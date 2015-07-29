@@ -9,7 +9,9 @@ namespace CldeParser {
     Scanner::Scanner(std::initializer_list<int> &completeStates,
                      std::initializer_list<int> &acceptedStates,
                      std::initializer_list<char> &characters)
-            : _completeStates{completeStates}, _acceptedStates{acceptedStates}, _characters{characters} {
+            : _completeStates{completeStates},
+              _acceptedStates{acceptedStates},
+              _characters{characters} {
         //
     }
 
@@ -34,6 +36,10 @@ namespace CldeParser {
 
             // Else - continue;
         }
+    }
+
+    std::string Scanner::CopyToString() {
+        return std::string{};
     }
 }
 

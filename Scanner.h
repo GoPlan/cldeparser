@@ -10,13 +10,14 @@
 #include <functional>
 #include <unordered_map>
 #include "Word.h"
+#include "Common/IPrintable.h"
 
 namespace CldeParser {
 
     using TransitionKeyPair = std::pair<int, char>;
     using TransitionFunction = std::function<int(TransitionKeyPair)>;
 
-    class Scanner {
+    class Scanner : Common::IPrintable {
 
         std::vector<int> _completeStates;
         std::vector<int> _acceptedStates;
@@ -28,7 +29,7 @@ namespace CldeParser {
         std::unordered_map<TransitionKeyPair, TransitionFunction> _transitionFunctions;
 
     public:
-        Scanner() = default;
+        Scanner() = delete;
         Scanner(std::initializer_list<int> &completeStates,
                 std::initializer_list<int> &acceptedStates,
                 std::initializer_list<char> &characters);
@@ -38,6 +39,10 @@ namespace CldeParser {
         Scanner &operator=(Scanner &&) = default;
         virtual ~Scanner() = default;
 
+        // IPrintable
+        std::string CopyToString();
+
+        // Locals
         void Execute(const std::string &buffer);
     };
 }

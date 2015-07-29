@@ -3,15 +3,20 @@ project(cldeparser)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-add_subdirectory(Foundation)
+add_subdirectory(Common)
 add_subdirectory(Scanner)
 add_subdirectory(Parser)
+add_subdirectory(Json)
 
-set(SOURCE_FILES main.cpp)
-add_executable(cldeparser ${SOURCE_FILES}
+add_library(foundation STATIC
+    Common/IPrintable.h
+    Common/IPrintFormatter.h
     Scanner.cpp
     Scanner.h
     Word.cpp
-    Word.h)
+    Word.h
+)
 
-target_link_libraries(cldeparser)
+set(SOURCE_FILES main.cpp CldeParser.h)
+add_executable(cldeparser ${SOURCE_FILES})
+target_link_libraries(cldeparser foundation)
