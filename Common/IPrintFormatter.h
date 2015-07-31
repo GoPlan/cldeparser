@@ -13,7 +13,7 @@ namespace CldeParser {
         class IPrintable;
 
         struct IPrintFormatter {
-            virtual std::string Print(const IPrintable &printable) = 0;
+            virtual std::string Print(const IPrintable &printable) const = 0;
         };
     }
 }

@@ -6,12 +6,12 @@
 
 namespace CldeParser {
 
-    Scanner::Scanner(std::initializer_list<int> &completeStates,
-                     std::initializer_list<int> &acceptedStates,
+    Scanner::Scanner(std::initializer_list<SPtrState> &completeStates,
+                     std::initializer_list<SPtrState> &acceptedStates,
                      std::initializer_list<char> &characters)
             : _completeStates{completeStates},
               _acceptedStates{acceptedStates},
-              _characters{characters} {
+              _characterVector{characters} {
         //
     }
 
@@ -21,18 +21,19 @@ namespace CldeParser {
 
         for (auto &item : buffer) {
 
-            auto transPair = std::make_pair(_currentState, item);
+            auto transitionKey = std::make_pair(_currentState, item);
 
-            if (_transitionFunctions.find(transPair) == _transitionFunctions.cend()) {
+            TransitionMap::iterator iter;
+
+            if ((iter = _transitionMap.find(transitionKey)) == _transitionMap.cend()) {
                 // TODO: throw an approriate exception
             }
 
-            auto &transFunction = _transitionFunctions[transPair];
-            _currentState = transFunction(transPair);
-
-            // Check if _currentState is an E
+            _currentState = iter->second;
 
             // Check if _currentState is acceptable
+
+            // Check if _currentState is an E
 
             // Else - continue;
         }

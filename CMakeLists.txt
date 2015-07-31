@@ -13,10 +13,12 @@ add_library(foundation STATIC
     Common/IPrintFormatter.h
     Scanner.cpp
     Scanner.h
-    Word.cpp
-    Word.h
-)
+    Token.cpp
+    Token.h
+    State.cpp
+    State.h)
+
 
 set(SOURCE_FILES main.cpp CldeParser.h)
-add_executable(cldeparser ${SOURCE_FILES})
+add_executable(cldeparser ${SOURCE_FILES} Common/IComparable.h)
 target_link_libraries(cldeparser foundation)

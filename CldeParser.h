@@ -6,6 +6,6 @@
 #define CLDEPARSER_CLDEPARSER_H
 
 #include "Scanner.h"
-#include "Word.h"
+#include "Token.h"
 
 #endif //CLDEPARSER_CLDEPARSER_H

@@ -9,29 +9,28 @@
 #include <initializer_list>
 #include <functional>
 #include <unordered_map>
-#include "Word.h"
 #include "Common/IPrintable.h"
+#include "Token.h"
+#include "State.h"
 
 namespace CldeParser {
 
-    using TransitionKeyPair = std::pair<int, char>;
-    using TransitionFunction = std::function<int(TransitionKeyPair)>;
+    using TransitionKey = std::pair<SPtrState, char>;
+    using TransitionMap = std::unordered_map<TransitionKey, SPtrState>;
+    using CharacterVector = std::vector<char>;
 
     class Scanner : Common::IPrintable {
 
-        std::vector<int> _completeStates;
-        std::vector<int> _acceptedStates;
-        std::vector<char> _characters;
-        std::vector<SPtrWord> _words;
-
-        int _currentState{0};
-
-        std::unordered_map<TransitionKeyPair, TransitionFunction> _transitionFunctions;
+        SPtrStateVector _completeStates;
+        SPtrStateVector _acceptedStates;
+        SPtrState _currentState;
+        TransitionMap _transitionMap;
+        CharacterVector _characterVector;
 
     public:
-        Scanner() = delete;
-        Scanner(std::initializer_list<int> &completeStates,
-                std::initializer_list<int> &acceptedStates,
+        Scanner() = default;
+        Scanner(std::initializer_list<SPtrState> &completeStates,
+                std::initializer_list<SPtrState> &acceptedStates,
                 std::initializer_list<char> &characters);
         Scanner(const Scanner &) = default;
         Scanner(Scanner &&) = default;
