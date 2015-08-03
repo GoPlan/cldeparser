@@ -4,7 +4,7 @@ project(cldeparser)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_subdirectory(Exception)
-#add_subdirectory(Json)
+add_subdirectory(Json)
 
 add_library(foundation STATIC
     Token.cpp

@@ -28,7 +28,7 @@ namespace CldeParser {
     using SPtrToken = std::shared_ptr<Token>;
     using SPtrTokenVector = std::vector<SPtrToken>;
 
-    SPtrToken Create(int id, const std::string &lexeme);
+    SPtrToken CreateSPtrToken(int id, const std::string &lexeme);
 }
 
 

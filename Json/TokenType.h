@@ -7,13 +7,13 @@
 
 namespace CldeParser {
     namespace Json {
-        enum class ValueType {
-            string,
-            number,
-            object,
-            array,
-            boolean,
-            null
+        enum class TokenType {
+            boolean = 1,
+            string = 2,
+            number = 3,
+            object = 4,
+            array = 5,
+            null = 6
         };
     }
 }
