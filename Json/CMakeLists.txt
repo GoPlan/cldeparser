@@ -12,4 +12,5 @@ add_executable(cldejson ${SOURCE_FILES} main.cpp
     Array.cpp
     Array.h
     ValueType.h
-)
+    Tokens/StringToken.cpp
+    Tokens/StringToken.h)

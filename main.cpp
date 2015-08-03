@@ -6,11 +6,12 @@ using namespace CldeParser;
 int main() {
 
     auto characters = {'{', '}', ':', ',', '"'};
-    auto completeStates = {1, 2, 3, 4, 5, 6, 7};
-    auto acceptedStates = {2, 4, 6};
+    auto completeStateIds = {1, 2, 3, 4, 5, 6, 7};
+    auto acceptedStateIds = {2, 4, 6};
 
-    Scanner scanner{completeStates, acceptedStates, characters};
+    std::string example{"{ name: 15 }"};
 
+    SimpleScanner scanner{};
 
     return 0;
 }

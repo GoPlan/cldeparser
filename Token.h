@@ -12,12 +12,12 @@ namespace CldeParser {
 
     class Token {
 
-        std::string _lexeme;
         int _id;
+        std::string _lexeme;
 
     public:
-        Token(const std::string &word, int id);
-        Token(const char *word, int id);
+        Token(int id, const std::string &word) : _id{id}, _lexeme{word} { };
+        Token(int id, const char *word) : _id{id}, _lexeme{word} { };
         Token(const Token &) = default;
         Token(Token &&) = default;
         Token &operator=(const Token &) = default;
@@ -28,7 +28,7 @@ namespace CldeParser {
     using SPtrToken = std::shared_ptr<Token>;
     using SPtrTokenVector = std::vector<SPtrToken>;
 
-    SPtrToken Create(const std::string &lexeme, int id);
+    SPtrToken Create(int id, const std::string &lexeme);
 }
 
 
