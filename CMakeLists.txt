@@ -7,6 +7,9 @@ add_subdirectory(Exception)
 add_subdirectory(Common)
 
 add_library(foundation STATIC
+    Core/IPrintable.h
+    Core/IPrintFormatter.h
+    Core/IComparable.h
     Token.cpp
     Token.h
     Tokenizer.cpp
@@ -17,4 +20,4 @@ add_library(foundation STATIC
 
 set(SOURCE_FILES main.cpp CldeParser.h)
 add_executable(cldeparser ${SOURCE_FILES})
-target_link_libraries(cldeparser foundation exception)
+target_link_libraries(cldeparser foundation common exception)

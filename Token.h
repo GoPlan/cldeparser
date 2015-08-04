@@ -7,10 +7,11 @@
 
 #include <string>
 #include <vector>
+#include "Core/IPrintable.h"
 
 namespace CldeParser {
 
-    class Token {
+    class Token : public Core::IPrintable {
 
         int _id;
         std::string _lexeme;
@@ -23,6 +24,18 @@ namespace CldeParser {
         Token &operator=(const Token &) = default;
         Token &operator=(Token &&) = default;
         virtual ~Token() = default;
+
+        // Accessors
+        int id() const {
+            return _id;
+        }
+
+        const std::string &lexeme() const {
+            return _lexeme;
+        }
+
+        // IPrintable
+        std::string CopyToString() const override;
     };
 
     using SPtrToken = std::shared_ptr<Token>;

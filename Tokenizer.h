@@ -30,6 +30,7 @@ namespace CldeParser {
 
         // Locals
         bool Validate(char character);
+        void Reset();
 
         // Locals (Virtuals)
         virtual bool BeginWithCharacter(char character);

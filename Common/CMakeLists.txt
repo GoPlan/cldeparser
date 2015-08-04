@@ -22,4 +22,8 @@ add_library(common STATIC
     Tokenizers/BracketClose.cpp
     Tokenizers/BracketClose.h
     Tokenizers/SemiColon.cpp
-    Tokenizers/SemiColon.h Tokenizers/Id.cpp Tokenizers/Id.h)
+    Tokenizers/SemiColon.h
+    Tokenizers/Id.cpp
+    Tokenizers/Id.h
+    TokenizerFactory.cpp
+    TokenizerFactory.h TokenType.cpp Tokenizers/Space.cpp Tokenizers/Space.h Tokenizers/Tab.cpp Tokenizers/Tab.h)

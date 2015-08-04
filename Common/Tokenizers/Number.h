@@ -2,7 +2,7 @@
 // Created by LE, Duc Anh on 8/3/15.
 //
 
-#ifndef[CLDEPARSER_COMMON_TOKENIZERS_VALUE_H
+#ifndef CLDEPARSER_COMMON_TOKENIZERS_VALUE_H
 #define CLDEPARSER_COMMON_TOKENIZERS_VALUE_H
 
 #include "../TokenType.h"
@@ -51,8 +51,6 @@ namespace CldeParser {
                 bool IsValid(char character) override;
                 bool CoreValidate(char character) override;
             };
-
-            SPtrToken Number::CreateSPtrToken();
         }
     }
 }

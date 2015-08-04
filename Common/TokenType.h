@@ -5,8 +5,11 @@
 #ifndef CLDEPARSER_COMMON_VALUETYPE_H
 #define CLDEPARSER_COMMON_VALUETYPE_H
 
+#include <string>
+
 namespace CldeParser {
     namespace Common {
+
         enum class TokenType {
             BraceOpen = 1,
             BraceClose = 2,
@@ -17,8 +20,12 @@ namespace CldeParser {
             SemiColon = 7,
             String = 8,
             Number = 9,
-            Id = 10
+            Id = 10,
+            Space = 11,
+            Tab = 12,
         };
+
+        std::string CopyToString(int id) ;
     }
 }
 

@@ -1,18 +1,35 @@
 #include <string>
+#include <iostream>
 #include "CldeParser.h"
+#include "Common/TokenizerFactory.h"
+#include "Common/TokenType.h"
 
 using namespace CldeParser;
 
 int main() {
 
-    auto characters = {'{', '}', ':', ',', '"'};
-    auto completeStateIds = {1, 2, 3, 4, 5, 6, 7};
-    auto acceptedStateIds = {2, 4, 6};
+    std::string example{"{ _a_15 : '_15' }"};
 
-    std::string example{"{ name: 15 }"};
+    Scanner scanner;
 
-    Scanner scanner{};
-    scanner.Scan(example);
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateId());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateString());
+//    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateNumber());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateColon());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateSpace());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateTab());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateBraceOpen());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateBraceClose());
+
+    SPtrTokenVector tokens = scanner.Scan(example);
+
+    for (auto &token : tokens) {
+
+        if (token->id() == (int) Common::TokenType::Space)
+            continue;
+
+        std::cout << token->CopyToString() << std::endl;
+    }
 
     return 0;
 }

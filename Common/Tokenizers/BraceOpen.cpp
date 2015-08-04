@@ -35,6 +35,7 @@ namespace CldeParser {
             bool BraceOpen::CoreValidate(char character) {
                 _lexeme.append(1, character);
                 _currentState = _currentState + 1;
+                return true;
             }
         }
     }

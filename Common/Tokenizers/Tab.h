@@ -2,26 +2,26 @@
 // Created by LE, Duc Anh on 8/4/15.
 //
 
-#ifndef CLDEPARSER_COMMON_TOKENIZERS_COLON_H
-#define CLDEPARSER_COMMON_TOKENIZERS_COLON_H
+#ifndef CLDEPARSER_COMMON_TOKENIZERS_TAB_H
+#define CLDEPARSER_COMMON_TOKENIZERS_TAB_H
 
-#include "../../Tokenizer.h"
 #include "../TokenType.h"
+#include "../../Tokenizer.h"
 #include "../../Exception/ScannerException.h"
 
 namespace CldeParser {
     namespace Common {
         namespace Tokenizers {
 
-            class Colon : public Tokenizer {
+            class Tab : public Tokenizer {
 
             public:
-                Colon() = default;
-                Colon(const Colon &) = default;
-                Colon(Colon &&) = default;
-                Colon &operator=(const Colon &) = default;
-                Colon &operator=(Colon &&) = default;
-                ~Colon() = default;
+                Tab() = default;
+                Tab(const Tab &) = default;
+                Tab(Tab &&) = default;
+                Tab &operator=(const Tab &) = default;
+                Tab &operator=(Tab &&) = default;
+                ~Tab() = default;
 
                 // Tokenizer
                 bool BeginWithCharacter(char character) override;
@@ -38,5 +38,4 @@ namespace CldeParser {
     }
 }
 
-
-#endif //CLDEPARSER_COMMON_TOKENIZERS_COLON_H
+#endif //CLDEPARSER_COMMON_TOKENIZERS_TAB_H

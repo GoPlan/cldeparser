@@ -27,6 +27,11 @@ namespace CldeParser {
         return CoreValidate(character);
     }
 
+    void Tokenizer::Reset() {
+        _currentState = 0;
+        _lexeme.clear();
+    }
+
     SPtrToken Tokenizer::CreateSPtrToken() {
         return CldeParser::CreateSPtrToken(0, _lexeme);
     }

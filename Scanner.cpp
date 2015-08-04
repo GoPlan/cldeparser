@@ -3,6 +3,7 @@
 //
 
 #include "Scanner.h"
+#include "Exception/ScannerException.h"
 #include <iostream>
 
 namespace CldeParser {
@@ -24,20 +25,25 @@ namespace CldeParser {
             matchedTokenizers.clear();
 
             for (auto &tokenizer: _tokenizers) {
+                tokenizer->Reset();
                 if (tokenizer->BeginWithCharacter(*cIter)) { matchedTokenizers.push_back(tokenizer); }
             }
 
-            tokens.push_back(Process(cIter, cEndr, matchedTokenizers));
+            if (matchedTokenizers.size() == 0) {
+                std::string msg = "Unrecognized symbol - ";
+                msg.append(1, *cIter);
+                throw ScannerException{msg};
+            }
 
-            ++cIter;
+            tokens.push_back(ProcessAndMoveNext(cIter, cEndr, matchedTokenizers));
         }
 
         return tokens;
     }
 
-    SPtrToken Scanner::Process(std::string::const_iterator &cIter,
-                               std::string::const_iterator &cEnd,
-                               SPtrTokenizerList &matchedTokenizers) {
+    SPtrToken Scanner::ProcessAndMoveNext(std::string::const_iterator &cIter,
+                                          std::string::const_iterator &cEnd,
+                                          SPtrTokenizerList &matchedTokenizers) {
 
         std::vector<SPtrTokenizerList::const_iterator> unmatched;
 
@@ -63,12 +69,12 @@ namespace CldeParser {
                 matchedTokenizers.erase(iter);
             }
 
-            // Update SPtrToken
-            sptrToken = (*matchedTokenizers.cbegin())->CreateSPtrToken();
-
             // Break if there is no tokenizer left
-            if (matchedTokenizers.size() == 0)
+            if (matchedTokenizers.size() == 0) {
                 break;
+            }
+
+            sptrToken = (*matchedTokenizers.cbegin())->CreateSPtrToken();
 
             ++cIter;
         }

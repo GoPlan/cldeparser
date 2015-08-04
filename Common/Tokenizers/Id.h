@@ -17,6 +17,7 @@ namespace CldeParser {
 
                 bool isCharacter(char character);
                 bool isDigit(char character);
+                bool isUnderscore(char character);
 
             public:
                 Id() = default;
