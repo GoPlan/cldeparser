@@ -18,7 +18,12 @@ namespace CldeParser {
                 enum class States {
                     Start = 0,
                     InProgress = 1,
-                    Closing = 2
+                    InProgressAlternative = 2,
+                    InPogresssAlternativeHex_1 = 3,
+                    InPogresssAlternativeHex_2 = 4,
+                    InPogresssAlternativeHex_3 = 5,
+                    InPogresssAlternativeHex_4 = 6,
+                    Closing = 7
                 };
 
                 static StateSet _completeStates;
@@ -27,7 +32,11 @@ namespace CldeParser {
 
                 bool isControlCharacter(char character);
                 bool isQuote(char character);
+                bool isDoubleQuote(char character);
                 bool isBackSlash(char character);
+                bool isAlternativeSymbol(char character);
+                bool isAlternativeHexSymbol(char character);
+                bool isHexadecimal(char character);
 
 
             public:

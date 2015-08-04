@@ -8,7 +8,7 @@ using namespace CldeParser;
 
 int main() {
 
-    std::string example{"{ _a_15 : '_15' }"};
+    std::string example{"{ _a_15 : \"15_fda fdafas lê ' } - }\" }"};
 
     Scanner scanner;
 
