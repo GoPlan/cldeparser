@@ -3,6 +3,23 @@ project(cldeparser)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-#add_library(common STATIC
-  #    IPrintable.h
-  #)
+add_library(common STATIC
+    TokenType.h
+    Tokenizers/String.cpp
+    Tokenizers/String.h
+    Tokenizers/Number.cpp
+    Tokenizers/Number.h
+    Tokenizers/BraceOpen.cpp
+    Tokenizers/BraceOpen.h
+    Tokenizers/BraceClose.cpp
+    Tokenizers/BraceClose.h
+    Tokenizers/Colon.cpp
+    Tokenizers/Colon.h
+    Tokenizers/Comma.cpp
+    Tokenizers/Comma.h
+    Tokenizers/BracketOpen.cpp
+    Tokenizers/BracketOpen.h
+    Tokenizers/BracketClose.cpp
+    Tokenizers/BracketClose.h
+    Tokenizers/SemiColon.cpp
+    Tokenizers/SemiColon.h)

@@ -2,14 +2,14 @@
 // Created by LE, Duc Anh on 8/3/15.
 //
 
-#ifndef CLDEPARSER_JSON_TOKENIZERS_STRING_H
-#define CLDEPARSER_JSON_TOKENIZERS_STRING_H
+#ifndef CLDEPARSER_COMMON_TOKENIZERS_STRING_H
+#define CLDEPARSER_COMMON_TOKENIZERS_STRING_H
 
 #include "../TokenType.h"
 #include "../../Tokenizer.h"
 
 namespace CldeParser {
-    namespace Json {
+    namespace Common {
         namespace Tokenizers {
 
             class String : public Tokenizer {
@@ -23,11 +23,13 @@ namespace CldeParser {
                 ~String() = default;
 
                 // Tokenizer
-                virtual SPtrToken CreateToken() override;
+
+                virtual bool IsValid(char character) override;
+                SPtrToken CreateSPtrToken() override;
             };
         }
     }
 }
 
 
-#endif //CLDEPARSER_JSON_TOKENIZERS_STRING_H
+#endif //CLDEPARSER_COMMON_TOKENIZERS_STRING_H

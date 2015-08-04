@@ -2,11 +2,11 @@
 // Created by LE, Duc Anh on 7/31/15.
 //
 
-#ifndef CLDEPARSER_COMMON_ICOMPARABLE_H
-#define CLDEPARSER_COMMON_ICOMPARABLE_H
+#ifndef CLDEPARSER_CORE_ICOMPARABLE_H
+#define CLDEPARSER_CORE_ICOMPARABLE_H
 
 namespace CldeParser {
-    namespace Common {
+    namespace Core {
         struct IComparable {
             virtual bool Lesser(const IComparable &target) = 0;
             virtual bool Greater(const IComparable &target) = 0;
@@ -15,4 +15,4 @@ namespace CldeParser {
     }
 }
 
-#endif //CLDEPARSER_COMMON_ICOMPARABLE_H
+#endif //CLDEPARSER_CORE_ICOMPARABLE_H

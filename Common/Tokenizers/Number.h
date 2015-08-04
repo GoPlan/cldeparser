@@ -2,14 +2,14 @@
 // Created by LE, Duc Anh on 8/3/15.
 //
 
-#ifndef CLDEPARSER_JSON_TOKENIZERS_VALUE_H
-#define CLDEPARSER_JSON_TOKENIZERS_VALUE_H
+#ifndef[CLDEPARSER_COMMON_TOKENIZERS_VALUE_H
+#define CLDEPARSER_COMMON_TOKENIZERS_VALUE_H
 
-#include "../../Tokenizer.h"
 #include "../TokenType.h"
+#include "../../Tokenizer.h"
 
 namespace CldeParser {
-    namespace Json {
+    namespace Common {
         namespace Tokenizers {
 
             class Number : public Tokenizer {
@@ -20,17 +20,16 @@ namespace CldeParser {
                 Number(Number &&) = default;
                 Number &operator=(const Number &) = default;
                 Number &operator=(Number &&) = default;
-                virtual ~Number() = default;
+                ~Number() = default;
 
                 // Tokenizer
-
-                virtual SPtrToken CreateToken() override;
+                virtual SPtrToken CreateSPtrToken() override;
             };
 
-            SPtrToken Number::CreateToken();
+            SPtrToken Number::CreateSPtrToken();
         }
     }
 }
 
 
-#endif //CLDEPARSER_JSON_TOKENIZERS_VALUE_H
+#endif //CLDEPARSER_COMMON_TOKENIZERS_VALUE_H

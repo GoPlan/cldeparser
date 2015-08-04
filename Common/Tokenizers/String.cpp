@@ -5,10 +5,15 @@
 #include "String.h"
 
 namespace CldeParser {
-    namespace Json {
+    namespace Common {
         namespace Tokenizers {
-            SPtrToken String::CreateToken() {
+
+            SPtrToken String::CreateSPtrToken() {
                 return CreateSPtrToken((int) TokenType::string, _lexeme);
+            }
+
+            bool String::IsValid(char character) {
+                return true;
             }
         }
     }

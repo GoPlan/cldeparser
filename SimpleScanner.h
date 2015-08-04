@@ -27,8 +27,7 @@ namespace CldeParser {
         SPtrTokenVector Scan(const std::string &string);
 
     protected:
-        SPtrToken Process(const std::string::const_iterator &cIter,
-                          SPtrTokenizerVector &matchedTokenizers);
+        SPtrToken Process(const std::string::const_iterator &cIter, SPtrTokenizerVector &matchedTokenizers);
     };
 }
 

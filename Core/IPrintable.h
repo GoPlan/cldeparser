@@ -2,14 +2,14 @@
 // Created by LE, Duc Anh on 7/29/15.
 //
 
-#ifndef CLDEPARSER_COMMON_IPRINTABLE_H
-#define CLDEPARSER_COMMON_IPRINTABLE_H
+#ifndef CLDEPARSER_CORE_IPRINTABLE_H
+#define CLDEPARSER_CORE_IPRINTABLE_H
 
 #include <string>
 #include "IPrintFormatter.h"
 
 namespace CldeParser {
-    namespace Common {
+    namespace Core {
 
         struct IPrintable {
             virtual std::string CopyToString() const = 0;
@@ -18,4 +18,4 @@ namespace CldeParser {
     }
 }
 
-#endif //CLDEPARSER_IPRINTABLE_H
+#endif //CLDEPARSER_CORE_IPRINTABLE_H

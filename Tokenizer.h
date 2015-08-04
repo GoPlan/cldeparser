@@ -29,8 +29,10 @@ namespace CldeParser {
 
         // Locals
         virtual bool BeginWithCharacter(char character);
+        virtual bool IsValid(char character);
         virtual bool Validate(char character, bool isMoved = true);
-        virtual SPtrToken CreateToken();
+
+        virtual SPtrToken CreateSPtrToken();
 
     protected:
         StateSet _completeStates;

@@ -5,9 +5,9 @@
 #include "Number.h"
 
 namespace CldeParser {
-    namespace Json {
+    namespace Common {
         namespace Tokenizers {
-            SPtrToken Number::CreateToken() {
+            SPtrToken Number::CreateSPtrToken() {
                 return CreateSPtrToken((int) TokenType::number, _lexeme);
             }
         }
