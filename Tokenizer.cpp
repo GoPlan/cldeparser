@@ -11,28 +11,40 @@ namespace CldeParser {
     }
 
     bool Tokenizer::BeginWithCharacter(char character) {
-        return Validate(character, false);
+
+        auto transitionIter = Transitions().find(0);
+
+        if (transitionIter == Transitions().cend()) { return false; }
+
+        auto actionMap = (*transitionIter).second;
+        auto actionIter = actionMap.find(character);
+
+        return actionIter != actionMap.cend();
     }
 
-    bool Tokenizer::Validate(char character, bool isMoved) {
-
+    bool Tokenizer::Validate(char character) {
         if (!IsValid(character)) { return false; }
+        return CoreValidate(character);
+    }
 
-        auto transitionIter = _transitionMap.find(_currentState);
+    SPtrToken Tokenizer::CreateSPtrToken() {
+        return CldeParser::CreateSPtrToken(0, _lexeme);
+    }
 
-        if (transitionIter == _transitionMap.cend()) { return false; }
+    bool Tokenizer::CoreValidate(char character) {
+
+        auto transitionIter = Transitions().find(_currentState);
+
+        if (transitionIter == Transitions().cend()) { return false; }
 
         auto actionMap = (*transitionIter).second;
         auto actionIter = actionMap.find(character);
 
         if (actionIter == actionMap.cend()) { return false; }
-        if (isMoved) { _currentState = actionIter->second; }
+
+        _currentState = actionIter->second;
 
         return true;
-    }
-
-    SPtrToken Tokenizer::CreateSPtrToken() {
-        return CldeParser::CreateSPtrToken(0, _lexeme);
     }
 }
 

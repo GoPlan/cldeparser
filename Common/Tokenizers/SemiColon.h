@@ -17,7 +17,7 @@ namespace CldeParser {
                 SemiColon(SemiColon &&) = default;
                 SemiColon &operator=(const SemiColon &) = default;
                 SemiColon &operator=(SemiColon &&) = default;
-                virtual ~SemiColon() = default;
+                ~SemiColon() = default;
             };
         }
     }

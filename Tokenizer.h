@@ -29,18 +29,21 @@ namespace CldeParser {
         virtual ~Tokenizer() = default;
 
         // Locals
-        virtual bool BeginWithCharacter(char character);
-        virtual bool IsValid(char character);
-        virtual bool Validate(char character, bool isMoved = true);
+        bool Validate(char character);
 
+        // Locals (Virtuals)
+        virtual bool BeginWithCharacter(char character);
+        virtual const StateSet &CompleteStates() const = 0;
+        virtual const StateSet &AcceptedStates() const = 0;
+        virtual const TransitionMap &Transitions() const = 0;
         virtual SPtrToken CreateSPtrToken();
 
     protected:
-        StateSet _completeStates;
-        StateSet _acceptedStates;
-        TransitionMap _transitionMap;
         int _currentState{0};
         std::string _lexeme{};
+
+        virtual bool IsValid(char character);
+        virtual bool CoreValidate(char character);
     };
 
     using SPtrTokenizer = std::shared_ptr<Tokenizer>;

@@ -8,22 +8,47 @@ namespace CldeParser {
     namespace Common {
         namespace Tokenizers {
 
-            bool Id::IsValid(char character) {
-                return _currentState > 0 ? isNumber(character) || isCharacter(character) : isCharacter(character);
+            bool Id::isCharacter(char character) {
+                return (int) character > 47 && (int) character < 58;
+            }
+
+            bool Id::isDigit(char character) {
+                return ((int) character > 65 && (int) character < 91)
+                       || ((int) character > 96 && (int) character < 123);
+            }
+
+            bool Id::BeginWithCharacter(char character) {
+                return isCharacter(character);
             }
 
             SPtrToken Id::CreateSPtrToken() {
                 return CldeParser::CreateSPtrToken((int) TokenType::Id, _lexeme);
             }
 
-            bool Id::isCharacter(char character) {
-                int charvar = (int) character;
-                return charvar > 47 && charvar < 58;
+            const StateSet &Id::CompleteStates() const {
+                throw ScannerException{"CompleteStates is not supported"};
             }
 
-            bool Id::isNumber(char character) {
-                int charvar = (int) character;
-                return (charvar > 40 && charvar < 91) || (charvar > 96 && charvar < 123);
+            const StateSet &Id::AcceptedStates() const {
+                throw ScannerException{"AcceptedStates is not supported"};
+            }
+
+            const TransitionMap &Id::Transitions() const {
+                throw ScannerException{"TransitionMap is not supported"};
+            }
+
+            bool Id::IsValid(char character) {
+                return _currentState > 0 ? isDigit(character) || isCharacter(character) : isCharacter(character);
+            }
+
+            bool Id::CoreValidate(char character) {
+
+                if (_lexeme.length() == 0) { _lexeme.reserve(20); }
+                if (_currentState < 2) { _currentState = _currentState + 1; }
+
+                _lexeme.append(1, character);
+
+                return true;
             }
         }
     }

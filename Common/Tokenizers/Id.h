@@ -5,8 +5,9 @@
 #ifndef CLDEPARSER_COMMON_TOKENIZERS_ID_H
 #define CLDEPARSER_COMMON_TOKENIZERS_ID_H
 
-#include "../../Tokenizer.h"
 #include "../TokenType.h"
+#include "../../Tokenizer.h"
+#include "../../Exception/ScannerException.h"
 
 namespace CldeParser {
     namespace Common {
@@ -15,7 +16,7 @@ namespace CldeParser {
             class Id : public Tokenizer {
 
                 bool isCharacter(char character);
-                bool isNumber(char character);
+                bool isDigit(char character);
 
             public:
                 Id() = default;
@@ -26,8 +27,15 @@ namespace CldeParser {
                 ~Id() = default;
 
                 // Tokenizer
-                bool IsValid(char character) override;
+                bool BeginWithCharacter(char character) override;
+                const StateSet &CompleteStates() const override;
+                const StateSet &AcceptedStates() const override;
+                const TransitionMap &Transitions() const override;
                 SPtrToken CreateSPtrToken() override;
+
+            protected:
+                bool IsValid(char character) override;
+                bool CoreValidate(char character) override;
             };
         }
     }
