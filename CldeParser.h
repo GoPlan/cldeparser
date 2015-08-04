@@ -7,6 +7,6 @@
 
 #include "Token.h"
 #include "Tokenizer.h"
-#include "SimpleScanner.h"
+#include "Scanner.h"
 
 #endif //CLDEPARSER_CLDEPARSER_H

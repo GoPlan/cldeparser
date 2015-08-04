@@ -1,46 +1,79 @@
 //
-// Created by LE, Duc Anh on 7/29/15.
+// Created by LE, Duc Anh on 8/3/15.
 //
 
 #include "Scanner.h"
+#include <iostream>
 
 namespace CldeParser {
 
-    Scanner::Scanner(std::initializer_list<SPtrState> &completeStates,
-                     std::initializer_list<SPtrState> &acceptedStates,
-                     std::initializer_list<char> &characters)
-            : _completeStates{completeStates},
-              _acceptedStates{acceptedStates},
-              _characterVector{characters} {
-        //
+    SPtrTokenizerVector &Scanner::Tokenizers() {
+        return _tokenizers;
     }
 
-    void Scanner::Execute(const std::string &buffer) {
+    SPtrTokenVector Scanner::Scan(const std::string &string) {
 
-        std::string tmp;
+        SPtrTokenizerList matchedTokenizers;
+        SPtrTokenVector tokens;
 
-        for (auto &item : buffer) {
+        std::string::const_iterator cIter = string.cbegin();
+        std::string::const_iterator cEndr = string.cend();
 
-            auto transitionKey = std::make_pair(_currentState, item);
+        while (cIter != string.end()) {
 
-            TransitionMap::iterator iter;
+            matchedTokenizers.clear();
 
-            if ((iter = _transitionMap.find(transitionKey)) == _transitionMap.cend()) {
-                // TODO: throw an approriate exception
+            for (auto &tokenizer: _tokenizers) {
+                if (tokenizer->BeginWithCharacter(*cIter)) { matchedTokenizers.push_back(tokenizer); }
             }
 
-            _currentState = iter->second;
+            tokens.push_back(Process(cIter, cEndr, matchedTokenizers));
 
-            // Check if _currentState is acceptable
-
-            // Check if _currentState is an E
-
-            // Else - continue;
+            ++cIter;
         }
+
+        return tokens;
     }
 
-    std::string Scanner::CopyToString() {
-        return std::string{};
+    SPtrToken Scanner::Process(std::string::const_iterator &cIter,
+                               std::string::const_iterator &cEnd,
+                               SPtrTokenizerList &matchedTokenizers) {
+
+        std::vector<SPtrTokenizerList::const_iterator> unmatched;
+
+        SPtrToken sptrToken;
+
+        while (cIter != cEnd) {
+
+            unmatched.clear();
+
+            // Validate character with tokenizers
+            for (SPtrTokenizerList::const_iterator iter = matchedTokenizers.cbegin();
+                 iter != matchedTokenizers.cend(); ++iter) {
+
+                auto &tokenizer = *iter;
+
+                if (!tokenizer->Validate(*cIter)) {
+                    unmatched.push_back(iter);
+                }
+            }
+
+            // Remove unmatched tokenizers
+            for (auto &iter : unmatched) {
+                matchedTokenizers.erase(iter);
+            }
+
+            // Update SPtrToken
+            sptrToken = (*matchedTokenizers.cbegin())->CreateSPtrToken();
+
+            // Break if there is no tokenizer left
+            if (matchedTokenizers.size() == 0)
+                break;
+
+            ++cIter;
+        }
+
+        return sptrToken;
     }
 }
 

@@ -7,8 +7,14 @@
 namespace CldeParser {
     namespace Common {
         namespace Tokenizers {
+
+            bool Number::IsValid(char character) {
+                int charvar = (int) character;
+                return (charvar > 40 && charvar < 91) || (charvar > 96 && charvar < 123);
+            }
+
             SPtrToken Number::CreateSPtrToken() {
-                return CreateSPtrToken((int) TokenType::number, _lexeme);
+                return CldeParser::CreateSPtrToken((int) TokenType::Number, _lexeme);
             }
         }
     }

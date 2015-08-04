@@ -17,6 +17,7 @@ namespace CldeParser {
             SemiColon = 7,
             String = 8,
             Number = 9,
+            Id = 10
         };
     }
 }

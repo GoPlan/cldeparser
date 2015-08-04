@@ -23,7 +23,8 @@ namespace CldeParser {
                 ~Number() = default;
 
                 // Tokenizer
-                virtual SPtrToken CreateSPtrToken() override;
+                bool IsValid(char character) override;
+                SPtrToken CreateSPtrToken() override;
             };
 
             SPtrToken Number::CreateSPtrToken();

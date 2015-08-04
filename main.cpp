@@ -11,7 +11,7 @@ int main() {
 
     std::string example{"{ name: 15 }"};
 
-    SimpleScanner scanner{};
+    Scanner scanner{};
     scanner.Scan(example);
 
     return 0;

@@ -9,6 +9,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <list>
 #include "Token.h"
 
 namespace CldeParser {
@@ -44,6 +45,7 @@ namespace CldeParser {
 
     using SPtrTokenizer = std::shared_ptr<Tokenizer>;
     using SPtrTokenizerVector = std::vector<SPtrTokenizer>;
+    using SPtrTokenizerList = std::list<SPtrTokenizer>;
 }
 
 

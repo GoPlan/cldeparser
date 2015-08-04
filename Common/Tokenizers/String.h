@@ -23,8 +23,7 @@ namespace CldeParser {
                 ~String() = default;
 
                 // Tokenizer
-
-                virtual bool IsValid(char character) override;
+                bool IsValid(char character) override;
                 SPtrToken CreateSPtrToken() override;
             };
         }

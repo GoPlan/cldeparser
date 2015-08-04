@@ -8,12 +8,18 @@ namespace CldeParser {
     namespace Common {
         namespace Tokenizers {
 
-            SPtrToken String::CreateSPtrToken() {
-                return CreateSPtrToken((int) TokenType::string, _lexeme);
+            bool String::IsValid(char character) {
+
+                int charvar = (int) character;
+
+                if (charvar < 31) return false;     // control characters
+                if (charvar == 34) return false;    // double-quote
+
+                return true;
             }
 
-            bool String::IsValid(char character) {
-                return true;
+            SPtrToken String::CreateSPtrToken() {
+                return CldeParser::CreateSPtrToken((int) TokenType::String, _lexeme);
             }
         }
     }

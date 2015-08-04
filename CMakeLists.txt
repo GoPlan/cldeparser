@@ -11,8 +11,8 @@ add_library(foundation STATIC
     Token.h
     Tokenizer.cpp
     Tokenizer.h
-    SimpleScanner.cpp
-    SimpleScanner.h)
+    Scanner.cpp
+    Scanner.h)
 
 
 set(SOURCE_FILES main.cpp CldeParser.h)

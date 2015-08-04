@@ -22,4 +22,4 @@ add_library(common STATIC
     Tokenizers/BracketClose.cpp
     Tokenizers/BracketClose.h
     Tokenizers/SemiColon.cpp
-    Tokenizers/SemiColon.h)
+    Tokenizers/SemiColon.h Tokenizers/Id.cpp Tokenizers/Id.h)
