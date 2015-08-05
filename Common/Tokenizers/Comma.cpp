@@ -17,15 +17,15 @@ namespace CldeParser {
             }
 
             const StateSet &Comma::CompleteStates() const {
-                throw ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{"CompleteStates is not supported"};
             }
 
             const StateSet &Comma::AcceptedStates() const {
-                throw ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
             }
 
             const TransitionMap &Comma::Transitions() const {
-                throw ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{"TransitionMap is not supported"};
             }
 
             bool Comma::IsValid(char character) {

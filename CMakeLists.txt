@@ -3,7 +3,7 @@ project(cldeparser)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-add_subdirectory(Exception)
+add_subdirectory(Exceptions)
 add_subdirectory(Common)
 
 add_library(foundation STATIC
@@ -15,9 +15,11 @@ add_library(foundation STATIC
     Tokenizer.cpp
     Tokenizer.h
     Scanner.cpp
-    Scanner.h)
+    Scanner.h
+    Parser.cpp
+    Parser.h)
 
 
 set(SOURCE_FILES main.cpp CldeParser.h)
 add_executable(cldeparser ${SOURCE_FILES})
-target_link_libraries(cldeparser foundation common exception)
+target_link_libraries(cldeparser foundation common exceptions)

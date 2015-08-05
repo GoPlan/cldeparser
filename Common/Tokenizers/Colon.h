@@ -7,7 +7,7 @@
 
 #include "../../Tokenizer.h"
 #include "../TokenType.h"
-#include "../../Exception/ScannerException.h"
+#include "../../Exceptions/ScannerException.h"
 
 namespace CldeParser {
     namespace Common {

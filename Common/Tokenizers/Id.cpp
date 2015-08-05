@@ -30,15 +30,15 @@ namespace CldeParser {
             }
 
             const StateSet &Id::CompleteStates() const {
-                throw ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{"CompleteStates is not supported"};
             }
 
             const StateSet &Id::AcceptedStates() const {
-                throw ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
             }
 
             const TransitionMap &Id::Transitions() const {
-                throw ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{"TransitionMap is not supported"};
             }
 
             bool Id::IsValid(char character) {

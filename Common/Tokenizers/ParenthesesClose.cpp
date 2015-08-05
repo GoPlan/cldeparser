@@ -17,15 +17,15 @@ namespace CldeParser {
             }
 
             const StateSet &ParenthesesClose::CompleteStates() const {
-                throw ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{"CompleteStates is not supported"};
             }
 
             const StateSet &ParenthesesClose::AcceptedStates() const {
-                throw ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
             }
 
             const TransitionMap &ParenthesesClose::Transitions() const {
-                throw ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{"TransitionMap is not supported"};
             }
 
             bool ParenthesesClose::IsValid(char character) {

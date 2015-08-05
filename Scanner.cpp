@@ -3,7 +3,7 @@
 //
 
 #include "Scanner.h"
-#include "Exception/ScannerException.h"
+#include "Exceptions/ScannerException.h"
 #include <iostream>
 
 namespace CldeParser {
@@ -32,7 +32,7 @@ namespace CldeParser {
             if (matchedTokenizers.size() == 0) {
                 std::string msg = "Unrecognized symbol - ";
                 msg.append(1, *cIter);
-                throw ScannerException{msg};
+                throw Exceptions::ScannerException{msg};
             }
 
             tokens.push_back(ProcessAndMoveNext(cIter, cEndr, matchedTokenizers));
