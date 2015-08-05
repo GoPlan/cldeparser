@@ -5,11 +5,15 @@
 #ifndef CLDEPARSER_COMMON_TOKENIZERS_BRACKETOPEN_H
 #define CLDEPARSER_COMMON_TOKENIZERS_BRACKETOPEN_H
 
+#include "../TokenType.h"
+#include "../../Tokenizer.h"
+#include "../../Exception/ScannerException.h"
+
 namespace CldeParser {
     namespace Common {
         namespace Tokenizers {
 
-            class BracketOpen {
+            class BracketOpen : public Tokenizer {
 
             public:
                 BracketOpen() = default;
@@ -17,7 +21,18 @@ namespace CldeParser {
                 BracketOpen(BracketOpen &&) = default;
                 BracketOpen &operator=(const BracketOpen &) = default;
                 BracketOpen &operator=(BracketOpen &&) = default;
-                virtual ~BracketOpen() = default;
+                ~BracketOpen() = default;
+
+                // Tokenizer
+                bool BeginWithCharacter(char character) override;
+                const StateSet &CompleteStates() const override;
+                const StateSet &AcceptedStates() const override;
+                const TransitionMap &Transitions() const override;
+                SPtrToken CreateSPtrToken() override;
+
+            protected:
+                bool IsValid(char character) override;
+                bool CoreValidate(char character) override;
             };
         }
     }

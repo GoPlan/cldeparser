@@ -26,4 +26,4 @@ add_library(common STATIC
     Tokenizers/Id.cpp
     Tokenizers/Id.h
     TokenizerFactory.cpp
-    TokenizerFactory.h TokenType.cpp Tokenizers/Space.cpp Tokenizers/Space.h Tokenizers/Tab.cpp Tokenizers/Tab.h)
+    TokenizerFactory.h TokenType.cpp Tokenizers/Space.cpp Tokenizers/Space.h Tokenizers/Tab.cpp Tokenizers/Tab.h Tokenizers/ParenthesesOpen.cpp Tokenizers/ParenthesesOpen.h Tokenizers/ParenthesesClose.cpp Tokenizers/ParenthesesClose.h)

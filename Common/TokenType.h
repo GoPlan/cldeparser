@@ -23,9 +23,11 @@ namespace CldeParser {
             Id = 10,
             Space = 11,
             Tab = 12,
+            ParenthesesOpen = 13,
+            ParenthesesClose = 14
         };
 
-        std::string CopyToString(int id) ;
+        std::string CopyToString(int id);
     }
 }
 

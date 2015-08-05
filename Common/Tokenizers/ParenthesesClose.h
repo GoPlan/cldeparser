@@ -1,28 +1,27 @@
 //
-// Created by LE, Duc Anh on 8/4/15.
+// Created by LE, Duc Anh on 8/5/15.
 //
 
-#ifndef CLDEPARSER_COMMON_TOKENIZERS_SEMICOLON_H
-#define CLDEPARSER_COMMON_TOKENIZERS_SEMICOLON_H
+#ifndef CLDEPARSER_COMMON_TOKENIZERS_PARENTHESESCLOSE_H
+#define CLDEPARSER_COMMON_TOKENIZERS_PARENTHESESCLOSE_H
 
 #include "../TokenType.h"
 #include "../../Tokenizer.h"
 #include "../../Exception/ScannerException.h"
 
-
 namespace CldeParser {
     namespace Common {
         namespace Tokenizers {
 
-            class SemiColon : public Tokenizer {
+            class ParenthesesClose : public Tokenizer {
 
             public:
-                SemiColon() = default;
-                SemiColon(const SemiColon &) = default;
-                SemiColon(SemiColon &&) = default;
-                SemiColon &operator=(const SemiColon &) = default;
-                SemiColon &operator=(SemiColon &&) = default;
-                ~SemiColon() = default;
+                ParenthesesClose() = default;
+                ParenthesesClose(const ParenthesesClose &) = default;
+                ParenthesesClose(ParenthesesClose &&) = default;
+                ParenthesesClose &operator=(const ParenthesesClose &) = default;
+                ParenthesesClose &operator=(ParenthesesClose &&) = default;
+                ~ParenthesesClose() = default;
 
                 // Tokenizer
                 bool BeginWithCharacter(char character) override;
@@ -40,4 +39,4 @@ namespace CldeParser {
 }
 
 
-#endif //CLDEPARSER_COMMON_TOKENIZERS_SEMICOLON_H
+#endif //CLDEPARSER_COMMON_TOKENIZERS_PARENTHESESCLOSE_H
