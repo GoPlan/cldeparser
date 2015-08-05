@@ -11,6 +11,7 @@
 #include "Tokenizers/Number.h"
 #include "Tokenizers/Space.h"
 #include "Tokenizers/Tab.h"
+#include "Tokenizers/Comma.h"
 
 namespace CldeParser {
     namespace Common {
@@ -38,6 +39,9 @@ namespace CldeParser {
         }
         SPtrTokenizer TokenizerFactory::CreateTab() {
             return std::make_shared<Tokenizers::Tab>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateComma() {
+            return std::make_shared<Tokenizers::Comma>();
         }
     }
 }

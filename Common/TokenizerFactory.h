@@ -20,6 +20,7 @@ namespace CldeParser {
             static SPtrTokenizer CreateString();
             static SPtrTokenizer CreateSpace();
             static SPtrTokenizer CreateTab();
+            static SPtrTokenizer CreateComma();
         };
     }
 }

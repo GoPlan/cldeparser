@@ -8,14 +8,15 @@ using namespace CldeParser;
 
 int main() {
 
-    std::string example{"{ _a_15 : \"15_fda fdafas lê ' } - }\" }"};
+    std::string example{"{ _a_15 : 'Example', 'a16' : 10.78Ee10 }"};
 
     Scanner scanner;
 
     scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateId());
     scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateString());
-//    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateNumber());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateNumber());
     scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateColon());
+    scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateComma());
     scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateSpace());
     scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateTab());
     scanner.Tokenizers().push_back(Common::TokenizerFactory::CreateBraceOpen());

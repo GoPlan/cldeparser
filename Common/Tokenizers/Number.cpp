@@ -32,6 +32,11 @@ namespace CldeParser {
                 return (int) character == (int) Number::NumberSpecialToken::Zero;
             }
 
+            bool Number::isExponentialSymbol(char character) {
+                return (int) character == (int) Number::NumberSpecialToken::LowerE
+                       || (int) character == (int) Number::NumberSpecialToken::UpperE;
+            }
+
             bool Number::BeginWithCharacter(char character) {
                 return isMinus(character) || isDigit(character) || isDot(character);
             }
@@ -53,11 +58,88 @@ namespace CldeParser {
             }
 
             bool Number::IsValid(char character) {
-                return isDigit(character);
+
+                switch ((States) _currentState) {
+                    case States::Start:
+                        return isMinus(character) || isDigit(character);
+                    case States::Negation:
+                        return isDigit(character);
+                    case States::RationalPercent:
+                        return isDot(character) || isExponentialSymbol(character);
+                    case States::Number:
+                        return isDigit(character) || isDot(character) || isExponentialSymbol(character);
+                    case States::Decimal:
+                        return isDigit(character) || isExponentialSymbol(character);
+                    case States::Exponential_1:
+                        return isDigit(character) || isPlus(character) || isMinus(character);
+                    case States::Exponential_2:
+                        return isDigit(character);
+                    case States::Closing:
+                        return false;
+                }
             }
 
             bool Number::CoreValidate(char character) {
-                return Tokenizer::CoreValidate(character);
+
+                if (_lexeme.length() == 0)
+                    _lexeme.reserve(20);
+
+                switch ((States) _currentState) {
+
+                    case States::Start: {
+                        _lexeme.append(1, character);
+                        if (isMinus(character)) _currentState = (int) States::Negation;
+                        if (isZero(character)) _currentState = (int) States::RationalPercent;
+                        if (isDigitOneToNine(character)) _currentState = (int) States::Number;
+                        break;
+                    }
+
+                    case States::Negation: {
+                        _lexeme.append(1, character);
+                        if (isZero(character)) _currentState = (int) States::RationalPercent;
+                        if (isDigitOneToNine(character)) _currentState = (int) States::Number;
+                        break;
+                    }
+
+                    case States::RationalPercent: {
+                        _lexeme.append(1, character);
+                        if (isDot(character)) _currentState = (int) States::Decimal;
+                        if (isExponentialSymbol(character)) _currentState = (int) States::Exponential_1;
+                        break;
+                    }
+
+                    case States::Number: {
+                        _lexeme.append(1, character);
+                        if (isDigit(character)) _currentState = (int) States::Number;
+                        if (isDot(character)) _currentState = (int) States::Decimal;
+                        if (isExponentialSymbol(character)) _currentState = (int) States::Exponential_1;
+                        break;
+                    }
+
+                    case States::Decimal: {
+                        _lexeme.append(1, character);
+                        if (isDigit(character)) _currentState = (int) States::Decimal;
+                        if (isExponentialSymbol(character)) _currentState = (int) States::Exponential_1;
+                        break;
+                    }
+
+                    case States::Exponential_1: {
+                        _lexeme.append(1, character);
+                        _currentState = (int) States::Exponential_2;
+                        break;
+                    }
+
+                    case States::Exponential_2: {
+                        _lexeme.append(1, character);
+                        _currentState = (int) States::Exponential_2;
+                        break;
+                    }
+
+                    case States::Closing:
+                        return false;
+                }
+
+                return true;
             }
         }
     }

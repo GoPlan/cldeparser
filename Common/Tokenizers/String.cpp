@@ -75,7 +75,7 @@ namespace CldeParser {
                 if ((int) character == 92) return true;    // Back slash
                 if ((int) character == 98) return true;    // Backspace
 
-                if ((int) character == 102) return true;    // Formfeed
+                if ((int) character == 102) return true;    // Form feed
                 if ((int) character == 110) return true;    // Newline
                 if ((int) character == 114) return true;    // Carriage return
                 if ((int) character == 116) return true;    // Horizontal tab

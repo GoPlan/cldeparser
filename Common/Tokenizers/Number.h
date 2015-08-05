@@ -15,12 +15,22 @@ namespace CldeParser {
 
             class Number : public Tokenizer {
 
+                enum class States {
+                    Start = 0,
+                    Negation = 1,
+                    RationalPercent = 2,
+                    Number = 3,
+                    Decimal = 4,
+                    Exponential_1 = 5,
+                    Exponential_2 = 6,
+                    Closing = 10
+                };
+
                 enum class NumberSpecialToken {
-                    Zero = 48,
                     Plus = 43,
-                    Comma = 44,
                     Minus = 45,
                     Dot = 46,
+                    Zero = 48,
                     LowerE = 69,
                     UpperE = 101
                 };
@@ -31,6 +41,7 @@ namespace CldeParser {
                 bool isDigit(char character);
                 bool isDigitOneToNine(char character);
                 bool isZero(char character);
+                bool isExponentialSymbol(char character);
 
             public:
                 Number() = default;
