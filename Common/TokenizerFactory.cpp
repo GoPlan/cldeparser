@@ -5,7 +5,12 @@
 #include "TokenizerFactory.h"
 #include "Tokenizers/BraceOpen.h"
 #include "Tokenizers/BraceClose.h"
+#include "Tokenizers/BracketOpen.h"
+#include "Tokenizers/BracketClose.h"
+#include "Tokenizers/ParenthesesOpen.h"
+#include "Tokenizers/ParenthesesClose.h"
 #include "Tokenizers/Colon.h"
+#include "Tokenizers/SemiColon.h"
 #include "Tokenizers/Id.h"
 #include "Tokenizers/String.h"
 #include "Tokenizers/Number.h"
@@ -21,6 +26,21 @@ namespace CldeParser {
         }
         SPtrTokenizer TokenizerFactory::CreateBraceClose() {
             return std::make_shared<Tokenizers::BraceClose>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateBracketOpen() {
+            return std::make_shared<Tokenizers::BracketOpen>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateBracketClose() {
+            return std::make_shared<Tokenizers::BracketClose>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateParenthesesOpen() {
+            return std::make_shared<Tokenizers::ParenthesesOpen>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateParenthesesClose() {
+            return std::make_shared<Tokenizers::ParenthesesClose>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateSemiColon() {
+            return std::make_shared<Tokenizers::SemiColon>();
         }
         SPtrTokenizer TokenizerFactory::CreateColon() {
             return std::make_shared<Tokenizers::Colon>();

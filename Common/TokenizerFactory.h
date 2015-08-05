@@ -14,7 +14,12 @@ namespace CldeParser {
         public:
             static SPtrTokenizer CreateBraceOpen();
             static SPtrTokenizer CreateBraceClose();
+            static SPtrTokenizer CreateBracketOpen();
+            static SPtrTokenizer CreateBracketClose();
+            static SPtrTokenizer CreateParenthesesOpen();
+            static SPtrTokenizer CreateParenthesesClose();
             static SPtrTokenizer CreateColon();
+            static SPtrTokenizer CreateSemiColon();
             static SPtrTokenizer CreateId();
             static SPtrTokenizer CreateNumber();
             static SPtrTokenizer CreateString();
