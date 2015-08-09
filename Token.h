@@ -26,13 +26,8 @@ namespace CldeParser {
         virtual ~Token() = default;
 
         // Accessors
-        int id() const {
-            return _id;
-        }
-
-        const std::string &lexeme() const {
-            return _lexeme;
-        }
+        int id() const { return _id; }
+        const std::string &lexeme() const { return _lexeme; }
 
         // IPrintable
         std::string CopyToString() const override;
@@ -40,7 +35,9 @@ namespace CldeParser {
 
     using SPtrToken = std::shared_ptr<Token>;
     using SPtrTokenVector = std::vector<SPtrToken>;
+    using SPtrTokenVectorIterator = SPtrTokenVector::iterator;
     using SPtrTokenSet = std::vector<SPtrToken>;
+    using SPtrTokenSetIterator = SPtrTokenSet::iterator;
 
     SPtrToken CreateSPtrToken(int id, const std::string &lexeme);
 }

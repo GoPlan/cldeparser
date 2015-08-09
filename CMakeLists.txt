@@ -17,9 +17,9 @@ add_library(foundation STATIC
     Scanner.cpp
     Scanner.h
     Parser.cpp
-    Parser.h)
+    Parser.h Derivative.cpp Derivative.h)
 
 
 set(SOURCE_FILES main.cpp CldeParser.h)
-add_executable(cldeparser ${SOURCE_FILES})
+add_executable(cldeparser ${SOURCE_FILES} Parser/Derivatives/JsonDerivative.cpp Parser/Derivatives/JsonDerivative.h Parser/JsonEntity.cpp Parser/JsonEntity.h Parser/JsonObject.cpp Parser/JsonObject.h Parser/JsonValue.cpp Parser/JsonValue.h Parser/JsonFactory.cpp Parser/JsonFactory.h)
 target_link_libraries(cldeparser foundation common exceptions)
