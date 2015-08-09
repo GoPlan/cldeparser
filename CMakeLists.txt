@@ -4,7 +4,8 @@ project(cldeparser)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_subdirectory(Exceptions)
-add_subdirectory(Common)
+add_subdirectory(Scanning)
+add_subdirectory(Parsing/Json)
 
 add_library(foundation STATIC
     Core/IPrintable.h
@@ -17,9 +18,11 @@ add_library(foundation STATIC
     Scanner.cpp
     Scanner.h
     Parser.cpp
-    Parser.h Derivative.cpp Derivative.h)
+    Parser.h
+    Derivative.cpp
+    Derivative.h)
 
 
 set(SOURCE_FILES main.cpp CldeParser.h)
-add_executable(cldeparser ${SOURCE_FILES} Parser/Derivatives/JsonDerivative.cpp Parser/Derivatives/JsonDerivative.h Parser/JsonEntity.cpp Parser/JsonEntity.h Parser/JsonObject.cpp Parser/JsonObject.h Parser/JsonValue.cpp Parser/JsonValue.h Parser/JsonFactory.cpp Parser/JsonFactory.h)
-target_link_libraries(cldeparser foundation common exceptions)
+add_executable(cldeparser ${SOURCE_FILES})
+target_link_libraries(cldeparser foundation scanner parser-json exceptions)

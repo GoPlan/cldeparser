@@ -3,7 +3,7 @@
 //
 
 #include "Token.h"
-#include "Common/TokenType.h"
+#include "Scanning/TokenType.h"
 
 namespace CldeParser {
 
@@ -12,7 +12,7 @@ namespace CldeParser {
     }
 
     std::string Token::CopyToString() const {
-        std::string msg = "<" + Common::CopyToString(_id) + ", " + _lexeme + ">";
+        std::string msg = "<" + Scanning::CopyToString(_id) + ", " + _lexeme + ">";
         return msg;
     }
 }

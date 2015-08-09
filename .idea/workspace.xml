@@ -2,11 +2,12 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
+      <config projectName="cldeparser" targetName="common" />
       <config projectName="cldeparser" targetName="cldeparser" />
       <config projectName="cldeparser" targetName="scanner" />
       <config projectName="cldeparser" targetName="scanner_example" />
       <config projectName="cldeparser" targetName="exceptions" />
-      <config projectName="cldeparser" targetName="common" />
+      <config projectName="cldeparser" targetName="parser-json" />
       <config projectName="cldeparser" targetName="foundation" />
       <config projectName="cldeparser" targetName="json" />
       <config projectName="cldeparser" targetName="parser" />
@@ -21,21 +22,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aeda09b7-3cb9-411c-b832-6925168cac33" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Derivative.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Derivative.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonDerivative.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonDerivative.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonEntity.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonEntity.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonFactory.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonFactory.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonObject.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonObject.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonValue.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parser/Json/JsonValue.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parsing/Json/CMakeLists.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parsing/Json/JsonDerivative.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parsing/Json/JsonEntity.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parsing/Json/JsonFactory.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parsing/Json/JsonObject.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Parsing/Json/JsonValue.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Scanning/Scanning.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Parser/Json/JsonDerivative.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Parser/Json/JsonDerivative.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Parser/Json/JsonEntity.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Parser/Json/JsonFactory.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Parser/Json/JsonObject.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Parser/Json/JsonValue.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scanner/CMakeLists.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scanner/main.cpp" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/CMakeLists.txt" afterPath="$PROJECT_DIR$/Scanning/CMakeLists.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/TokenType.cpp" afterPath="$PROJECT_DIR$/Scanning/TokenType.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/TokenType.h" afterPath="$PROJECT_DIR$/Scanning/TokenType.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/TokenizerFactory.cpp" afterPath="$PROJECT_DIR$/Scanning/TokenizerFactory.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/TokenizerFactory.h" afterPath="$PROJECT_DIR$/Scanning/TokenizerFactory.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BraceClose.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BraceClose.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BraceClose.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BraceClose.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BraceOpen.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BraceOpen.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BraceOpen.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BraceOpen.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BracketClose.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BracketClose.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BracketClose.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BracketClose.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BracketOpen.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BracketOpen.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/BracketOpen.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/BracketOpen.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Colon.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Colon.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Colon.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Colon.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Comma.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Comma.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Comma.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Comma.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Id.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Id.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Id.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Id.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Number.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Number.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Number.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Number.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/ParenthesesClose.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesClose.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/ParenthesesClose.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesClose.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/ParenthesesOpen.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesOpen.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/ParenthesesOpen.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesOpen.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/SemiColon.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/SemiColon.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/SemiColon.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/SemiColon.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Space.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Space.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Space.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Space.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/String.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/String.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/String.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/String.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Tab.cpp" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Tab.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Common/Tokenizers/Tab.h" afterPath="$PROJECT_DIR$/Scanning/Tokenizers/Tab.h" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Parser/Json/JsonEntity.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonEntity.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Parser/Json/JsonFactory.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonFactory.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Parser/Json/JsonObject.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonObject.cpp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Parser/Json/JsonValue.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonValue.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Token.h" afterPath="$PROJECT_DIR$/Token.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CldeParser.h" afterPath="$PROJECT_DIR$/CldeParser.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Token.cpp" afterPath="$PROJECT_DIR$/Token.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cldeparser.iws" />
@@ -57,12 +100,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JsonEntity.h" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Parser/Json/JsonEntity.h">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3478854">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.18036072">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,57 +120,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Parser.h" />
-        <option value="$PROJECT_DIR$/Exception/ParserException.h" />
-        <option value="$PROJECT_DIR$/Exception/Exception.h" />
-        <option value="$PROJECT_DIR$/Exceptions/Exception.h" />
-        <option value="$PROJECT_DIR$/Exceptions/Exception.cpp" />
-        <option value="$PROJECT_DIR$/Exceptions/ParserException.h" />
-        <option value="$PROJECT_DIR$/Exceptions/ScannerException.cpp" />
-        <option value="$PROJECT_DIR$/Exceptions/ScannerException.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Number.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Number.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BraceClose.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BraceClose.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BraceOpen.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BraceOpen.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BracketClose.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BracketClose.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BracketOpen.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/BracketOpen.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Colon.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Colon.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Comma.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Comma.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Id.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Id.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/ParenthesesClose.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/ParenthesesClose.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/ParenthesesOpen.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/ParenthesesOpen.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/SemiColon.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/SemiColon.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Space.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Space.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/String.h" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/String.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Tab.cpp" />
-        <option value="$PROJECT_DIR$/Common/Tokenizers/Tab.h" />
-        <option value="$PROJECT_DIR$/Scanner.cpp" />
+        <option value="$PROJECT_DIR$/Parser/Json/JsonDerivative.h" />
+        <option value="$PROJECT_DIR$/Parser/Json/JsonObject.h" />
+        <option value="$PROJECT_DIR$/Parser/Json/JsonValue.h" />
+        <option value="$PROJECT_DIR$/Common/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Scanner/TokenType.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/BraceClose.h" />
+        <option value="$PROJECT_DIR$/Scanner/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/BraceOpen.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/BraceClose.cpp" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/BraceOpen.cpp" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/BracketClose.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/BracketOpen.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/Colon.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/Comma.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/Id.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/Number.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/ParenthesesClose.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/ParenthesesOpen.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/SemiColon.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/Space.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/String.h" />
+        <option value="$PROJECT_DIR$/Scanner/Tokenizers/Tab.h" />
+        <option value="$PROJECT_DIR$/Parser/Json/JsonDerivative.cpp" />
+        <option value="$PROJECT_DIR$/Scanner/TokenizerFactory.h" />
+        <option value="$PROJECT_DIR$/Scanning/TokenType.h" />
+        <option value="$PROJECT_DIR$/Scanner.h" />
+        <option value="$PROJECT_DIR$/Token.cpp" />
+        <option value="$PROJECT_DIR$/Scanning/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Exceptions/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/Parser/Derivators/Json.cpp" />
-        <option value="$PROJECT_DIR$/Parser/Derivators/Json.h" />
-        <option value="$PROJECT_DIR$/Derivator.h" />
-        <option value="$PROJECT_DIR$/Derivative.h" />
-        <option value="$PROJECT_DIR$/Parser/Derivatives/Json.cpp" />
-        <option value="$PROJECT_DIR$/Parser/JsonObject.h" />
-        <option value="$PROJECT_DIR$/Parser/JsonEntity.h" />
-        <option value="$PROJECT_DIR$/Token.h" />
-        <option value="$PROJECT_DIR$/Parser/JsonValue.h" />
-        <option value="$PROJECT_DIR$/Parser/JsonFactory.h" />
-        <option value="$PROJECT_DIR$/Parser/Derivatives/Json.h" />
-        <option value="$PROJECT_DIR$/Parser/Derivatives/JsonDerivative.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/BraceClose.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/BraceOpen.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/BracketClose.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/BracketOpen.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/Colon.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/Comma.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/Id.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/Number.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesClose.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesOpen.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/SemiColon.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/Space.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/String.h" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/Tab.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonDerivative.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonEntity.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonFactory.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonObject.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonValue.h" />
+        <option value="$PROJECT_DIR$/Scanning/Scanning.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/CldeParser.h" />
       </list>
     </option>
   </component>
@@ -136,6 +181,7 @@
   <component name="NamedScopeManager">
     <order />
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
     <option name="x" value="-1600" />
     <option name="y" value="23" />
@@ -205,34 +251,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$1$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Scanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$1$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -244,6 +262,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/ducanhki/Documents/BitBucket/cldeparser/SimpleScanner.h" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Scanner" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -251,6 +270,7 @@
       <recent name="$PROJECT_DIR$/Common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Scanner" />
       <recent name="$PROJECT_DIR$/Parser/Json" />
       <recent name="$PROJECT_DIR$/Json" />
     </key>
@@ -305,7 +325,11 @@
       <envs />
       <method />
     </configuration>
-    <list size="9">
+    <configuration default="false" name="parser-json" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="cldeparser" TARGET_NAME="parser-json" CONFIG_NAME="Debug">
+      <envs />
+      <method />
+    </configuration>
+    <list size="10">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
       <item index="1" class="java.lang.String" itemvalue="Application.cldeparser" />
       <item index="2" class="java.lang.String" itemvalue="Application.common" />
@@ -315,6 +339,7 @@
       <item index="6" class="java.lang.String" itemvalue="Application.exception" />
       <item index="7" class="java.lang.String" itemvalue="Application.json" />
       <item index="8" class="java.lang.String" itemvalue="Application.exceptions" />
+      <item index="9" class="java.lang.String" itemvalue="Application.parser-json" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -332,26 +357,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1600" y="23" width="1600" height="877" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32279316" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3241107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24952501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30039525" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24952501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3992095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30566534" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32907802" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32806325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3992095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3241107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30566534" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -369,9 +394,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24952501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30566534" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -389,12 +414,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Common/Tokenizers/Number.cpp</url>
+          <url>file://$PROJECT_DIR$/Scanning/Tokenizers/Number.cpp</url>
           <line>61</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Common/Tokenizers/Number.cpp</url>
+          <url>file://$PROJECT_DIR$/Scanning/Tokenizers/Number.cpp</url>
           <line>83</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -404,222 +429,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Number.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Number.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BraceClose.cpp">
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesOpen.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BraceClose.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BraceOpen.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BraceOpen.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BracketClose.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BracketClose.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BracketOpen.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/BracketOpen.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Colon.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Colon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Comma.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Id.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Comma.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Id.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/ParenthesesClose.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/ParenthesesClose.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/ParenthesesOpen.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/ParenthesesOpen.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/SemiColon.cpp">
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/SemiColon.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/SemiColon.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Space.cpp">
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Space.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Space.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/String.cpp">
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/String.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/String.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Tab.cpp">
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Tab.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Tokenizers/Tab.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.4">
-          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Exceptions/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21649484">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,7 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,50 +495,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scanner.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scanner.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonObject.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonValue.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonEntity.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Token.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -719,18 +519,288 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonDerivative.cpp">
+    <entry file="file://$PROJECT_DIR$/Exceptions/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonObject.h">
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/BraceClose.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/BraceOpen.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/BracketClose.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonEntity.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonFactory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonObject.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValue.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+          <folding>
+            <marker date="1439117625000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439117625000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439117625000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanner.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Token.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="e#45#63#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/TokenizerFactory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/TokenType.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/BraceClose.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4727273">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/BraceOpen.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="19" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/BracketClose.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/BracketOpen.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Colon.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Comma.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Id.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Number.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesClose.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/SemiColon.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08207934">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Space.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08207934">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/String.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08207934">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Tab.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14363885">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/ParenthesesOpen.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08207934">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonEntity.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonFactory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonObject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -743,45 +813,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonValue.h">
+    <entry file="file://$PROJECT_DIR$/Scanning/Scanning.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CldeParser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
-            <marker date="1439093570000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <element signature="e#124#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonFactory.cpp">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonFactory.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonDerivative.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser/Json/JsonEntity.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3478854">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.18036072">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
