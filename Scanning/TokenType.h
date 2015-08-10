@@ -12,9 +12,9 @@ namespace CldeParser {
 
         enum class TokenType {
             BraceOpen = 1,
-            BraceClose = 2,
+            BraceClosing = 2,
             BracketOpen = 3,
-            BracketClose = 4,
+            BracketClosing = 4,
             Comma = 5,
             Colon = 6,
             SemiColon = 7,
@@ -24,7 +24,13 @@ namespace CldeParser {
             Space = 11,
             Tab = 12,
             ParenthesesOpen = 13,
-            ParenthesesClose = 14
+            ParenthesesClosing = 14,
+            SquareBracketOpen = 15,
+            SquareBracketClosing = 16,
+            AngleBracketOpen = 17,
+            AngleBracketClosing = 18,
+            BackwardSlash = 19,
+            ForwardSlash = 20
         };
 
         std::string CopyToString(int id);

@@ -5,11 +5,15 @@
 #ifndef CLDEPARSER_SCANNING_TOKENIZERS_SQUAREBRACKETOPEN_H
 #define CLDEPARSER_SCANNING_TOKENIZERS_SQUAREBRACKETOPEN_H
 
+#include "../TokenType.h"
+#include "../../Tokenizer.h"
+#include "../../Exceptions/ScannerException.h"
+
 namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            class SquareBracketOpen {
+            class SquareBracketOpen : public Tokenizer {
 
             public:
                 SquareBracketOpen() = default;
@@ -17,7 +21,18 @@ namespace CldeParser {
                 SquareBracketOpen(SquareBracketOpen &&) = default;
                 SquareBracketOpen &operator=(const SquareBracketOpen &) = default;
                 SquareBracketOpen &operator=(SquareBracketOpen &&) = default;
-                virtual ~SquareBracketOpen() = default;
+                ~SquareBracketOpen() = default;
+
+                // Tokenizer
+                bool BeginWithCharacter(char character) override;
+                const StateSet &CompleteStates() const override;
+                const StateSet &AcceptedStates() const override;
+                const TransitionMap &Transitions() const override;
+                SPtrToken CreateSPtrToken() override;
+
+            protected:
+                bool IsValid(char character) override;
+                bool CoreValidate(char character) override;
             };
         }
     }

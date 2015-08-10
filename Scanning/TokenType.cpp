@@ -10,11 +10,11 @@ namespace CldeParser {
             switch ((TokenType) id) {
                 case TokenType::BraceOpen:
                     return "BraceOpen";
-                case TokenType::BraceClose:
-                    return "BraceClose";
+                case TokenType::BraceClosing:
+                    return "BraceClosing";
                 case TokenType::BracketOpen:
                     return "BracketOpen";
-                case TokenType::BracketClose:
+                case TokenType::BracketClosing:
                     return "BracketClose";
                 case TokenType::Comma:
                     return "Comma";
@@ -32,6 +32,22 @@ namespace CldeParser {
                     return "Space";
                 case TokenType::Tab:
                     return "Tab";
+                case TokenType::ParenthesesOpen:
+                    return "ParenthesesOpen";
+                case TokenType::ParenthesesClosing:
+                    return "ParenthesesClosing";
+                case TokenType::SquareBracketOpen:
+                    return "SquareBracketOpen";
+                case TokenType::SquareBracketClosing:
+                    return "SquareBracketClosing";
+                case TokenType::AngleBracketOpen:
+                    return "AngleBracketOpen";
+                case TokenType::AngleBracketClosing:
+                    return "AngleBracketClosing";
+                case TokenType::BackwardSlash:
+                    return "BackwardSlash";
+                case TokenType::ForwardSlash:
+                    return "ForwardSlash";
             }
         }
     }

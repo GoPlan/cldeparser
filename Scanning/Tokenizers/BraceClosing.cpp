@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken BraceClosing::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::BraceClose, _lexeme);
+                return CldeParser::CreateSPtrToken((int) TokenType::BraceClosing, _lexeme);
             }
 
             const StateSet &BraceClosing::CompleteStates() const {

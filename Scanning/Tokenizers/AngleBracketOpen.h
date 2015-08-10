@@ -5,11 +5,15 @@
 #ifndef CLDEPARSER_SCANNING_TOKENIZERS_ANGLEBRACKETOPEN_H
 #define CLDEPARSER_SCANNING_TOKENIZERS_ANGLEBRACKETOPEN_H
 
+#include "../TokenType.h"
+#include "../../Tokenizer.h"
+#include "../../Exceptions/ScannerException.h"
+
 namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            class AngleBracketOpen {
+            class AngleBracketOpen : public Tokenizer {
 
             public:
                 AngleBracketOpen() = default;
@@ -17,7 +21,18 @@ namespace CldeParser {
                 AngleBracketOpen(AngleBracketOpen &&) = default;
                 AngleBracketOpen &operator=(const AngleBracketOpen &) = default;
                 AngleBracketOpen &operator=(AngleBracketOpen &&) = default;
-                virtual ~AngleBracketOpen() = default;
+                ~AngleBracketOpen() = default;
+
+                // Tokenizer
+                bool BeginWithCharacter(char character) override;
+                const StateSet &CompleteStates() const override;
+                const StateSet &AcceptedStates() const override;
+                const TransitionMap &Transitions() const override;
+                SPtrToken CreateSPtrToken() override;
+
+            protected:
+                bool IsValid(char character) override;
+                bool CoreValidate(char character) override;
             };
         }
     }

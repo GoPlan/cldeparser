@@ -4,11 +4,11 @@
 
 #include "TokenizerFactory.h"
 #include "Tokenizers/BraceOpen.h"
-#include "BraceClosing.h"
+#include "Tokenizers/BraceClosing.h"
 #include "Tokenizers/BracketOpen.h"
-#include "BracketClosing.h"
+#include "Tokenizers/BracketClosing.h"
 #include "Tokenizers/ParenthesesOpen.h"
-#include "ParenthesesClosing.h"
+#include "Tokenizers/ParenthesesClosing.h"
 #include "Tokenizers/Colon.h"
 #include "Tokenizers/SemiColon.h"
 #include "Tokenizers/Id.h"
@@ -17,6 +17,12 @@
 #include "Tokenizers/Space.h"
 #include "Tokenizers/Tab.h"
 #include "Tokenizers/Comma.h"
+#include "Tokenizers/SquareBracketOpen.h"
+#include "Tokenizers/SquareBracketClosing.h"
+#include "Tokenizers/AngleBracketOpen.h"
+#include "Tokenizers/AngleBracketClosing.h"
+#include "Tokenizers/ForwardSlash.h"
+#include "Tokenizers/BackwardSlash.h"
 
 namespace CldeParser {
     namespace Scanning {
@@ -24,19 +30,19 @@ namespace CldeParser {
         SPtrTokenizer TokenizerFactory::CreateBraceOpen() {
             return std::make_shared<Tokenizers::BraceOpen>();
         }
-        SPtrTokenizer TokenizerFactory::CreateBraceClose() {
+        SPtrTokenizer TokenizerFactory::CreateBraceClosing() {
             return std::make_shared<Tokenizers::BraceClosing>();
         }
         SPtrTokenizer TokenizerFactory::CreateBracketOpen() {
             return std::make_shared<Tokenizers::BracketOpen>();
         }
-        SPtrTokenizer TokenizerFactory::CreateBracketClose() {
+        SPtrTokenizer TokenizerFactory::CreateBracketClosing() {
             return std::make_shared<Tokenizers::BracketClosing>();
         }
         SPtrTokenizer TokenizerFactory::CreateParenthesesOpen() {
             return std::make_shared<Tokenizers::ParenthesesOpen>();
         }
-        SPtrTokenizer TokenizerFactory::CreateParenthesesClose() {
+        SPtrTokenizer TokenizerFactory::CreateParenthesesClosing() {
             return std::make_shared<Tokenizers::ParenthesesClosing>();
         }
         SPtrTokenizer TokenizerFactory::CreateSemiColon() {
@@ -62,6 +68,24 @@ namespace CldeParser {
         }
         SPtrTokenizer TokenizerFactory::CreateComma() {
             return std::make_shared<Tokenizers::Comma>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateSquareBracketOpen() {
+            return std::make_shared<Tokenizers::SquareBracketOpen>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateSquareBracketClosing() {
+            return std::make_shared<Tokenizers::SquareBracketClosing>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateAngleBracketOpen() {
+            return std::make_shared<Tokenizers::AngleBracketOpen>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateAngleBracketClosing() {
+            return std::make_shared<Tokenizers::AngleBracketClosing>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateForwardSlash() {
+            return std::make_shared<Tokenizers::ForwardSlash>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateBackwardSlash() {
+            return std::make_shared<Tokenizers::BackwardSlash>();
         }
     }
 }

@@ -18,7 +18,7 @@ int main() {
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateTab());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBraceOpen());
-    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBraceClose());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBraceClosing());
 
     SPtrTokenVector tokens = scanner.Scan(example);
 

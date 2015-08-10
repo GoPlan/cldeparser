@@ -12,11 +12,17 @@ namespace CldeParser {
         class TokenizerFactory {
         public:
             static SPtrTokenizer CreateBraceOpen();
-            static SPtrTokenizer CreateBraceClose();
+            static SPtrTokenizer CreateBraceClosing();
             static SPtrTokenizer CreateBracketOpen();
-            static SPtrTokenizer CreateBracketClose();
+            static SPtrTokenizer CreateBracketClosing();
             static SPtrTokenizer CreateParenthesesOpen();
-            static SPtrTokenizer CreateParenthesesClose();
+            static SPtrTokenizer CreateParenthesesClosing();
+            static SPtrTokenizer CreateSquareBracketOpen();
+            static SPtrTokenizer CreateSquareBracketClosing();
+            static SPtrTokenizer CreateAngleBracketOpen();
+            static SPtrTokenizer CreateAngleBracketClosing();
+            static SPtrTokenizer CreateForwardSlash();
+            static SPtrTokenizer CreateBackwardSlash();
             static SPtrTokenizer CreateColon();
             static SPtrTokenizer CreateSemiColon();
             static SPtrTokenizer CreateId();
