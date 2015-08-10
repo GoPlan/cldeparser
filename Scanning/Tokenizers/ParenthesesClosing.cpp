@@ -2,37 +2,37 @@
 // Created by LE, Duc Anh on 8/5/15.
 //
 
-#include "ParenthesesClose.h"
+#include "ParenthesesClosing.h"
 
 namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            bool ParenthesesClose::BeginWithCharacter(char character) {
+            bool ParenthesesClosing::BeginWithCharacter(char character) {
                 return (int) character == 40;
             }
 
-            SPtrToken ParenthesesClose::CreateSPtrToken() {
+            SPtrToken ParenthesesClosing::CreateSPtrToken() {
                 return CldeParser::CreateSPtrToken((int) TokenType::ParenthesesClose, _lexeme);
             }
 
-            const StateSet &ParenthesesClose::CompleteStates() const {
+            const StateSet &ParenthesesClosing::CompleteStates() const {
                 throw Exceptions::ScannerException{"CompleteStates is not supported"};
             }
 
-            const StateSet &ParenthesesClose::AcceptedStates() const {
+            const StateSet &ParenthesesClosing::AcceptedStates() const {
                 throw Exceptions::ScannerException{"AcceptedStates is not supported"};
             }
 
-            const TransitionMap &ParenthesesClose::Transitions() const {
+            const TransitionMap &ParenthesesClosing::Transitions() const {
                 throw Exceptions::ScannerException{"TransitionMap is not supported"};
             }
 
-            bool ParenthesesClose::IsValid(char character) {
+            bool ParenthesesClosing::IsValid(char character) {
                 return _currentState == 0 ? (int) character == 40 : false;
             }
 
-            bool ParenthesesClose::CoreValidate(char character) {
+            bool ParenthesesClosing::CoreValidate(char character) {
                 _lexeme.append(1, character);
                 _currentState = _currentState + 1;
                 return true;

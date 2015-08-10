@@ -14,16 +14,16 @@ add_library(scanner STATIC
     Tokenizers/Number.h
     Tokenizers/BraceOpen.cpp
     Tokenizers/BraceOpen.h
-    Tokenizers/BraceClose.cpp
-    Tokenizers/BraceClose.h
+    Tokenizers/BraceClosing.cpp
+    Tokenizers/BraceClosing.h
     Tokenizers/Colon.cpp
     Tokenizers/Colon.h
     Tokenizers/Comma.cpp
     Tokenizers/Comma.h
     Tokenizers/BracketOpen.cpp
     Tokenizers/BracketOpen.h
-    Tokenizers/BracketClose.cpp
-    Tokenizers/BracketClose.h
+    Tokenizers/BracketClosing.cpp
+    Tokenizers/BracketClosing.h
     Tokenizers/SemiColon.cpp
     Tokenizers/SemiColon.h
     Tokenizers/Id.cpp
@@ -34,5 +34,5 @@ add_library(scanner STATIC
     Tokenizers/Tab.h
     Tokenizers/ParenthesesOpen.cpp
     Tokenizers/ParenthesesOpen.h
-    Tokenizers/ParenthesesClose.cpp
-    Tokenizers/ParenthesesClose.h Scanning.h)
+    Tokenizers/ParenthesesClosing.cpp
+    Tokenizers/ParenthesesClosing.h Scanning.h Tokenizers/AngleBracketOpen.cpp Tokenizers/AngleBracketOpen.h Tokenizers/AngleBracketClosing.cpp Tokenizers/AngleBracketClosing.h Tokenizers/SquareBracketOpen.cpp Tokenizers/SquareBracketOpen.h Tokenizers/SquareBracketClosing.cpp Tokenizers/SquareBracketClosing.h Tokenizers/ForwardSlash.cpp Tokenizers/ForwardSlash.h Tokenizers/BackwardSlash.cpp Tokenizers/BackwardSlash.h)

@@ -1,9 +1,9 @@
 //
-// Created by LE, Duc Anh on 8/4/15.
+// Created by LE, Duc Anh on 8/5/15.
 //
 
-#ifndef CLDEPARSER_SCANNING_TOKENIZERS_BRACKETCLOSE_H
-#define CLDEPARSER_SCANNING_TOKENIZERS_BRACKETCLOSE_H
+#ifndef CLDEPARSER_SCANNING_TOKENIZERS_PARENTHESESCLOSING_H
+#define CLDEPARSER_SCANNING_TOKENIZERS_PARENTHESESCLOSING_H
 
 #include "../TokenType.h"
 #include "../../Tokenizer.h"
@@ -13,15 +13,15 @@ namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            class BracketClose : public Tokenizer {
+            class ParenthesesClosing : public Tokenizer {
 
             public:
-                BracketClose() = default;
-                BracketClose(const BracketClose &) = default;
-                BracketClose(BracketClose &&) = default;
-                BracketClose &operator=(const BracketClose &) = default;
-                BracketClose &operator=(BracketClose &&) = default;
-                ~BracketClose() = default;
+                ParenthesesClosing() = default;
+                ParenthesesClosing(const ParenthesesClosing &) = default;
+                ParenthesesClosing(ParenthesesClosing &&) = default;
+                ParenthesesClosing &operator=(const ParenthesesClosing &) = default;
+                ParenthesesClosing &operator=(ParenthesesClosing &&) = default;
+                ~ParenthesesClosing() = default;
 
                 // Tokenizer
                 bool BeginWithCharacter(char character) override;
@@ -39,4 +39,4 @@ namespace CldeParser {
 }
 
 
-#endif //CLDEPARSER_SCANNING_TOKENIZERS_BRACKETCLOSE_H
+#endif //CLDEPARSER_SCANNING_TOKENIZERS_PARENTHESESCLOSING_H
