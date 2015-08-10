@@ -5,11 +5,15 @@
 #ifndef CLDEPARSER_PARSING_JSON_JSONOBJECT_H
 #define CLDEPARSER_PARSING_JSON_JSONOBJECT_H
 
-namespace CldeParser {
-    namespace Parser {
-        namespace {
+#include <string>
+#include "JsonValue.h"
+#include "JsonEntity.h"
 
-            class JsonObject {
+namespace CldeParser {
+    namespace Parsing {
+        namespace Json {
+
+            class JsonObject : public JsonEntity {
 
             public:
                 JsonObject() = default;
@@ -18,6 +22,12 @@ namespace CldeParser {
                 JsonObject &operator=(const JsonObject &) = default;
                 JsonObject &operator=(JsonObject &&) = default;
                 virtual ~JsonObject() = default;
+
+            protected:
+                SPtrJsonEntityMap _map;
+                std::string _id;
+                JsonValue _value;
+
             };
         }
     }

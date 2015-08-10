@@ -20,7 +20,9 @@ add_library(foundation STATIC
     Parser.cpp
     Parser.h
     Derivative.cpp
-    Derivative.h)
+    Derivative.h
+    SyntaxNode.cpp
+    SyntaxNode.h)
 
 
 set(SOURCE_FILES main.cpp CldeParser.h)

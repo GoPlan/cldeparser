@@ -5,17 +5,14 @@
 #ifndef CLDEPARSER_PARSING_JSON_JSONFACTORY_H
 #define CLDEPARSER_PARSING_JSON_JSONFACTORY_H
 
+#include "JsonEntity.h"
+
 namespace CldeParser {
-    namespace Parser {
+    namespace Parsing {
         namespace Json {
-            class JsonFactory {
-            public:
-                JsonFactory() = default;
-                JsonFactory(const JsonFactory &) = default;
-                JsonFactory(JsonFactory &&) = default;
-                JsonFactory &operator=(const JsonFactory &) = default;
-                JsonFactory &operator=(JsonFactory &&) = default;
-                virtual ~JsonFactory() = default;
+            struct JsonFactory {
+                static JsonEntity CreateJsonObject();
+                static JsonEntity CreateJsonArray();
             };
         }
     }

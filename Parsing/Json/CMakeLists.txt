@@ -13,4 +13,8 @@ add_library(parser-json STATIC
       JsonValue.cpp
       JsonValue.h
       JsonFactory.cpp
-      JsonFactory.h)
+      JsonFactory.h
+      JsonDocument.cpp
+      JsonDocument.h
+      JsonArray.cpp
+      JsonArray.h)

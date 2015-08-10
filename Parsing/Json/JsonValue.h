@@ -8,18 +8,11 @@
 #include "JsonEntity.h"
 
 namespace CldeParser {
-    namespace Parser {
+    namespace Parsing {
         namespace Json {
 
-            class JsonValue {
+            struct JsonValue {
 
-            public:
-                JsonValue() = default;
-                JsonValue(const JsonValue &) = default;
-                JsonValue(JsonValue &&) = default;
-                JsonValue &operator=(const JsonValue &) = default;
-                JsonValue &operator=(JsonValue &&) = default;
-                virtual ~JsonValue() = default;
             };
         }
     }

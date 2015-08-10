@@ -5,7 +5,7 @@
 #include "JsonDerivative.h"
 
 namespace CldeParser {
-    namespace Parser {
+    namespace Parsing {
         namespace Json {
             bool JsonDerivative::Derive(const SPtrTokenVector &sptrTokenVector) {
 

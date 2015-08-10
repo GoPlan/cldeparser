@@ -5,15 +5,24 @@
 #ifndef CLDEPARSER_PARSING_JSON_JSONENTITY_H
 #define CLDEPARSER_PARSING_JSON_JSONENTITY_H
 
+#include <memory>
+#include <unordered_map>
+#include <vector>
+
 namespace CldeParser {
-    namespace Parser {
-        namespace Json{
+    namespace Parsing {
+        namespace Json {
 
             enum class JsonEntityType {
                 Unknown = 0,
                 Object = 1,
                 Array = 2
             };
+
+            class JsonEntity;
+            using SPtrJsonEntity = std::shared_ptr<JsonEntity>;
+            using SPtrJsonEntityMap = std::unordered_map<std::string, SPtrJsonEntity>;
+            using SPtrJsonEntityVector = std::vector<SPtrJsonEntity>;
 
             class JsonEntity {
 

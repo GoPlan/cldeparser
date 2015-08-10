@@ -8,7 +8,7 @@
 #include "../../Derivative.h"
 
 namespace CldeParser {
-    namespace Parser {
+    namespace Parsing {
         namespace Json {
 
             class JsonDerivative : public Derivative {
