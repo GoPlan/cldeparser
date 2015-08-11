@@ -23,6 +23,10 @@
 #include "Tokenizers/AngleBracketClosing.h"
 #include "Tokenizers/ForwardSlash.h"
 #include "Tokenizers/BackwardSlash.h"
+#include "Tokenizers/Adding.h"
+#include "Tokenizers/Subtracting.h"
+#include "Tokenizers/Multiplication.h"
+#include "Tokenizers/Division.h"
 
 namespace CldeParser {
     namespace Scanning {
@@ -86,6 +90,18 @@ namespace CldeParser {
         }
         SPtrTokenizer TokenizerFactory::CreateBackwardSlash() {
             return std::make_shared<Tokenizers::BackwardSlash>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateAdding() {
+            return std::make_shared<Tokenizers::Adding>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateSubtracting() {
+            return std::make_shared<Tokenizers::Subtracting>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateMultiplication() {
+            return std::make_shared<Tokenizers::Multiplication>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateDivision() {
+            return std::make_shared<Tokenizers::Division>();
         }
     }
 }

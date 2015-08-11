@@ -31,6 +31,10 @@ namespace CldeParser {
             static SPtrTokenizer CreateSpace();
             static SPtrTokenizer CreateTab();
             static SPtrTokenizer CreateComma();
+            static SPtrTokenizer CreateAdding();
+            static SPtrTokenizer CreateSubtracting();
+            static SPtrTokenizer CreateMultiplication();
+            static SPtrTokenizer CreateDivision();
         };
     }
 }

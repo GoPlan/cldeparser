@@ -48,6 +48,14 @@ namespace CldeParser {
                     return "BackwardSlash";
                 case TokenType::ForwardSlash:
                     return "ForwardSlash";
+                case TokenType::Adding:
+                    return "Adding";
+                case TokenType::Subtracting:
+                    return "Subtracting";
+                case TokenType::Multiplication:
+                    return "Multiplication";
+                case TokenType::Division:
+                    return "Division";
             }
         }
     }
