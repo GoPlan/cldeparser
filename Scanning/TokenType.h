@@ -30,7 +30,11 @@ namespace CldeParser {
             AngleBracketOpen = 17,
             AngleBracketClosing = 18,
             BackwardSlash = 19,
-            ForwardSlash = 20
+            ForwardSlash = 20,
+            Adding = 21,
+            Subtracting = 22,
+            Multiplication = 23,
+            Division = 24
         };
 
         std::string CopyToString(int id);

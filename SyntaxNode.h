@@ -19,6 +19,8 @@ namespace CldeParser {
         SyntaxNode &operator=(SyntaxNode &&) = default;
         virtual ~SyntaxNode() = default;
     };
+
+    using SPtrSyntaxNode = std::shared_ptr<SyntaxNode>;
 }
 
 

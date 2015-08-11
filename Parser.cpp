@@ -6,6 +6,17 @@
 
 namespace CldeParser {
 
+    SPtrSyntaxTree Parser::Parse(const SPtrTokenVector &sptrTokens) {
+
+        SPtrSyntaxTree sptrSyntaxTree;
+
+        return sptrSyntaxTree;
+    }
+
+    bool Parser::Process(const SPtrToken &sptrToken) {
+        
+        return false;
+    }
 }
 
 

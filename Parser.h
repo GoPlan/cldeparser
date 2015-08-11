@@ -5,6 +5,8 @@
 #ifndef CLDEPARSER_PARSER_H
 #define CLDEPARSER_PARSER_H
 
+#include "SyntaxTree.h"
+
 namespace CldeParser {
 
     class Parser {
@@ -16,6 +18,13 @@ namespace CldeParser {
         Parser &operator=(const Parser &) = default;
         Parser &operator=(Parser &&) = default;
         virtual ~Parser() = default;
+
+        // Locals
+        virtual SPtrSyntaxTree Parse(const SPtrTokenVector &sptrTokens);
+
+    protected:
+        virtual bool Process(const SPtrToken &sptrToken);
+
     };
 }
 

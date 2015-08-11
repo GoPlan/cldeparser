@@ -35,4 +35,4 @@ add_library(scanner STATIC
     Tokenizers/ParenthesesOpen.cpp
     Tokenizers/ParenthesesOpen.h
     Tokenizers/ParenthesesClosing.cpp
-    Tokenizers/ParenthesesClosing.h Scanning.h Tokenizers/AngleBracketOpen.cpp Tokenizers/AngleBracketOpen.h Tokenizers/AngleBracketClosing.cpp Tokenizers/AngleBracketClosing.h Tokenizers/SquareBracketOpen.cpp Tokenizers/SquareBracketOpen.h Tokenizers/SquareBracketClosing.cpp Tokenizers/SquareBracketClosing.h Tokenizers/ForwardSlash.cpp Tokenizers/ForwardSlash.h Tokenizers/BackwardSlash.cpp Tokenizers/BackwardSlash.h)
+    Tokenizers/ParenthesesClosing.h Scanning.h Tokenizers/AngleBracketOpen.cpp Tokenizers/AngleBracketOpen.h Tokenizers/AngleBracketClosing.cpp Tokenizers/AngleBracketClosing.h Tokenizers/SquareBracketOpen.cpp Tokenizers/SquareBracketOpen.h Tokenizers/SquareBracketClosing.cpp Tokenizers/SquareBracketClosing.h Tokenizers/ForwardSlash.cpp Tokenizers/ForwardSlash.h Tokenizers/BackwardSlash.cpp Tokenizers/BackwardSlash.h Tokenizers/Adding.cpp Tokenizers/Adding.h Tokenizers/Subtracting.cpp Tokenizers/Subtracting.h Tokenizers/Multiplication.cpp Tokenizers/Multiplication.h Tokenizers/Division.cpp Tokenizers/Division.h)
