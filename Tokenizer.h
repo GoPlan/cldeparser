@@ -33,10 +33,10 @@ namespace CldeParser {
         void Reset();
 
         // Locals (Virtuals)
-        virtual bool BeginWithCharacter(char character);
         virtual const StateSet &CompleteStates() const = 0;
         virtual const StateSet &AcceptedStates() const = 0;
         virtual const TransitionMap &Transitions() const = 0;
+        virtual bool BeginWithCharacter(char character);
         virtual SPtrToken CreateSPtrToken();
 
     protected:

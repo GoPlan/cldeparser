@@ -6,10 +6,13 @@
 #define CLDEPARSER_DERIVATIVE_H
 
 #include "Token.h"
+#include "SyntaxTree.h"
 
 namespace CldeParser {
 
     class Derivative {
+
+        SPtrSyntaxTree _sptrSyntaxTree;
 
     public:
         Derivative() = default;
@@ -19,7 +22,16 @@ namespace CldeParser {
         Derivative &operator=(Derivative &&) = default;
         virtual ~Derivative() = default;
 
-        virtual bool Derive(const SPtrTokenVector &sptrTokenVector) = 0;
+        // Locals
+        bool Derive(SPtrTokenVectorIterator &sptrTokenIterator);
+        void Reset();
+
+        // Locals - Virtual
+        virtual bool IsFirst(const SPtrToken &token) = 0;
+
+    protected:
+        virtual bool CoreDerive(SPtrTokenVectorIterator &sptrTokenIterator) = 0;
+
     };
 
     using SPtrDerivative = std::shared_ptr<Derivative>;

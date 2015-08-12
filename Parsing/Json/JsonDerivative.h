@@ -16,27 +16,31 @@ namespace CldeParser {
                 SPtrTokenVector _matchedTokens;
 
                 // Main
-                bool json(const SPtrTokenVectorIterator &iterator);
-
-                // NonTerminal matching
-                void object_stmt(const SPtrTokenVectorIterator &iterator);
-                void object(const SPtrTokenVectorIterator &iterator);
-                void pair(const SPtrTokenVectorIterator &iterator);
-                void pair_add(const SPtrTokenVectorIterator &iterator);
-                void array_stmt(const SPtrTokenVectorIterator &iterator);
-                void array(const SPtrTokenVectorIterator &iterator);
-                void value(const SPtrTokenVectorIterator &iterator);
-                void value_add(const SPtrTokenVectorIterator &iterator);
+                bool json(SPtrTokenVectorIterator &iterator);
 
                 // Terminal matching
-                void matchId(const SPtrTokenVectorIterator &iterator);
-                void matchColon(const SPtrTokenVectorIterator &iterator);
-                void matchComma(const SPtrTokenVectorIterator &iterator);
-                void matchBracketOpen(const SPtrTokenSetIterator &iterator);
-                void matchBracketClosing(const SPtrTokenVectorIterator &iterator);
-                void matchCurlyBraceOpen(const SPtrTokenVectorIterator &iterator);
-                void matchCurlyBraceClosing(const SPtrTokenVectorIterator &iterator);
+                void matchId(SPtrTokenVectorIterator &iterator);
+                void matchColon(SPtrTokenVectorIterator &iterator);
+                void matchComma(SPtrTokenVectorIterator &iterator);
+                void matchBracketOpen(SPtrTokenSetIterator &iterator);
+                void matchBracketClosing(SPtrTokenVectorIterator &iterator);
+                void matchCurlyBraceOpen(SPtrTokenVectorIterator &iterator);
+                void matchCurlyBraceClosing(SPtrTokenVectorIterator &iterator);
+                void matchString(SPtrTokenVectorIterator &iterator);
+                void matchNumber(SPtrTokenVectorIterator &iterator);
+                void matchTrue(SPtrTokenVectorIterator &iterator);
+                void matchFalse(SPtrTokenVectorIterator &iterator);
+                void matchNull(SPtrTokenVectorIterator &iterator);
 
+                // NonTerminal matching
+                void object_stmt(SPtrTokenVectorIterator &iterator);
+                void object(SPtrTokenVectorIterator &iterator);
+                void pair(SPtrTokenVectorIterator &iterator);
+                void pair_add(SPtrTokenVectorIterator &iterator);
+                void array_stmt(SPtrTokenVectorIterator &iterator);
+                void array(SPtrTokenVectorIterator &iterator);
+                void value(SPtrTokenVectorIterator &iterator);
+                void value_add(SPtrTokenVectorIterator &iterator);
 
             public:
                 JsonDerivative() = default;
@@ -47,7 +51,11 @@ namespace CldeParser {
                 virtual ~JsonDerivative() = default;
 
                 // Derivatives
-                virtual bool Derive(const SPtrTokenVector &sptrTokenVector) override;
+                virtual bool IsFirst(const SPtrToken &token) override;
+
+            protected:
+                // Derivatives
+                virtual bool CoreDerive(SPtrTokenVectorIterator &sptrTokenIterator) override;
             };
         }
     }

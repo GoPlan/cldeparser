@@ -19,9 +19,9 @@ namespace CldeParser {
         SyntaxTree &operator=(const SyntaxTree &) = default;
         SyntaxTree &operator=(SyntaxTree &&) = default;
         virtual ~SyntaxTree() = default;
-
-        // IPrintable
-        virtual std::string CopyToString() const override;
+        
+        // Locals
+        virtual void Reset();
 
     protected:
         SPtrSyntaxNode _root;

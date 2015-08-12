@@ -3,8 +3,8 @@
 //
 
 #include "TokenizerFactory.h"
-#include "CurlyBraceOpen.h"
-#include "CurlyBraceClosing.h"
+#include "Tokenizers/CurlyBraceOpen.h"
+#include "Tokenizers/CurlyBraceClosing.h"
 #include "Tokenizers/BracketOpen.h"
 #include "Tokenizers/BracketClosing.h"
 #include "Tokenizers/ParenthesesOpen.h"
@@ -27,6 +27,9 @@
 #include "Tokenizers/Subtracting.h"
 #include "Tokenizers/Multiplication.h"
 #include "Tokenizers/Division.h"
+#include "Tokenizers/BoolFalse.h"
+#include "Tokenizers/BoolTrue.h"
+#include "Tokenizers/Null.h"
 
 namespace CldeParser {
     namespace Scanning {
@@ -102,6 +105,15 @@ namespace CldeParser {
         }
         SPtrTokenizer TokenizerFactory::CreateDivision() {
             return std::make_shared<Tokenizers::Division>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateBoolFalse() {
+            return std::make_shared<Tokenizers::BoolFalse>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateBoolTrue() {
+            return std::make_shared<Tokenizers::BoolTrue>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateNull() {
+            return std::make_shared<Tokenizers::Null>();
         }
     }
 }

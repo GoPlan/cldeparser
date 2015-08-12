@@ -11,6 +11,7 @@ namespace CldeParser {
     namespace Scanning {
 
         enum class TokenType {
+            End = 0,
             CurlyBraceOpen = 1,
             CurlyBraceClosing = 2,
             BracketOpen = 3,
@@ -34,7 +35,10 @@ namespace CldeParser {
             Adding = 21,
             Subtracting = 22,
             Multiplication = 23,
-            Division = 24
+            Division = 24,
+            BoolFalse = 25,
+            BoolTrue = 26,
+            Null = 27
         };
 
         std::string CopyToString(int id);

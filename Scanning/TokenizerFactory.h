@@ -35,6 +35,9 @@ namespace CldeParser {
             static SPtrTokenizer CreateSubtracting();
             static SPtrTokenizer CreateMultiplication();
             static SPtrTokenizer CreateDivision();
+            static SPtrTokenizer CreateBoolFalse();
+            static SPtrTokenizer CreateBoolTrue();
+            static SPtrTokenizer CreateNull();
         };
     }
 }

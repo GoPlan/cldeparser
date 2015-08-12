@@ -29,7 +29,9 @@ namespace CldeParser {
         virtual SPtrSyntaxTree Parse(const SPtrTokenVector &sptrTokens);
 
     protected:
-        virtual bool Process(const SPtrToken &sptrToken);
+        virtual SPtrSyntaxTree ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
+                                                  SPtrTokenVectorIterator &end,
+                                                  const SPtrDerivativeVector &matchedDerivatives);
 
     };
 }

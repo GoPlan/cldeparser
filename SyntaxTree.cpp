@@ -5,8 +5,8 @@
 #include "SyntaxTree.h"
 
 namespace CldeParser {
-    std::string SyntaxTree::CopyToString() const {
-        return std::string{};
+    void SyntaxTree::Reset() {
+        //
     }
 }
 

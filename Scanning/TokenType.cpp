@@ -8,6 +8,8 @@ namespace CldeParser {
     namespace Scanning {
         std::string CopyToString(int id) {
             switch ((TokenType) id) {
+                case TokenType::End:
+                    return "End";
                 case TokenType::CurlyBraceOpen:
                     return "CurlyBraceOpen";
                 case TokenType::CurlyBraceClosing:
@@ -56,6 +58,12 @@ namespace CldeParser {
                     return "Multiplication";
                 case TokenType::Division:
                     return "Division";
+                case TokenType::BoolFalse:
+                    return "BoolFalse";
+                case TokenType::BoolTrue:
+                    return "BoolTrue";
+                case TokenType::Null:
+                    return "Null";
             }
         }
     }
