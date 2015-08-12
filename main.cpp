@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include "CldeParser.h"
+#include "Parsing/ParserFactory.h"
 
 using namespace CldeParser;
 
@@ -8,8 +9,9 @@ int main() {
 
     std::string example{"{ _a_15 : 'Example', 'a16' : 10.78Ee10 }"};
 
-    Scanner scanner;
 
+    // Scanning
+    Scanner scanner;
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateId());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateString());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNumber());
@@ -22,13 +24,13 @@ int main() {
 
     SPtrTokenVector tokens = scanner.Scan(example);
 
-    for (auto &token : tokens) {
 
-        if (token->id() == (int) Scanning::TokenType::Space)
-            continue;
+    // Parsing
+    Parser parser;
+    parser.Derivatives().push_back(Parsing::ParserFactory::CreateJsonDerivative());
 
-        std::cout << token->CopyToString() << std::endl;
-    }
+    SPtrSyntaxTree syntaxTree = parser.Parse(tokens);
 
-    return 0;
+
+    return EXIT_SUCCESS;
 }

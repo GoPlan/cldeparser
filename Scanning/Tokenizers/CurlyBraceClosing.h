@@ -2,8 +2,8 @@
 // Created by LE, Duc Anh on 8/4/15.
 //
 
-#ifndef CLDEPARSER_SCANNING_TOKENIZERS_BRACECLOSING_H
-#define CLDEPARSER_SCANNING_TOKENIZERS_BRACECLOSING_H
+#ifndef CLDEPARSER_SCANNING_TOKENIZERS_CURLYBRACECLOSING_H
+#define CLDEPARSER_SCANNING_TOKENIZERS_CURLYBRACECLOSING_H
 
 #include "../TokenType.h"
 #include "../../Tokenizer.h"
@@ -13,15 +13,15 @@ namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            class BraceClosing : public Tokenizer {
+            class CurlyBraceClosing : public Tokenizer {
 
             public:
-                BraceClosing() = default;
-                BraceClosing(const BraceClosing &) = default;
-                BraceClosing(BraceClosing &&) = default;
-                BraceClosing &operator=(const BraceClosing &) = default;
-                BraceClosing &operator=(BraceClosing &&) = default;
-                ~BraceClosing() = default;
+                CurlyBraceClosing() = default;
+                CurlyBraceClosing(const CurlyBraceClosing &) = default;
+                CurlyBraceClosing(CurlyBraceClosing &&) = default;
+                CurlyBraceClosing &operator=(const CurlyBraceClosing &) = default;
+                CurlyBraceClosing &operator=(CurlyBraceClosing &&) = default;
+                ~CurlyBraceClosing() = default;
 
                 // Tokenizer
                 bool BeginWithCharacter(char character) override;
@@ -39,4 +39,4 @@ namespace CldeParser {
 }
 
 
-#endif //CLDEPARSER_SCANNING_TOKENIZERS_BRACECLOSING_H
+#endif //CLDEPARSER_SCANNING_TOKENIZERS_CURLYBRACECLOSING_H

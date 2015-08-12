@@ -12,10 +12,10 @@ add_library(scanner STATIC
     Tokenizers/String.h
     Tokenizers/Number.cpp
     Tokenizers/Number.h
-    Tokenizers/BraceOpen.cpp
-    Tokenizers/BraceOpen.h
-    Tokenizers/BraceClosing.cpp
-    Tokenizers/BraceClosing.h
+    Tokenizers/CurlyBraceOpen.cpp
+    Tokenizers/CurlyBraceOpen.h
+    Tokenizers/CurlyBraceClosing.cpp
+    Tokenizers/CurlyBraceClosing.h
     Tokenizers/Colon.cpp
     Tokenizers/Colon.h
     Tokenizers/Comma.cpp

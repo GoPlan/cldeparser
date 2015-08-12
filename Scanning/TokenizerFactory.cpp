@@ -3,8 +3,8 @@
 //
 
 #include "TokenizerFactory.h"
-#include "Tokenizers/BraceOpen.h"
-#include "Tokenizers/BraceClosing.h"
+#include "CurlyBraceOpen.h"
+#include "CurlyBraceClosing.h"
 #include "Tokenizers/BracketOpen.h"
 #include "Tokenizers/BracketClosing.h"
 #include "Tokenizers/ParenthesesOpen.h"
@@ -32,10 +32,10 @@ namespace CldeParser {
     namespace Scanning {
 
         SPtrTokenizer TokenizerFactory::CreateBraceOpen() {
-            return std::make_shared<Tokenizers::BraceOpen>();
+            return std::make_shared<Tokenizers::CurlyBraceOpen>();
         }
         SPtrTokenizer TokenizerFactory::CreateBraceClosing() {
-            return std::make_shared<Tokenizers::BraceClosing>();
+            return std::make_shared<Tokenizers::CurlyBraceClosing>();
         }
         SPtrTokenizer TokenizerFactory::CreateBracketOpen() {
             return std::make_shared<Tokenizers::BracketOpen>();

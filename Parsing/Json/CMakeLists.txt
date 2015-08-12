@@ -17,4 +17,4 @@ add_library(parser-json STATIC
       JsonDocument.cpp
       JsonDocument.h
       JsonArray.cpp
-      JsonArray.h)
+      JsonArray.h Json.h)

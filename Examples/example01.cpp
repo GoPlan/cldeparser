@@ -9,16 +9,17 @@ using namespace CldeParser;
 
 int main() {
 
-    std::string example{"15 + 7 * 21 / 15"};
+    std::string example{"(15 + 7) * 21 / 15"};
 
     Scanner scanner;
-
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNumber());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSubtracting());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateAdding());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateMultiplication());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateDivision());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateParenthesesOpen());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateParenthesesClosing());
 
     SPtrTokenVector tokens = scanner.Scan(example);
 

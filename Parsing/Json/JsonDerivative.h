@@ -15,21 +15,28 @@ namespace CldeParser {
 
                 SPtrTokenVector _matchedTokens;
 
-                bool main(const SPtrToken &token);
+                // Main
+                bool json(const SPtrTokenVectorIterator &iterator);
 
                 // NonTerminal matching
-                bool matchObject(const SPtrToken &token);
-                bool matchArray(const SPtrToken &token);
+                void object_stmt(const SPtrTokenVectorIterator &iterator);
+                void object(const SPtrTokenVectorIterator &iterator);
+                void pair(const SPtrTokenVectorIterator &iterator);
+                void pair_add(const SPtrTokenVectorIterator &iterator);
+                void array_stmt(const SPtrTokenVectorIterator &iterator);
+                void array(const SPtrTokenVectorIterator &iterator);
+                void value(const SPtrTokenVectorIterator &iterator);
+                void value_add(const SPtrTokenVectorIterator &iterator);
 
                 // Terminal matching
-                bool matchOpenBracket(const SPtrToken &token);
-                bool matchClosingBracket(const SPtrToken &token);
-                bool matchOpenBrace(const SPtrToken &token);
-                bool matchClosingBrace(const SPtrToken &token);
-                bool matchComma(const SPtrToken &token);
-                bool matchColon(const SPtrToken &token);
-                bool matchId(const SPtrToken &token);
-                bool matchValue(const SPtrToken &token);
+                void matchId(const SPtrTokenVectorIterator &iterator);
+                void matchColon(const SPtrTokenVectorIterator &iterator);
+                void matchComma(const SPtrTokenVectorIterator &iterator);
+                void matchBracketOpen(const SPtrTokenSetIterator &iterator);
+                void matchBracketClosing(const SPtrTokenVectorIterator &iterator);
+                void matchCurlyBraceOpen(const SPtrTokenVectorIterator &iterator);
+                void matchCurlyBraceClosing(const SPtrTokenVectorIterator &iterator);
+
 
             public:
                 JsonDerivative() = default;

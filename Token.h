@@ -35,7 +35,7 @@ namespace CldeParser {
 
     using SPtrToken = std::shared_ptr<Token>;
     using SPtrTokenVector = std::vector<SPtrToken>;
-    using SPtrTokenVectorIterator = SPtrTokenVector::iterator;
+    using SPtrTokenVectorIterator = SPtrTokenVector::const_iterator;
     using SPtrTokenSet = std::vector<SPtrToken>;
     using SPtrTokenSetIterator = SPtrTokenSet::iterator;
 

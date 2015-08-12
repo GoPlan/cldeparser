@@ -11,8 +11,8 @@ namespace CldeParser {
     namespace Scanning {
 
         enum class TokenType {
-            BraceOpen = 1,
-            BraceClosing = 2,
+            CurlyBraceOpen = 1,
+            CurlyBraceClosing = 2,
             BracketOpen = 3,
             BracketClosing = 4,
             Comma = 5,

@@ -2,37 +2,37 @@
 // Created by LE, Duc Anh on 8/4/15.
 //
 
-#include "BraceClosing.h"
+#include "CurlyBraceClosing.h"
 
 namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            bool BraceClosing::BeginWithCharacter(char character) {
+            bool CurlyBraceClosing::BeginWithCharacter(char character) {
                 return (int) character == 125;
             }
 
-            SPtrToken BraceClosing::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::BraceClosing, _lexeme);
+            SPtrToken CurlyBraceClosing::CreateSPtrToken() {
+                return CldeParser::CreateSPtrToken((int) TokenType::CurlyBraceClosing, _lexeme);
             }
 
-            const StateSet &BraceClosing::CompleteStates() const {
+            const StateSet &CurlyBraceClosing::CompleteStates() const {
                 throw Exceptions::ScannerException{"CompleteStates is not supported"};
             }
 
-            const StateSet &BraceClosing::AcceptedStates() const {
+            const StateSet &CurlyBraceClosing::AcceptedStates() const {
                 throw Exceptions::ScannerException{"AcceptedStates is not supported"};
             }
 
-            const TransitionMap &BraceClosing::Transitions() const {
+            const TransitionMap &CurlyBraceClosing::Transitions() const {
                 throw Exceptions::ScannerException{"TransitionMap is not supported"};
             }
 
-            bool BraceClosing::IsValid(char character) {
+            bool CurlyBraceClosing::IsValid(char character) {
                 return _currentState == 0 ? (int) character == 125 : false;
             }
 
-            bool BraceClosing::CoreValidate(char character) {
+            bool CurlyBraceClosing::CoreValidate(char character) {
                 _lexeme.append(1, character);
                 _currentState = _currentState + 1;
                 return true;

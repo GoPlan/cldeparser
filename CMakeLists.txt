@@ -31,7 +31,7 @@ add_library(foundation STATIC
 
 
 set(SOURCE_FILES main.cpp CldeParser.h)
-add_executable(cldeparser ${SOURCE_FILES})
+add_executable(cldeparser ${SOURCE_FILES} Parsing/Parsing.h Parsing/ParserFactory.cpp Parsing/ParserFactory.h)
 target_link_libraries(cldeparser foundation scanner parser-json exceptions)
 
 

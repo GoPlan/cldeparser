@@ -8,10 +8,10 @@ namespace CldeParser {
     namespace Scanning {
         std::string CopyToString(int id) {
             switch ((TokenType) id) {
-                case TokenType::BraceOpen:
-                    return "BraceOpen";
-                case TokenType::BraceClosing:
-                    return "BraceClosing";
+                case TokenType::CurlyBraceOpen:
+                    return "CurlyBraceOpen";
+                case TokenType::CurlyBraceClosing:
+                    return "CurlyBraceClosing";
                 case TokenType::BracketOpen:
                     return "BracketOpen";
                 case TokenType::BracketClosing:

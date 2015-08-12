@@ -21,6 +21,9 @@ namespace CldeParser {
 
         virtual bool Derive(const SPtrTokenVector &sptrTokenVector) = 0;
     };
+
+    using SPtrDerivative = std::shared_ptr<Derivative>;
+    using SPtrDerivativeVector = std::vector<SPtrDerivative>;
 }
 
 
