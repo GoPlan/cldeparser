@@ -7,19 +7,19 @@
 
 namespace CldeParser {
 
-    SPtrSyntaxTree Parser::Parse(const SPtrTokenVector &sptrTokens) {
+    SPtrSyntaxTreeVector Parser::Parse(const SPtrTokenVector &sptrTokens) {
 
         SPtrDerivativeVector matchedDerivatives;
-        SPtrSyntaxTree sptrSyntaxTree;
+        SPtrSyntaxTreeVector syntaxTrees;
 
-        SPtrTokenVectorIterator tokenIter = sptrTokens.cbegin();
-        SPtrTokenVectorIterator endingTokenIter = sptrTokens.cend();
+        SPtrTokenVectorIterator startTokenIterator = sptrTokens.cbegin();
+        SPtrTokenVectorIterator endingTokenIterator = sptrTokens.cend();
 
-        while (tokenIter != endingTokenIter) {
+        while (startTokenIterator != endingTokenIterator && (*startTokenIterator) != nullptr) {
 
             for (auto &sptrDerivative : _derivatives) {
                 sptrDerivative->Reset();
-                if (sptrDerivative->IsFirst(*tokenIter))
+                if (sptrDerivative->IsFirst(*startTokenIterator))
                     matchedDerivatives.push_back(sptrDerivative);
             }
 
@@ -28,30 +28,47 @@ namespace CldeParser {
                 throw Exceptions::Exception{msg};
             }
 
-            ProcessAndMoveNext(tokenIter, endingTokenIter, matchedDerivatives);
+            syntaxTrees.push_back(ProcessAndMoveNext(startTokenIterator, endingTokenIterator,
+                                                     matchedDerivatives));
 
-            ++tokenIter;
+            ++startTokenIterator;
         }
 
-        return sptrSyntaxTree;
+        return syntaxTrees;
     }
 
     SPtrSyntaxTree Parser::ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
                                               SPtrTokenVectorIterator &end,
-                                              const SPtrDerivativeVector &matchedDerivatives) {
+                                              SPtrDerivativeVector &matchedDerivatives) {
 
-        SPtrSyntaxTree sptrSyntaxTree;
+        std::vector<SPtrDerivativeVector::const_iterator> unmatched;
+        SPtrDerivativeVector::const_iterator last;
 
-        while (iterator != end) {
+        while (iterator != end && (*iterator) != nullptr) {
 
-            for (auto &sptrDerivative : matchedDerivatives) {
-                sptrDerivative->Derive(iterator);
+            unmatched.clear();
+
+            for (auto derivativeIter = matchedDerivatives.cbegin();
+                 derivativeIter != matchedDerivatives.cend();
+                 ++derivativeIter) {
+
+                if (!(*derivativeIter)->Derive(iterator)) {
+                    unmatched.push_back(derivativeIter);
+                }
+            }
+
+            for (auto &item : unmatched) {
+                matchedDerivatives.erase(item);
+            }
+
+            if (matchedDerivatives.size() > 0) {
+                last = matchedDerivatives.cbegin();
             }
 
             ++iterator;
         }
 
-        return sptrSyntaxTree;
+        return (*last)->SyntaxTree();
     }
 }
 

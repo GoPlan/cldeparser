@@ -19,7 +19,7 @@ namespace CldeParser {
         SyntaxTree &operator=(const SyntaxTree &) = default;
         SyntaxTree &operator=(SyntaxTree &&) = default;
         virtual ~SyntaxTree() = default;
-        
+
         // Locals
         virtual void Reset();
 
@@ -29,6 +29,7 @@ namespace CldeParser {
     };
 
     using SPtrSyntaxTree = std::shared_ptr<SyntaxTree>;
+    using SPtrSyntaxTreeVector = std::vector<SPtrSyntaxTree>;
 }
 
 

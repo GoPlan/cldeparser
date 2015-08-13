@@ -28,6 +28,7 @@ namespace CldeParser {
 
         // Locals - Virtual
         virtual bool IsFirst(const SPtrToken &token) = 0;
+        virtual SPtrSyntaxTree SyntaxTree();
 
     protected:
         virtual bool CoreDerive(SPtrTokenVectorIterator &sptrTokenIterator) = 0;

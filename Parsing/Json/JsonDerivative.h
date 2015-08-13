@@ -22,7 +22,7 @@ namespace CldeParser {
                 void matchId(SPtrTokenVectorIterator &iterator);
                 void matchColon(SPtrTokenVectorIterator &iterator);
                 void matchComma(SPtrTokenVectorIterator &iterator);
-                void matchBracketOpen(SPtrTokenSetIterator &iterator);
+                void matchBracketOpen(SPtrTokenVectorIterator &iterator);
                 void matchBracketClosing(SPtrTokenVectorIterator &iterator);
                 void matchCurlyBraceOpen(SPtrTokenVectorIterator &iterator);
                 void matchCurlyBraceClosing(SPtrTokenVectorIterator &iterator);
@@ -36,6 +36,7 @@ namespace CldeParser {
                 void object_stmt(SPtrTokenVectorIterator &iterator);
                 void object(SPtrTokenVectorIterator &iterator);
                 void pair(SPtrTokenVectorIterator &iterator);
+                void name(SPtrTokenVectorIterator &iterator);
                 void pair_add(SPtrTokenVectorIterator &iterator);
                 void array_stmt(SPtrTokenVectorIterator &iterator);
                 void array(SPtrTokenVectorIterator &iterator);

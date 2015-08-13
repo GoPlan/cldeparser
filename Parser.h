@@ -26,12 +26,12 @@ namespace CldeParser {
         SPtrDerivativeVector &Derivatives() { return _derivatives; }
 
         // Locals
-        virtual SPtrSyntaxTree Parse(const SPtrTokenVector &sptrTokens);
+        virtual SPtrSyntaxTreeVector Parse(const SPtrTokenVector &sptrTokens);
 
     protected:
         virtual SPtrSyntaxTree ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
                                                   SPtrTokenVectorIterator &end,
-                                                  const SPtrDerivativeVector &matchedDerivatives);
+                                                  SPtrDerivativeVector &matchedDerivatives);
 
     };
 }

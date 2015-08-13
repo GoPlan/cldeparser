@@ -47,6 +47,7 @@ namespace CldeParser {
                                           SPtrTokenizerList &matchedTokenizers) {
 
         std::vector<SPtrTokenizerList::const_iterator> unmatched;
+        SPtrTokenizerList::const_iterator last;
 
         SPtrToken sptrToken;
 

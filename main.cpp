@@ -7,7 +7,7 @@ using namespace CldeParser;
 
 int main() {
 
-    std::string example{"{ _a_15 : 'Example', 'a16' : 10.78Ee10 , isExample: true, isNotExample : false, abc : null }"};
+    std::string example{"{ _a_15 : 'Example', 'a16' : 10.78E10 , isExample: true, isNotExample : false, abc : null }"};
 
     // Scanning
     Scanner scanner;
@@ -40,7 +40,7 @@ int main() {
     Parser parser;
     parser.Derivatives().push_back(Parsing::ParserFactory::CreateJsonDerivative());
 
-    SPtrSyntaxTree syntaxTree = parser.Parse(filteredTokens);
+    SPtrSyntaxTreeVector syntaxTrees = parser.Parse(filteredTokens);
 
 
     return EXIT_SUCCESS;

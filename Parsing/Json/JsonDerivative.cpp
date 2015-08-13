@@ -10,7 +10,7 @@ namespace CldeParser {
     namespace Parsing {
         namespace Json {
 
-            void JsonDerivative::matchBracketOpen(SPtrTokenSetIterator &iterator) {
+            void JsonDerivative::matchBracketOpen(SPtrTokenVectorIterator &iterator) {
 
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
@@ -56,7 +56,6 @@ namespace CldeParser {
                 }
 
                 ++iterator;
-
             }
 
             void JsonDerivative::matchComma(SPtrTokenVectorIterator &iterator) {
@@ -179,7 +178,7 @@ namespace CldeParser {
                 }
 
                 else {
-                    std::string msg{};
+                    std::string msg{"Invalid token"};
                     throw Exceptions::Exception{msg};
                 }
 
@@ -187,41 +186,43 @@ namespace CldeParser {
             }
 
             void JsonDerivative::object_stmt(SPtrTokenVectorIterator &iterator) {
-
-                // Matching
                 matchCurlyBraceOpen(iterator);
                 object(iterator);
                 matchCurlyBraceClosing(iterator);
-
-                // TODO: syntax node
             }
 
             void JsonDerivative::array_stmt(SPtrTokenVectorIterator &iterator) {
-
+                matchBracketOpen(iterator);
+                array(iterator);
+                matchBracketClosing(iterator);
             }
 
             void JsonDerivative::object(SPtrTokenVectorIterator &iterator) {
 
-                Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
-
-                if (type == Scanning::TokenType::Id) {
+                if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Id) {
                     pair(iterator);
                 }
 
-                else if (type == Scanning::TokenType::Comma) {
+                if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Comma) {
                     pair_add(iterator);
-                }
-
-                else {
-                    std::string msg{};
-                    throw Exceptions::Exception{msg};
                 }
             }
 
             void JsonDerivative::pair(SPtrTokenVectorIterator &iterator) {
-                matchId(iterator);
+                name(iterator);
                 matchColon(iterator);
                 value(iterator);
+            }
+
+            void JsonDerivative::name(SPtrTokenVectorIterator &iterator) {
+
+                if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Id) {
+                    matchId(iterator);
+                }
+
+                if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::String) {
+                    matchString(iterator);
+                }
             }
 
             void JsonDerivative::pair_add(SPtrTokenVectorIterator &iterator) {
@@ -236,10 +237,21 @@ namespace CldeParser {
 
             void JsonDerivative::array(SPtrTokenVectorIterator &iterator) {
 
+                value(iterator);
+
+                if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Comma) {
+                    value_add(iterator);
+                }
             }
 
             void JsonDerivative::value_add(SPtrTokenVectorIterator &iterator) {
 
+                matchComma(iterator);
+                value(iterator);
+
+                if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Comma) {
+                    value_add(iterator);
+                }
             }
 
             void JsonDerivative::value(SPtrTokenVectorIterator &iterator) {
@@ -272,6 +284,7 @@ namespace CldeParser {
                     throw Exceptions::Exception{msg};
                 }
             }
+
         }
     }
 }
