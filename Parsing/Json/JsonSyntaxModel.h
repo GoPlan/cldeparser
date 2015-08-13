@@ -13,6 +13,8 @@ namespace CldeParser {
 
             class JsonSyntaxModel : public SyntaxModel {
 
+                SPtrSyntaxNode _root;
+
             public:
                 JsonSyntaxModel() = default;
                 JsonSyntaxModel(const JsonSyntaxModel &) = default;

@@ -38,13 +38,13 @@ namespace CldeParser {
     }
 
     SPtrSyntaxModel Parser::ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
-                                              SPtrTokenVectorIterator &end,
-                                              SPtrDerivativeVector &matchedDerivatives) {
+                                               SPtrTokenVectorIterator &end,
+                                               SPtrDerivativeVector &matchedDerivatives) {
 
         std::vector<SPtrDerivativeVector::const_iterator> unmatched;
         SPtrDerivativeVector::const_iterator last;
 
-        while (iterator != end && (*iterator) != nullptr) {
+        while (true) {
 
             unmatched.clear();
 
@@ -64,6 +64,9 @@ namespace CldeParser {
             if (matchedDerivatives.size() > 0) {
                 last = matchedDerivatives.cbegin();
             }
+
+            if (iterator == end)
+                break;
 
             ++iterator;
         }

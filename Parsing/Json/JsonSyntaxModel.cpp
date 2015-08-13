@@ -12,7 +12,7 @@ namespace CldeParser {
         }
 
         const SPtrSyntaxNode &Json::JsonSyntaxModel::RootNode() {
-            return <#initializer#>;
+            return _root;
         }
     }
 }

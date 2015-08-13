@@ -12,7 +12,7 @@ namespace CldeParser {
 
             JsonEntity JsonFactory::Create(SPtrSyntaxModel const &sptrSyntaxModel) {
 
-                
+
 
                 return Json::JsonEntity();
             }

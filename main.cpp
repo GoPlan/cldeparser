@@ -29,13 +29,13 @@ int main() {
     SPtrTokenVector tokens = scanner.Scan(example);
     SPtrTokenVector filtereds(tokens.size());
 
-    std::copy_if(tokens.cbegin(), tokens.cend(), filtereds.begin(),
-                 [](SPtrToken const &token) -> bool {
-                     std::cout << token->CopyToString() << std::endl;
-                     return token->id() != (int) Scanning::TokenType::Space;
-                 });
+    auto newEndIter = std::copy_if(tokens.cbegin(), tokens.cend(), filtereds.begin(),
+                                   [](SPtrToken const &token) -> bool {
+                                       std::cout << token->CopyToString() << std::endl;
+                                       return token->id() != (int) Scanning::TokenType::Space;
+                                   });
 
-    filtereds.shrink_to_fit();
+    filtereds.resize(std::distance(filtereds.begin(), newEndIter));
 
     // Parsing
     Parser parser;
