@@ -11,8 +11,8 @@ namespace CldeParser {
     namespace Scanning {
         class TokenizerFactory {
         public:
-            static SPtrTokenizer CreateBraceOpen();
-            static SPtrTokenizer CreateBraceClosing();
+            static SPtrTokenizer CreateCurlyBraceOpen();
+            static SPtrTokenizer CreateCurlyBraceClosing();
             static SPtrTokenizer CreateBracketOpen();
             static SPtrTokenizer CreateBracketClosing();
             static SPtrTokenizer CreateParenthesesOpen();

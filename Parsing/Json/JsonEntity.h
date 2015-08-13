@@ -20,6 +20,7 @@ namespace CldeParser {
             };
 
             class JsonEntity;
+
             using SPtrJsonEntity = std::shared_ptr<JsonEntity>;
             using SPtrJsonEntityMap = std::unordered_map<std::string, SPtrJsonEntity>;
             using SPtrJsonEntityVector = std::vector<SPtrJsonEntity>;
@@ -33,6 +34,9 @@ namespace CldeParser {
                 JsonEntity &operator=(const JsonEntity &) = default;
                 JsonEntity &operator=(JsonEntity &&) = default;
                 virtual ~JsonEntity() = default;
+
+                // Accessors & Mutators
+                JsonEntityType &Type() { return _type; }
 
             protected:
                 JsonEntityType _type{JsonEntityType::Unknown};

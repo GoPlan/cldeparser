@@ -26,8 +26,8 @@ add_library(foundation STATIC
     Derivative.h
     SyntaxNode.cpp
     SyntaxNode.h
-    SyntaxTree.cpp
-    SyntaxTree.h)
+    SyntaxModel.cpp
+    SyntaxModel.h)
 
 
 set(SOURCE_FILES main.cpp CldeParser.h)

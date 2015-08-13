@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_PARSER_H
 #define CLDEPARSER_PARSER_H
 
-#include "SyntaxTree.h"
+#include "SyntaxModel.h"
 #include "Derivative.h"
 
 namespace CldeParser {
@@ -26,10 +26,10 @@ namespace CldeParser {
         SPtrDerivativeVector &Derivatives() { return _derivatives; }
 
         // Locals
-        virtual SPtrSyntaxTreeVector Parse(const SPtrTokenVector &sptrTokens);
+        virtual SPtrSyntaxModelVector Parse(const SPtrTokenVector &sptrTokens);
 
     protected:
-        virtual SPtrSyntaxTree ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
+        virtual SPtrSyntaxModel ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
                                                   SPtrTokenVectorIterator &end,
                                                   SPtrDerivativeVector &matchedDerivatives);
 

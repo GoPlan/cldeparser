@@ -10,7 +10,7 @@ namespace CldeParser {
         return CoreDerive(sptrTokenIterator);
     }
 
-    SPtrSyntaxTree Derivative::SyntaxTree() {
+    SPtrSyntaxModel Derivative::SyntaxTree() {
         return _sptrSyntaxTree;
     }
     

@@ -34,10 +34,10 @@
 namespace CldeParser {
     namespace Scanning {
 
-        SPtrTokenizer TokenizerFactory::CreateBraceOpen() {
+        SPtrTokenizer TokenizerFactory::CreateCurlyBraceOpen() {
             return std::make_shared<Tokenizers::CurlyBraceOpen>();
         }
-        SPtrTokenizer TokenizerFactory::CreateBraceClosing() {
+        SPtrTokenizer TokenizerFactory::CreateCurlyBraceClosing() {
             return std::make_shared<Tokenizers::CurlyBraceClosing>();
         }
         SPtrTokenizer TokenizerFactory::CreateBracketOpen() {

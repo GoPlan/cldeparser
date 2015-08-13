@@ -6,5 +6,9 @@
 #define CLDEPARSER_PARSING_JSON_JSON_H
 
 #include "JsonDerivative.h"
+#include "JsonEntity.h"
+#include "JsonFactory.h"
+#include "JsonException.h"
+#include "JsonValue.h"
 
 #endif //CLDEPARSER_JSON_H

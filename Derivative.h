@@ -6,13 +6,13 @@
 #define CLDEPARSER_DERIVATIVE_H
 
 #include "Token.h"
-#include "SyntaxTree.h"
+#include "SyntaxModel.h"
 
 namespace CldeParser {
 
     class Derivative {
 
-        SPtrSyntaxTree _sptrSyntaxTree;
+        SPtrSyntaxModel _sptrSyntaxTree;
 
     public:
         Derivative() = default;
@@ -28,7 +28,7 @@ namespace CldeParser {
 
         // Locals - Virtual
         virtual bool IsFirst(const SPtrToken &token) = 0;
-        virtual SPtrSyntaxTree SyntaxTree();
+        virtual SPtrSyntaxModel SyntaxTree();
 
     protected:
         virtual bool CoreDerive(SPtrTokenVectorIterator &sptrTokenIterator) = 0;

@@ -21,6 +21,9 @@ namespace CldeParser {
                 JsonArray &operator=(JsonArray &&) = default;
                 virtual ~JsonArray() = default;
 
+                // Locals
+                SPtrJsonEntityVector &Container() { return _children; }
+
             protected:
                 SPtrJsonEntityVector _children;
 

@@ -7,7 +7,7 @@ using namespace CldeParser;
 
 int main() {
 
-    std::string example{"{ _a_15 : 'Example', 'a16' : 10.78E10 , isExample: true, isNotExample : false, abc : null }"};
+    std::string example{"{ a01 : { name: \"DucAnh\", age : 34 }, a02 : [1, 2 ,3 , 4, 5]}"};
 
     // Scanning
     Scanner scanner;
@@ -21,27 +21,28 @@ int main() {
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateComma());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateTab());
-    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBraceOpen());
-    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBraceClosing());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateCurlyBraceOpen());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateCurlyBraceClosing());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketOpen());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketClosing());
 
     SPtrTokenVector tokens = scanner.Scan(example);
-    SPtrTokenVector filteredTokens;
+    SPtrTokenVector filtereds(tokens.size());
 
-    for (auto &item : tokens) {
+    std::copy_if(tokens.cbegin(), tokens.cend(), filtereds.begin(),
+                 [](SPtrToken const &token) -> bool {
+                     std::cout << token->CopyToString() << std::endl;
+                     return token->id() != (int) Scanning::TokenType::Space;
+                 });
 
-        if (item->id() == (int) Scanning::TokenType::Space)
-            continue;
-
-        std::cout << item->CopyToString() << std::endl;
-        filteredTokens.push_back(item);
-    }
+    filtereds.shrink_to_fit();
 
     // Parsing
     Parser parser;
     parser.Derivatives().push_back(Parsing::ParserFactory::CreateJsonDerivative());
 
-    SPtrSyntaxTreeVector syntaxTrees = parser.Parse(filteredTokens);
-
+    SPtrSyntaxModelVector syntaxTrees = parser.Parse(filtereds);
+    std::cout << syntaxTrees.size() << std::endl;
 
     return EXIT_SUCCESS;
 }

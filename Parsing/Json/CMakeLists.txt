@@ -4,6 +4,7 @@ project(cldeparser)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_library(parser-json STATIC
+      Json.h
       JsonDerivative.cpp
       JsonDerivative.h
       JsonEntity.cpp
@@ -14,7 +15,9 @@ add_library(parser-json STATIC
       JsonValue.h
       JsonFactory.cpp
       JsonFactory.h
-      JsonDocument.cpp
-      JsonDocument.h
       JsonArray.cpp
-      JsonArray.h Json.h)
+      JsonArray.h
+      JsonException.cpp
+      JsonException.h
+      JsonSyntaxNode.cpp
+      JsonSyntaxNode.h JsonSyntaxModel.cpp JsonSyntaxModel.h)

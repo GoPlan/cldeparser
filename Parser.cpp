@@ -7,10 +7,10 @@
 
 namespace CldeParser {
 
-    SPtrSyntaxTreeVector Parser::Parse(const SPtrTokenVector &sptrTokens) {
+    SPtrSyntaxModelVector Parser::Parse(const SPtrTokenVector &sptrTokens) {
 
         SPtrDerivativeVector matchedDerivatives;
-        SPtrSyntaxTreeVector syntaxTrees;
+        SPtrSyntaxModelVector syntaxTrees;
 
         SPtrTokenVectorIterator startTokenIterator = sptrTokens.cbegin();
         SPtrTokenVectorIterator endingTokenIterator = sptrTokens.cend();
@@ -37,7 +37,7 @@ namespace CldeParser {
         return syntaxTrees;
     }
 
-    SPtrSyntaxTree Parser::ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
+    SPtrSyntaxModel Parser::ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
                                               SPtrTokenVectorIterator &end,
                                               SPtrDerivativeVector &matchedDerivatives) {
 

@@ -6,12 +6,14 @@
 #define CLDEPARSER_PARSING_JSON_JSONOBJECT_H
 
 #include <string>
-#include "JsonValue.h"
 #include "JsonEntity.h"
+#include "JsonValue.h"
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
+
+            using SPtrJsonValueMap = std::unordered_map<std::string, SPtrJsonValue>;
 
             class JsonObject : public JsonEntity {
 
@@ -23,10 +25,12 @@ namespace CldeParser {
                 JsonObject &operator=(JsonObject &&) = default;
                 virtual ~JsonObject() = default;
 
+                // Accessors & Mutators
+                SPtrJsonValue GetValue(std::string const &id);
+                void SetValue(std::string const &id, SPtrJsonValue const &value);
+
             protected:
-                SPtrJsonEntityMap _map;
-                std::string _id;
-                JsonValue _value;
+                SPtrJsonValueMap _map;
 
             };
         }

@@ -6,13 +6,13 @@
 #define CLDEPARSER_PARSING_JSON_JSONFACTORY_H
 
 #include "JsonEntity.h"
+#include "../../SyntaxModel.h"
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
             struct JsonFactory {
-                static JsonEntity CreateJsonObject();
-                static JsonEntity CreateJsonArray();
+                static JsonEntity Create(SPtrSyntaxModel const &sptrSyntaxModel);
             };
         }
     }
