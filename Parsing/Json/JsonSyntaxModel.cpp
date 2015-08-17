@@ -6,6 +6,7 @@
 #include "JsonSyntaxModel.h"
 #include "JsonFactory.h"
 #include "../../Scanning/TokenType.h"
+#include "JsonValueFactory.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -18,26 +19,25 @@ namespace CldeParser {
 
             SPtrJsonEntity JsonSyntaxModel::CreateSPtrJsonEnity() {
                 auto iterator = _sptrSyntaxNodeStack.cbegin();
-                _root = createSPtrJsonEntity(iterator);
-                return _root;
+                return createSPtrJsonEntity(iterator);
             }
 
             SPtrJsonEntity JsonSyntaxModel::createSPtrJsonEntity(SPtrJsonSyntaxNodeIterator &iterator) {
 
-                SPtrJsonEntity _sptrEntity;
+                SPtrJsonEntity sptrJsonEntity;
 
                 if ((*iterator)->id() == (int) JsonSyntaxNodeType::ArrayOpen) {
-                    _sptrEntity = JsonFactory::CreateSPtrJsonArray();
+                    sptrJsonEntity = JsonFactory::CreateSPtrJsonArray();
                 }
                 else if ((*iterator)->id() == (int) JsonSyntaxNodeType::ObjectOpen) {
-                    _sptrEntity = JsonFactory::CreateSPtrJsonObject();
+                    sptrJsonEntity = JsonFactory::CreateSPtrJsonObject();
                 }
                 else {
                     //TODO: exception
                 }
 
-                // Push _root into scope stack
-                _sptrEntityScopeStack.push_back(_sptrEntity);
+                // Push entity into scope stack
+                _sptrEntityScopeStack.push_back(sptrJsonEntity);
                 ++iterator;
 
                 for (; iterator != _sptrSyntaxNodeStack.cend(); ++iterator) {
@@ -47,7 +47,7 @@ namespace CldeParser {
                     if ((sptrIdNode->id() == (int) Scanning::TokenType::CurlyBraceClosing
                          || sptrIdNode->id() == (int) Scanning::TokenType::BracketClosing) && !_sptrEntityScopeStack.empty()) {
 
-                        // Pop the scope stack
+                        // Pop the (entity) scope stack
                         _sptrEntityScopeStack.pop_back();
                         continue;
                     }
@@ -75,7 +75,7 @@ namespace CldeParser {
                     }
                 }
 
-                return _sptrEntity;
+                return sptrJsonEntity;
             }
 
             SPtrJsonValue JsonSyntaxModel::createSPtrJsonValue(SPtrJsonSyntaxNodeIterator &iterator) {
@@ -88,34 +88,41 @@ namespace CldeParser {
                 switch (type) {
 
                     case Scanning::TokenType::String: {
+                        result = JsonValueFactory::CreateString(sptrValueNode->value());
                         break;
                     }
 
                     case Scanning::TokenType::Number: {
+                        result = JsonValueFactory::CreateInteger(sptrValueNode->value());
                         break;
                     }
 
                     case Scanning::TokenType::BoolTrue: {
+                        result = JsonValueFactory::CreateBooleanTrue();
                         break;
                     }
 
                     case Scanning::TokenType::BoolFalse: {
+                        result = JsonValueFactory::CreateBooleanFalse();
                         break;
                     }
 
                     case Scanning::TokenType::Null: {
+                        result = JsonValueFactory::CreateNull();
                         break;
                     }
 
                     case Scanning::TokenType::CurlyBraceOpen: {
                         SPtrJsonEntity sptrJsonEntity = JsonFactory::CreateSPtrJsonObject();
                         _sptrEntityScopeStack.push_back(sptrJsonEntity);
+                        result = JsonValueFactory::CreateEntityValue(sptrJsonEntity);
                         break;
                     }
 
                     case Scanning::TokenType::BracketOpen: {
                         SPtrJsonEntity sptrJsonEntity = JsonFactory::CreateSPtrJsonArray();
                         _sptrEntityScopeStack.push_back(sptrJsonEntity);
+                        result = JsonValueFactory::CreateEntityValue(sptrJsonEntity);
                         break;
                     }
 

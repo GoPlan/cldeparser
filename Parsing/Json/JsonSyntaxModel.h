@@ -23,7 +23,6 @@ namespace CldeParser {
 
                 SPtrJsonEntityVector _sptrEntityScopeStack;
                 SPtrJsonSyntaxNodeVector _sptrSyntaxNodeStack;
-                SPtrJsonEntity _root;
 
                 SPtrJsonValue createSPtrJsonValue(SPtrJsonSyntaxNodeIterator &iterator);
                 SPtrJsonEntity createSPtrJsonEntity(SPtrJsonSyntaxNodeIterator &iterator);
