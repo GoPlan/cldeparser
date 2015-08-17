@@ -39,7 +39,9 @@ namespace CldeParser {
                 JsonEntityType &Type() { return _type; }
 
             protected:
+                JsonEntity(JsonEntityType type) : _type{type} { };
                 JsonEntityType _type{JsonEntityType::Unknown};
+
             };
         }
     }

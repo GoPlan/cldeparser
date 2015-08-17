@@ -6,7 +6,6 @@
 #define CLDEPARSER_PARSING_JSON_JSONFACTORY_H
 
 #include "JsonEntity.h"
-#include "../../SyntaxModel.h"
 #include "JsonSyntaxNode.h"
 
 namespace CldeParser {

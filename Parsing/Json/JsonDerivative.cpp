@@ -5,7 +5,6 @@
 #include "JsonDerivative.h"
 #include "../../Scanning/TokenType.h"
 #include "../../Exceptions/Exception.h"
-#include "JsonObject.h"
 #include "JsonFactory.h"
 
 namespace CldeParser {
@@ -292,6 +291,10 @@ namespace CldeParser {
             }
 
             void JsonDerivative::value_add(SPtrTokenVectorIterator &iterator) {
+
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) Scanning::TokenType::Id,
+                                                                                 std::string{}));
 
                 matchComma(iterator);
                 value(iterator);

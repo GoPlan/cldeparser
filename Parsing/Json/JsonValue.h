@@ -31,6 +31,8 @@ namespace CldeParser {
             };
 
             using SPtrJsonValue = std::shared_ptr<JsonValue>;
+            using SPtrJsonValueMap = std::unordered_map<std::string, SPtrJsonValue>;
+            using SPtrJsonValueVector = std::vector<SPtrJsonValue>;
         }
     }
 }

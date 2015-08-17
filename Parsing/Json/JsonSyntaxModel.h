@@ -8,17 +8,25 @@
 #include "../../SyntaxModel.h"
 #include "JsonEntity.h"
 #include "JsonSyntaxNode.h"
+#include "JsonObject.h"
+#include "JsonArray.h"
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
 
-            class JsonSyntaxModel : public SyntaxModel {
+            class JsonSyntaxModel : public SyntaxModel,
+                                    public std::enable_shared_from_this<JsonSyntaxModel> {
 
                 friend class JsonDerivative;
+                friend class JsonSyntaxModelHelper;
 
                 SPtrJsonEntityVector _sptrEntityScopeStack;
                 SPtrJsonSyntaxNodeVector _sptrSyntaxNodeStack;
+                SPtrJsonEntity _root;
+
+                SPtrJsonValue createSPtrJsonValue(SPtrJsonSyntaxNodeIterator &iterator);
+                SPtrJsonEntity createSPtrJsonEntity(SPtrJsonSyntaxNodeIterator &iterator);
 
             public:
                 JsonSyntaxModel() = default;

@@ -49,5 +49,7 @@ int main() {
         std::cout << sptrSyntaxNode->CopyToString() << std::endl;
     }
 
+    auto sptrEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
+
     return EXIT_SUCCESS;
 }

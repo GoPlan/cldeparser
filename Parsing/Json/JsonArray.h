@@ -6,6 +6,7 @@
 #define CLDEPARSER_PARSING_JSON_JSONARRAY_H
 
 #include "JsonEntity.h"
+#include "JsonValue.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -14,7 +15,7 @@ namespace CldeParser {
             class JsonArray : public JsonEntity {
 
             public:
-                JsonArray() = default;
+                JsonArray() : JsonEntity{JsonEntityType::Array} { };
                 JsonArray(const JsonArray &) = default;
                 JsonArray(JsonArray &&) = default;
                 JsonArray &operator=(const JsonArray &) = default;
@@ -22,10 +23,10 @@ namespace CldeParser {
                 virtual ~JsonArray() = default;
 
                 // Locals
-                SPtrJsonEntityVector &Container() { return _children; }
+                SPtrJsonValueVector &Container() { return _container; }
 
             protected:
-                SPtrJsonEntityVector _children;
+                SPtrJsonValueVector _container;
 
             };
         }

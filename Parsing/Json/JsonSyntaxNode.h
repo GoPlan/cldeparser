@@ -12,6 +12,20 @@ namespace CldeParser {
     namespace Parsing {
         namespace Json {
 
+            enum class JsonSyntaxNodeType {
+                Unknown = 0,
+                ObjectOpen,
+                ObjectClosing,
+                ArrayOpen,
+                ArrayClosing,
+                Id,
+                ValueString,
+                ValueNumber,
+                ValueTrue,
+                ValueFalse,
+                ValueNull
+            };
+
             class JsonSyntaxNode : public SyntaxNode {
 
             public:
@@ -29,6 +43,7 @@ namespace CldeParser {
 
             using SPtrJsonSyntaxNode = std::shared_ptr<JsonSyntaxNode>;
             using SPtrJsonSyntaxNodeVector = std::vector<SPtrJsonSyntaxNode>;
+            using SPtrJsonSyntaxNodeIterator = SPtrJsonSyntaxNodeVector::const_iterator;
         }
     }
 }

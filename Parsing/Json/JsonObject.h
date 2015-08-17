@@ -13,12 +13,10 @@ namespace CldeParser {
     namespace Parsing {
         namespace Json {
 
-            using SPtrJsonValueMap = std::unordered_map<std::string, SPtrJsonValue>;
-
             class JsonObject : public JsonEntity {
 
             public:
-                JsonObject() = default;
+                JsonObject() : JsonEntity{JsonEntityType::Object} { };
                 JsonObject(const JsonObject &) = default;
                 JsonObject(JsonObject &&) = default;
                 JsonObject &operator=(const JsonObject &) = default;
