@@ -5,10 +5,17 @@
 #include "JsonDerivative.h"
 #include "../../Scanning/TokenType.h"
 #include "../../Exceptions/Exception.h"
+#include "JsonObject.h"
+#include "JsonFactory.h"
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
+
+            JsonDerivative::JsonDerivative() :
+                    _sptrSyntaxModel{std::make_shared<JsonSyntaxModel>()} {
+                //
+            }
 
             void JsonDerivative::matchBracketOpen(SPtrTokenVectorIterator &iterator) {
 
@@ -18,6 +25,10 @@ namespace CldeParser {
                     std::string msg{"Unexpected token is found"};
                     throw Exceptions::Exception{msg};
                 }
+
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -31,6 +42,10 @@ namespace CldeParser {
                     throw Exceptions::Exception{msg};
                 }
 
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
+
                 ++iterator;
             }
 
@@ -43,6 +58,10 @@ namespace CldeParser {
                     throw Exceptions::Exception{msg};
                 }
 
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
+
                 ++iterator;
             }
 
@@ -54,6 +73,10 @@ namespace CldeParser {
                     std::string msg{"Invalid token is found"};
                     throw Exceptions::Exception{msg};
                 }
+
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -91,6 +114,10 @@ namespace CldeParser {
                     throw Exceptions::Exception{msg};
                 }
 
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
+
                 ++iterator;
             }
 
@@ -102,6 +129,10 @@ namespace CldeParser {
                     std::string msg{"Invalid token is found"};
                     throw Exceptions::Exception{msg};
                 }
+
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -115,6 +146,10 @@ namespace CldeParser {
                     throw Exceptions::Exception{msg};
                 }
 
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
+
                 ++iterator;
             }
 
@@ -126,6 +161,10 @@ namespace CldeParser {
                     std::string msg{"Invalid token is found"};
                     throw Exceptions::Exception{msg};
                 }
+
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -139,6 +178,10 @@ namespace CldeParser {
                     throw Exceptions::Exception{msg};
                 }
 
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
+
                 ++iterator;
             }
 
@@ -150,6 +193,10 @@ namespace CldeParser {
                     std::string msg{"Invalid token is found"};
                     throw Exceptions::Exception{msg};
                 }
+
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -285,6 +332,12 @@ namespace CldeParser {
                 }
             }
 
+            SPtrSyntaxModel JsonDerivative::SyntaxModel() {
+                return _sptrSyntaxModel;
+            }
+            void JsonDerivative::Reset() {
+                _sptrSyntaxModel->Reset();
+            }
         }
     }
 }

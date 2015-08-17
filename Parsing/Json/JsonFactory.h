@@ -7,12 +7,15 @@
 
 #include "JsonEntity.h"
 #include "../../SyntaxModel.h"
+#include "JsonSyntaxNode.h"
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
             struct JsonFactory {
-                static JsonEntity Create(SPtrSyntaxModel const &sptrSyntaxModel);
+                static SPtrJsonEntity CreateSPtrJsonObject();
+                static SPtrJsonEntity CreateSPtrJsonArray();
+                static SPtrJsonSyntaxNode CreateSPtrJsonSyntaxNode(int id, std::string const &value);
             };
         }
     }

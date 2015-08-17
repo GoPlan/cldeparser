@@ -6,6 +6,7 @@
 #define CLDEPARSER_PARSING_JSON_JSONDERIVATIVE_H
 
 #include "../../Derivative.h"
+#include "JsonSyntaxModel.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -13,7 +14,7 @@ namespace CldeParser {
 
             class JsonDerivative : public Derivative {
 
-                SPtrTokenVector _matchedTokens;
+                SPtrJsonSyntaxModel _sptrSyntaxModel;
 
                 // Main
                 bool json(SPtrTokenVectorIterator &iterator);
@@ -44,7 +45,7 @@ namespace CldeParser {
                 void value_add(SPtrTokenVectorIterator &iterator);
 
             public:
-                JsonDerivative() = default;
+                JsonDerivative();
                 JsonDerivative(const JsonDerivative &) = default;
                 JsonDerivative(JsonDerivative &&) = default;
                 JsonDerivative &operator=(const JsonDerivative &) = default;
@@ -52,7 +53,9 @@ namespace CldeParser {
                 virtual ~JsonDerivative() = default;
 
                 // Derivatives
+                virtual SPtrSyntaxModel SyntaxModel() override;
                 virtual bool IsFirst(const SPtrToken &token) override;
+                virtual void Reset() override;
 
             protected:
                 // Derivatives

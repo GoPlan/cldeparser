@@ -13,9 +13,6 @@ namespace CldeParser {
 
     class Token : public Core::IPrintable {
 
-        int _id;
-        std::string _lexeme;
-
     public:
         Token(int id, const std::string &word) : _id{id}, _lexeme{word} { };
         Token(int id, const char *word) : _id{id}, _lexeme{word} { };
@@ -31,6 +28,10 @@ namespace CldeParser {
 
         // IPrintable
         std::string CopyToString() const override;
+
+    protected:
+        int _id;
+        std::string _lexeme;
     };
 
     using SPtrToken = std::shared_ptr<Token>;

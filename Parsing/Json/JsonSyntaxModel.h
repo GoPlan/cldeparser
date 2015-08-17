@@ -6,6 +6,8 @@
 #define CLDEPARSER_PARSING_JSON_JSONSYNTAXMODEL_H
 
 #include "../../SyntaxModel.h"
+#include "JsonEntity.h"
+#include "JsonSyntaxNode.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -13,7 +15,10 @@ namespace CldeParser {
 
             class JsonSyntaxModel : public SyntaxModel {
 
-                SPtrSyntaxNode _root;
+                friend class JsonDerivative;
+
+                SPtrJsonEntityVector _sptrEntityScopeStack;
+                SPtrJsonSyntaxNodeVector _sptrSyntaxNodeStack;
 
             public:
                 JsonSyntaxModel() = default;
@@ -23,10 +28,19 @@ namespace CldeParser {
                 JsonSyntaxModel &operator=(JsonSyntaxModel &&) = default;
                 virtual ~JsonSyntaxModel() = default;
 
-                // Accessors & Mutators
+                // SyntaxModel
                 virtual void Reset() override;
-                virtual SPtrSyntaxNode const &RootNode() override;
+
+                // Accessors & Mutators
+                SPtrJsonEntityVector &EntityScopeStack() { return _sptrEntityScopeStack; }
+                SPtrJsonSyntaxNodeVector &SyntaxNodeStack() { return _sptrSyntaxNodeStack; }
+
+                // Locals
+                SPtrJsonEntity CreateSPtrJsonEnity();
+
             };
+
+            using SPtrJsonSyntaxModel = std::shared_ptr<JsonSyntaxModel>;
         }
     }
 }

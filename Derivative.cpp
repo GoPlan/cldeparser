@@ -9,10 +9,6 @@ namespace CldeParser {
     bool Derivative::Derive(SPtrTokenVectorIterator &sptrTokenIterator) {
         return CoreDerive(sptrTokenIterator);
     }
-
-    SPtrSyntaxModel Derivative::SyntaxTree() {
-        return _sptrSyntaxTree;
-    }
     
     void Derivative::Reset() {
         // TODO: implementation

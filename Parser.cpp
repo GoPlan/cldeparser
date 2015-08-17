@@ -71,7 +71,7 @@ namespace CldeParser {
             ++iterator;
         }
 
-        return (*last)->SyntaxTree();
+        return (*last)->SyntaxModel();
     }
 }
 

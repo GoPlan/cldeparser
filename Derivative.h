@@ -12,8 +12,6 @@ namespace CldeParser {
 
     class Derivative {
 
-        SPtrSyntaxModel _sptrSyntaxTree;
-
     public:
         Derivative() = default;
         Derivative(const Derivative &) = default;
@@ -22,13 +20,13 @@ namespace CldeParser {
         Derivative &operator=(Derivative &&) = default;
         virtual ~Derivative() = default;
 
-        // Locals
+        virtual // Locals
         bool Derive(SPtrTokenVectorIterator &sptrTokenIterator);
-        void Reset();
 
         // Locals - Virtual
+        virtual SPtrSyntaxModel SyntaxModel() = 0;
         virtual bool IsFirst(const SPtrToken &token) = 0;
-        virtual SPtrSyntaxModel SyntaxTree();
+        virtual void Reset() = 0;
 
     protected:
         virtual bool CoreDerive(SPtrTokenVectorIterator &sptrTokenIterator) = 0;

@@ -20,4 +20,7 @@ add_library(parser-json STATIC
       JsonException.cpp
       JsonException.h
       JsonSyntaxNode.cpp
-      JsonSyntaxNode.h JsonSyntaxModel.cpp JsonSyntaxModel.h)
+      JsonSyntaxNode.h
+      JsonSyntaxModel.cpp
+      JsonSyntaxModel.h
+)

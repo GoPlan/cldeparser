@@ -30,8 +30,8 @@ namespace CldeParser {
 
     protected:
         virtual SPtrSyntaxModel ProcessAndMoveNext(SPtrTokenVectorIterator &iterator,
-                                                  SPtrTokenVectorIterator &end,
-                                                  SPtrDerivativeVector &matchedDerivatives);
+                                                   SPtrTokenVectorIterator &end,
+                                                   SPtrDerivativeVector &matchedDerivatives);
 
     };
 }

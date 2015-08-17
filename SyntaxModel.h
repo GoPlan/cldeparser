@@ -6,11 +6,12 @@
 #define CLDEPARSER_SYNTAXTREE_H
 
 #include <memory>
+#include <vector>
 #include "SyntaxNode.h"
 
 namespace CldeParser {
 
-    class SyntaxModel : public Core::IPrintable {
+    class SyntaxModel {
 
     public:
         SyntaxModel() = default;
@@ -22,7 +23,6 @@ namespace CldeParser {
 
         // Locals
         virtual void Reset() = 0;
-        virtual SPtrSyntaxNode const &RootNode() = 0;
     };
 
     using SPtrSyntaxModel = std::shared_ptr<SyntaxModel>;

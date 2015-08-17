@@ -6,13 +6,17 @@
 
 namespace CldeParser {
     namespace Parsing {
+        namespace Json {
 
-        void Json::JsonSyntaxModel::Reset() {
+            void JsonSyntaxModel::Reset() {
+                _sptrSyntaxNodeStack.clear();
+                _sptrEntityScopeStack.clear();
+            }
 
-        }
-
-        const SPtrSyntaxNode &Json::JsonSyntaxModel::RootNode() {
-            return _root;
+            SPtrJsonEntity JsonSyntaxModel::CreateSPtrJsonEnity() {
+                SPtrJsonEntity sptrEntity;
+                return sptrEntity;
+            }
         }
     }
 }

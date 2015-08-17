@@ -33,6 +33,8 @@ namespace CldeParser {
                 SPtrJsonValueMap _map;
 
             };
+
+            using SPtrJsonObject = std::shared_ptr<JsonObject>;
         }
     }
 }

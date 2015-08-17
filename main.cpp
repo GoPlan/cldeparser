@@ -2,6 +2,7 @@
 #include <iostream>
 #include "CldeParser.h"
 #include "Parsing/ParserFactory.h"
+#include "Parsing/Json/JsonSyntaxModel.h"
 
 using namespace CldeParser;
 
@@ -31,7 +32,6 @@ int main() {
 
     auto newEndIter = std::copy_if(tokens.cbegin(), tokens.cend(), filtereds.begin(),
                                    [](SPtrToken const &token) -> bool {
-                                       std::cout << token->CopyToString() << std::endl;
                                        return token->id() != (int) Scanning::TokenType::Space;
                                    });
 
@@ -41,8 +41,13 @@ int main() {
     Parser parser;
     parser.Derivatives().push_back(Parsing::ParserFactory::CreateJsonDerivative());
 
-    SPtrSyntaxModelVector syntaxTrees = parser.Parse(filtereds);
-    std::cout << syntaxTrees.size() << std::endl;
+    SPtrSyntaxModelVector sptrModelVector = parser.Parse(filtereds);
+    auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(*(sptrModelVector.begin()));
+    auto &sptrSyntaxNodeVector = sptrSyntaxModel->SyntaxNodeStack();
+
+    for (auto &sptrSyntaxNode : sptrSyntaxNodeVector) {
+        std::cout << sptrSyntaxNode->CopyToString() << std::endl;
+    }
 
     return EXIT_SUCCESS;
 }
