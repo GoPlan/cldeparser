@@ -15,7 +15,11 @@ namespace CldeParser {
 
             class String : public Tokenizer {
 
-                enum class States {
+                enum class StringSpecialToken {
+
+                };
+
+                enum class StringState {
                     Start = 0,
                     InProgress = 1,
                     InProgressAlternative = 2,
@@ -26,10 +30,6 @@ namespace CldeParser {
                     Closing = 7
                 };
 
-                static StateSet _completeStates;
-                static StateSet _acceptedStates;
-                static TransitionMap _transitions;
-
                 bool isControlCharacter(char character);
                 bool isQuote(char character);
                 bool isDoubleQuote(char character);
@@ -38,6 +38,7 @@ namespace CldeParser {
                 bool isAlternativeHexSymbol(char character);
                 bool isHexadecimal(char character);
 
+                char _wrapChar;
 
             public:
                 String() = default;

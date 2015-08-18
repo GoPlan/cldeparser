@@ -1,13 +1,15 @@
 #include <string>
 #include <iostream>
 #include "CldeParser.h"
-#include "Parsing/ParserFactory.h"
+#include "Parsing/Json/Json.h"
+#include "ParserSingle.h"
 
 using namespace CldeParser;
 
 int main() {
 
-    std::string example{"{ a01 : { name: \"DucAnh\", age : 34 }, a02 : [1.3E-2, 2.05 ,3.0 , 4.0, 5.0]}"};
+    std::string example{
+            "{ 'a01' : { \"firstName\": \"\", age : 34, lastName : '' }, a02 : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0] }"};
 
     // Scanning
     Scanner scanner;
@@ -28,25 +30,23 @@ int main() {
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketClosing());
 
     SPtrTokenVector tokens = scanner.Scan(example);
-    SPtrTokenVector filtereds(tokens.size());
+    SPtrTokenVector filtered(tokens.size());
 
-    auto newEndIter = std::copy_if(tokens.cbegin(), tokens.cend(), filtereds.begin(),
-                                   [](SPtrToken const &token) -> bool {
-                                       return token->id() != (int) Scanning::TokenType::Space;
-                                   });
+    // Remove Space tokens
+    std::copy_if(tokens.cbegin(), tokens.cend(), filtered.begin(),
+                 [](SPtrToken const &token) -> bool {
+                     return token->id() != (int) Scanning::TokenType::Space;
+                 });
 
-    filtereds.resize(std::distance(filtereds.begin(), newEndIter));
+    filtered.shrink_to_fit();
 
     // Parsing
-    Parser parser;
-    parser.Derivatives().push_back(Parsing::ParserFactory::CreateJsonDerivative());
-
-    SPtrSyntaxModelVector sptrModelVector = parser.Parse(filtereds);
-    auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(*(sptrModelVector.begin()));
+    ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivative()};
+    auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filtered));
     auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
 
-    std::cout << example << std::endl;
-    std::cout << sptrJsonEntity->CopyToString() << std::endl;
+    std::cout << "Input: " << example << std::endl;
+    std::cout << "Output: " << sptrJsonEntity->CopyToString() << std::endl;
 
     return EXIT_SUCCESS;
 }

@@ -64,6 +64,8 @@ namespace CldeParser {
                     return "BoolTrue";
                 case TokenType::Null:
                     return "Null";
+                case TokenType::NumberInteger:
+                    return "NumberInteger";
             }
         }
     }

@@ -14,7 +14,7 @@
 // Scanner
 #include "Scanning/Scanning.h"
 
-// Parser
-#include "Parsing/Json/Json.h"
+// Parse
+#include "Parsing/Parsing.h"
 
 #endif //CLDEPARSER_CLDEPARSER_H

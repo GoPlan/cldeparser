@@ -261,7 +261,9 @@ namespace CldeParser {
 
             void JsonDerivative::object(SPtrTokenVectorIterator &iterator) {
 
-                if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Id) {
+                auto type = (Scanning::TokenType) (*iterator)->id();
+
+                if (type == Scanning::TokenType::Id || type == Scanning::TokenType::String) {
                     pair(iterator);
                 }
 
@@ -353,8 +355,7 @@ namespace CldeParser {
                     array_stmt(iterator);
                 }
                 else {
-                    std::string msg{};
-                    throw Exceptions::Exception{msg};
+                    //TODO: exception
                 }
             }
 

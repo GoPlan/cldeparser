@@ -8,9 +8,6 @@ namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            StateSet String::_completeStates = {0, 1, 2};
-            StateSet String::_acceptedStates = {2};
-
             bool String::isControlCharacter(char character) {
                 return (int) character > 3 && (int) character < 0;
             }
@@ -48,104 +45,112 @@ namespace CldeParser {
                 if (isControlCharacter(character)) return false;
                 if (isBackSlash(character)) return false;
 
-                switch ((String::States) _currentState) {
-                    case States::Start:
+                switch ((String::StringState) _currentState) {
+                    case StringState::Start:
                         return isQuote(character) || isDoubleQuote(character);
-                    case States::InProgress:
+                    case StringState::InProgress:
                         return true;
-                    case States::InProgressAlternative:
+                    case StringState::InProgressAlternative:
                         return isAlternativeSymbol(character);
-                    case States::InPogresssAlternativeHex_1:
+                    case StringState::InPogresssAlternativeHex_1:
                         return isHexadecimal(character);
-                    case States::InPogresssAlternativeHex_2:
+                    case StringState::InPogresssAlternativeHex_2:
                         return isHexadecimal(character);
-                    case States::InPogresssAlternativeHex_3:
+                    case StringState::InPogresssAlternativeHex_3:
                         return isHexadecimal(character);
-                    case States::InPogresssAlternativeHex_4:
+                    case StringState::InPogresssAlternativeHex_4:
                         return isHexadecimal(character);
-                    case States::Closing:
+                    case StringState::Closing:
                         return false;
                 }
             }
 
             bool String::isAlternativeSymbol(char character) {
 
-                if ((int) character == 39) return true;    // Quote
-                if ((int) character == 47) return true;    // Forward slash
-                if ((int) character == 92) return true;    // Back slash
-                if ((int) character == 98) return true;    // Backspace
+                bool result = false;
 
-                if ((int) character == 102) return true;    // Form feed
-                if ((int) character == 110) return true;    // Newline
-                if ((int) character == 114) return true;    // Carriage return
-                if ((int) character == 116) return true;    // Horizontal tab
+                if ((int) character == 39) result = true;    // Quote
+                if ((int) character == 47) result = true;    // Forward slash
+                if ((int) character == 92) result = true;    // Back slash
+                if ((int) character == 98) result = true;    // Backspace
 
-                return false;
+                if ((int) character == 102) result = true;    // Form feed
+                if ((int) character == 110) result = true;    // Newline
+                if ((int) character == 114) result = true;    // Carriage return
+                if ((int) character == 116) result = true;    // Horizontal tab
+
+                return result;
             }
 
             bool String::isAlternativeHexSymbol(char character) {
-                if ((int) character == 117) return true;
-                return false;
+                return (int) character == 117;
             }
 
             bool String::isHexadecimal(char character) {
 
-                if ((int) character > 47 && (int) character < 58) return true;      // Number;
-                if ((int) character > 64 && (int) character < 71) return true;      // A -> F;
-                if ((int) character > 96 && (int) character < 103) return true;     // a -> f;
+                bool result = false;
 
-                return false;
+                if ((int) character > 47 && (int) character < 58) result = true;      // Number;
+                if ((int) character > 64 && (int) character < 71) result = true;      // A -> F;
+                if ((int) character > 96 && (int) character < 103) result = true;     // a -> f;
+
+                return result;
             }
 
             bool String::CoreValidate(char character) {
 
                 if (_lexeme.length() == 0) _lexeme.reserve(20);
 
-                switch ((String::States) _currentState) {
-                    case States::Start:
-                        _lexeme.append(1, character);
-                        _currentState = (int) States::InProgress;
+                switch ((String::StringState) _currentState) {
+                    case StringState::Start:
+                        _wrapChar = character;
+                        _currentState = (int) StringState::InProgress;
                         break;
 
-                    case States::InProgress: {
+                    case StringState::InProgress: {
 
-                        auto &first = *(_lexeme.cbegin());
+                        if ((isQuote(character) && isQuote(_wrapChar))
+                            || (isDoubleQuote(character) && isDoubleQuote(_wrapChar))) {
+                            _currentState = (int) StringState::Closing;
+                            break;
+                        }
+
+                        if (isBackSlash(character)) {
+                            _currentState = (int) StringState::InProgressAlternative;
+                        }
+
                         _lexeme.append(1, character);
-
-                        if (isQuote(character) && isQuote(first)) { _currentState = (int) States::Closing; }
-                        if (isDoubleQuote(character) && isDoubleQuote(first)) { _currentState = (int) States::Closing; }
-                        if (isBackSlash(character)) { _currentState = (int) States::InProgressAlternative; }
 
                         break;
                     }
 
-                    case States::InProgressAlternative:
+                    case StringState::InProgressAlternative:
                         _lexeme.append(1, character);
-                        if (isAlternativeSymbol(character)) { _currentState = (int) States::InProgress; }
-                        if (isAlternativeHexSymbol(character)) { _currentState = (int) States::InPogresssAlternativeHex_1; }
+                        if (isAlternativeSymbol(character)) { _currentState = (int) StringState::InProgress; }
+                        if (isAlternativeHexSymbol(character)) { _currentState = (int) StringState::InPogresssAlternativeHex_1; }
                         break;
 
-                    case States::InPogresssAlternativeHex_1:
+                    case StringState::InPogresssAlternativeHex_1:
                         _lexeme.append(1, character);
-                        if (isHexadecimal(character)) { _currentState = (int) States::InPogresssAlternativeHex_2; }
+                        if (isHexadecimal(character)) { _currentState = (int) StringState::InPogresssAlternativeHex_2; }
                         break;
 
-                    case States::InPogresssAlternativeHex_2:
+                    case StringState::InPogresssAlternativeHex_2:
                         _lexeme.append(1, character);
-                        if (isHexadecimal(character)) { _currentState = (int) States::InPogresssAlternativeHex_3; }
+                        if (isHexadecimal(character)) { _currentState = (int) StringState::InPogresssAlternativeHex_3; }
                         break;
 
-                    case States::InPogresssAlternativeHex_3:
+                    case StringState::InPogresssAlternativeHex_3:
                         _lexeme.append(1, character);
-                        if (isHexadecimal(character)) { _currentState = (int) States::InPogresssAlternativeHex_4; }
+                        if (isHexadecimal(character)) { _currentState = (int) StringState::InPogresssAlternativeHex_4; }
                         break;
 
-                    case States::InPogresssAlternativeHex_4:
+                    case StringState::InPogresssAlternativeHex_4:
                         _lexeme.append(1, character);
-                        if (isHexadecimal(character)) { _currentState = (int) States::InProgress; }
+                        if (isHexadecimal(character)) { _currentState = (int) StringState::InProgress; }
                         break;
 
-                    case States::Closing:
+                    case StringState::Closing:
                         return false;
                 }
 

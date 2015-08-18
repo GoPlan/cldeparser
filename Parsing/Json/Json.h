@@ -10,5 +10,6 @@
 #include "JsonFactory.h"
 #include "JsonException.h"
 #include "JsonValue.h"
+#include "JsonSyntaxNode.h"
 
 #endif //CLDEPARSER_JSON_H

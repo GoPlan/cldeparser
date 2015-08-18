@@ -7,11 +7,13 @@
 
 #include "JsonEntity.h"
 #include "JsonSyntaxNode.h"
+#include "../../Derivative.h"
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
             struct JsonFactory {
+                static SPtrDerivative CreateSPtrJsonDerivative();
                 static SPtrJsonEntity CreateSPtrJsonObject();
                 static SPtrJsonEntity CreateSPtrJsonArray();
                 static SPtrJsonSyntaxNode CreateSPtrJsonSyntaxNode(int id, std::string const &value);

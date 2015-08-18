@@ -7,6 +7,7 @@
 
 #include "SyntaxModel.h"
 #include "Derivative.h"
+#include "Exceptions/Exception.h"
 
 namespace CldeParser {
 
