@@ -23,5 +23,5 @@ add_library(parser-json STATIC
       JsonSyntaxNode.h
       JsonSyntaxModel.cpp
       JsonSyntaxModel.h
-      JsonSyntaxModelHelper.cpp
-      JsonSyntaxModelHelper.h JsonValueFactory.cpp JsonValueFactory.h)
+      JsonValueFactory.cpp
+      JsonValueFactory.h)
