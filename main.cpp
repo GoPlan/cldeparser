@@ -45,7 +45,7 @@ int main() {
     auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filtered));
     auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
 
-    std::cout << "Input: " << example << std::endl;
+    std::cout << "Input:  " << example << std::endl;
     std::cout << "Output: " << sptrJsonEntity->CopyToString() << std::endl;
 
     return EXIT_SUCCESS;

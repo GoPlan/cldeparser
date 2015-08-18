@@ -37,7 +37,6 @@ namespace CldeParser {
                 virtual ~JsonSyntaxNode() = default;
 
                 // IPrintable
-
                 virtual std::string CopyToString() const override;
             };
 

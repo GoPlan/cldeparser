@@ -36,11 +36,7 @@ namespace CldeParser {
                 virtual ~JsonSyntaxModel() = default;
 
                 // SyntaxModel
-                virtual void Reset() override;
-
-                // Accessors & Mutators
-                SPtrJsonEntityVector &EntityScopeStack() { return _sptrEntityScopeStack; }
-                SPtrJsonSyntaxNodeVector &SyntaxNodeStack() { return _sptrSyntaxNodeStack; }
+                void Reset() override;
 
                 // Locals
                 SPtrJsonEntity CreateSPtrJsonEnity();
