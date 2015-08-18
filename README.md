@@ -2,6 +2,7 @@
 An extensible lexical, syntax parser for languages commons (Json parsing is included by default)
 
 Introduction:
+
 I needed a data-driven configuration mechanic for another project. So I chose Json format and it was how this parser came to live.
 
 Scanner:
