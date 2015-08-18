@@ -13,15 +13,15 @@ namespace CldeParser {
             }
 
             bool String::isQuote(char character) {
-                return (int) character == 39;
+                return (int) character == (int) StringSpecialToken::SingleQuote;
             }
 
             bool String::isDoubleQuote(char character) {
-                return (int) character == 34;
+                return (int) character == (int) StringSpecialToken::DoubleQuote;
             }
 
             bool String::isBackSlash(char character) {
-                return (int) character == 92;
+                return (int) character == (int) StringSpecialToken::BackSlash;
             }
 
             bool String::BeginWithCharacter(char character) {
@@ -40,10 +40,42 @@ namespace CldeParser {
                 throw Exceptions::ScannerException{"TransitionMap is not supported"};
             }
 
+            bool String::isAlternativeSymbol(char character) {
+
+                bool result = false;
+
+                if ((int) character == (int) StringSpecialToken::DoubleQuote) result = true;    // Quote
+                if ((int) character == (int) StringSpecialToken::ForwardSlash) result = true;    // Forward slash
+                if ((int) character == (int) StringSpecialToken::BackSlash) result = true;    // Back slash
+                if ((int) character == 98) result = true;    // b - Backspace
+
+                if ((int) character == 102) result = true;    // f - Form feed
+                if ((int) character == 110) result = true;    // n - Newline
+                if ((int) character == 114) result = true;    // r - Carriage return
+                if ((int) character == 116) result = true;    // t - Horizontal tab
+                if ((int) character == 117) result = true;    // u - Horizontal tab
+
+                return result;
+            }
+
+            bool String::isAlternativeHexSymbol(char character) {
+                return (int) character == 117;
+            }
+
+            bool String::isHexadecimal(char character) {
+
+                bool result = false;
+
+                if ((int) character > 47 && (int) character < 58) result = true;      // Number;
+                if ((int) character > 64 && (int) character < 71) result = true;      // A -> F;
+                if ((int) character > 96 && (int) character < 103) result = true;     // a -> f;
+
+                return result;
+            }
+
             bool String::IsValid(char character) {
 
                 if (isControlCharacter(character)) return false;
-                if (isBackSlash(character)) return false;
 
                 switch ((String::StringState) _currentState) {
                     case StringState::Start:
@@ -63,38 +95,6 @@ namespace CldeParser {
                     case StringState::Closing:
                         return false;
                 }
-            }
-
-            bool String::isAlternativeSymbol(char character) {
-
-                bool result = false;
-
-                if ((int) character == 39) result = true;    // Quote
-                if ((int) character == 47) result = true;    // Forward slash
-                if ((int) character == 92) result = true;    // Back slash
-                if ((int) character == 98) result = true;    // Backspace
-
-                if ((int) character == 102) result = true;    // Form feed
-                if ((int) character == 110) result = true;    // Newline
-                if ((int) character == 114) result = true;    // Carriage return
-                if ((int) character == 116) result = true;    // Horizontal tab
-
-                return result;
-            }
-
-            bool String::isAlternativeHexSymbol(char character) {
-                return (int) character == 117;
-            }
-
-            bool String::isHexadecimal(char character) {
-
-                bool result = false;
-
-                if ((int) character > 47 && (int) character < 58) result = true;      // Number;
-                if ((int) character > 64 && (int) character < 71) result = true;      // A -> F;
-                if ((int) character > 96 && (int) character < 103) result = true;     // a -> f;
-
-                return result;
             }
 
             bool String::CoreValidate(char character) {

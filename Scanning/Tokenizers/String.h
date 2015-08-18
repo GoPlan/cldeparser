@@ -16,7 +16,10 @@ namespace CldeParser {
             class String : public Tokenizer {
 
                 enum class StringSpecialToken {
-
+                    DoubleQuote = 34,
+                    SingleQuote = 39,
+                    ForwardSlash = 47,
+                    BackSlash = 92
                 };
 
                 enum class StringState {

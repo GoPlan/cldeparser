@@ -9,7 +9,7 @@ using namespace CldeParser;
 int main() {
 
     std::string example{
-            "{ 'a01' : { \"firstName\": \"\", age : 34, lastName : '' }, a02 : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0] }"};
+            "{ 'a\\t01' : { \"first\\u1ab4Name\": \"\", age : 34, lastName : '' }, a02 : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0] }"};
 
     // Scanning
     Scanner scanner;

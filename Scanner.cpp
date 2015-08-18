@@ -47,9 +47,7 @@ namespace CldeParser {
                                           SPtrTokenizerList &matchedTokenizers) {
 
         std::vector<SPtrTokenizerList::const_iterator> unmatched;
-        SPtrTokenizerList::const_iterator last;
-
-        SPtrToken sptrToken;
+        SPtrTokenizer sptrTokenizer;
 
         while (cIter != cEnd) {
 
@@ -76,12 +74,12 @@ namespace CldeParser {
                 break;
             }
 
-            sptrToken = (*matchedTokenizers.cbegin())->CreateSPtrToken();
+            sptrTokenizer = *(matchedTokenizers.cbegin());
 
             ++cIter;
         }
 
-        return sptrToken;
+        return sptrTokenizer->CreateSPtrToken();
     }
 }
 
