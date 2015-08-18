@@ -22,6 +22,9 @@ namespace CldeParser {
                 JsonArray &operator=(JsonArray &&) = default;
                 virtual ~JsonArray() = default;
 
+                // IPrintable
+                std::string CopyToString() const override;
+
                 // Locals
                 SPtrJsonValueVector &Container() { return _container; }
 

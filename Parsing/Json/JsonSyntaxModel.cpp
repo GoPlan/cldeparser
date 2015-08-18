@@ -5,8 +5,8 @@
 #include <iostream>
 #include "JsonSyntaxModel.h"
 #include "JsonFactory.h"
-#include "../../Scanning/TokenType.h"
 #include "JsonValueFactory.h"
+#include "../../Scanning/TokenType.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -49,7 +49,8 @@ namespace CldeParser {
 
                         // Pop the (entity) scope stack
                         _sptrEntityScopeStack.pop_back();
-                        continue;
+
+                        break;
                     }
 
                     auto &sptrScopeEntity = _sptrEntityScopeStack.back();
@@ -113,16 +114,12 @@ namespace CldeParser {
                     }
 
                     case Scanning::TokenType::CurlyBraceOpen: {
-                        SPtrJsonEntity sptrJsonEntity = JsonFactory::CreateSPtrJsonObject();
-                        _sptrEntityScopeStack.push_back(sptrJsonEntity);
-                        result = JsonValueFactory::CreateEntityValue(sptrJsonEntity);
+                        result = JsonValueFactory::CreateEntityValue(createSPtrJsonEntity(iterator));
                         break;
                     }
 
                     case Scanning::TokenType::BracketOpen: {
-                        SPtrJsonEntity sptrJsonEntity = JsonFactory::CreateSPtrJsonArray();
-                        _sptrEntityScopeStack.push_back(sptrJsonEntity);
-                        result = JsonValueFactory::CreateEntityValue(sptrJsonEntity);
+                        result = JsonValueFactory::CreateEntityValue(createSPtrJsonEntity(iterator));
                         break;
                     }
 

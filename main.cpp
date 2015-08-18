@@ -43,13 +43,10 @@ int main() {
 
     SPtrSyntaxModelVector sptrModelVector = parser.Parse(filtereds);
     auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(*(sptrModelVector.begin()));
-    auto &sptrSyntaxNodeVector = sptrSyntaxModel->SyntaxNodeStack();
+    auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
 
-    for (auto &sptrSyntaxNode : sptrSyntaxNodeVector) {
-        std::cout << sptrSyntaxNode->CopyToString() << std::endl;
-    }
-
-    auto sptrEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
+    std::cout << example << std::endl;
+    std::cout << sptrJsonEntity->CopyToString() << std::endl;
 
     return EXIT_SUCCESS;
 }

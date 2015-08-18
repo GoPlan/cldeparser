@@ -283,6 +283,9 @@ namespace CldeParser {
 
             void JsonDerivative::array(SPtrTokenVectorIterator &iterator) {
 
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) Scanning::TokenType::Id,
+                                                                                 std::string{}));
                 value(iterator);
 
                 if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Comma) {
@@ -292,11 +295,12 @@ namespace CldeParser {
 
             void JsonDerivative::value_add(SPtrTokenVectorIterator &iterator) {
 
+                matchComma(iterator);
+
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
                                 .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) Scanning::TokenType::Id,
                                                                                  std::string{}));
 
-                matchComma(iterator);
                 value(iterator);
 
                 if ((Scanning::TokenType) (*iterator)->id() == Scanning::TokenType::Comma) {

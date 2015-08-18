@@ -21,13 +21,16 @@ namespace CldeParser {
                 entity = 5
             };
 
-            struct JsonValue {
+            struct JsonValue : public Core::IPrintable {
                 int id;
                 int intValue;
                 double doubleValue;
                 bool boolValue;
                 std::string strValue;
                 SPtrJsonEntity sptrJsonEntity;
+
+                // IPrintable
+                std::string CopyToString() const override;
             };
 
             using SPtrJsonValue = std::shared_ptr<JsonValue>;

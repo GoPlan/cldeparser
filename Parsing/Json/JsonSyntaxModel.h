@@ -44,7 +44,6 @@ namespace CldeParser {
 
                 // Locals
                 SPtrJsonEntity CreateSPtrJsonEnity();
-
             };
 
             using SPtrJsonSyntaxModel = std::shared_ptr<JsonSyntaxModel>;

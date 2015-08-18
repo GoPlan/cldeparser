@@ -23,6 +23,9 @@ namespace CldeParser {
                 JsonObject &operator=(JsonObject &&) = default;
                 virtual ~JsonObject() = default;
 
+                // IPrintable
+                std::string CopyToString() const override;
+
                 // Accessors & Mutators
                 SPtrJsonValue GetValue(std::string const &id);
                 void SetValue(std::string const &id, SPtrJsonValue const &value);
