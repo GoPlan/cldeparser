@@ -94,6 +94,11 @@ namespace CldeParser {
                     }
 
                     case Scanning::TokenType::Number: {
+                        result = JsonValueFactory::CreateDouble(sptrValueNode->value());
+                        break;
+                    }
+
+                    case Scanning::TokenType::NumberInteger: {
                         result = JsonValueFactory::CreateInteger(sptrValueNode->value());
                         break;
                     }

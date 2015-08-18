@@ -25,7 +25,7 @@ namespace CldeParser {
             }
 
             bool Number::isDigitOneToNine(char character) {
-                return isDigit(character) && (int) character != 48;
+                return isDigit(character) && !isZero(character);
             }
 
             bool Number::isZero(char character) {

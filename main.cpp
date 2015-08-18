@@ -2,22 +2,22 @@
 #include <iostream>
 #include "CldeParser.h"
 #include "Parsing/ParserFactory.h"
-#include "Parsing/Json/JsonSyntaxModel.h"
 
 using namespace CldeParser;
 
 int main() {
 
-    std::string example{"{ a01 : { name: \"DucAnh\", age : 34 }, a02 : [1, 2 ,3 , 4, 5]}"};
+    std::string example{"{ a01 : { name: \"DucAnh\", age : 34 }, a02 : [1.3E-2, 2.05 ,3.0 , 4.0, 5.0]}"};
 
     // Scanning
     Scanner scanner;
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNull());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBoolTrue());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBoolFalse());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNumberInteger());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNumber());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateId());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateString());
-    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNumber());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateColon());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateComma());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());

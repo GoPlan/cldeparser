@@ -27,6 +27,7 @@ namespace CldeParser {
             static SPtrTokenizer CreateSemiColon();
             static SPtrTokenizer CreateId();
             static SPtrTokenizer CreateNumber();
+            static SPtrTokenizer CreateNumberInteger();
             static SPtrTokenizer CreateString();
             static SPtrTokenizer CreateSpace();
             static SPtrTokenizer CreateTab();

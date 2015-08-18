@@ -30,6 +30,7 @@
 #include "Tokenizers/BoolFalse.h"
 #include "Tokenizers/BoolTrue.h"
 #include "Tokenizers/Null.h"
+#include "Tokenizers/NumberInteger.h"
 
 namespace CldeParser {
     namespace Scanning {
@@ -63,6 +64,9 @@ namespace CldeParser {
         }
         SPtrTokenizer TokenizerFactory::CreateNumber() {
             return std::make_shared<Tokenizers::Number>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateNumberInteger() {
+            return std::make_shared<Tokenizers::NumberInteger>();
         }
         SPtrTokenizer TokenizerFactory::CreateString() {
             return std::make_shared<Tokenizers::String>();

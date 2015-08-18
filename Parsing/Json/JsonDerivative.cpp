@@ -136,6 +136,22 @@ namespace CldeParser {
                 ++iterator;
             }
 
+            void JsonDerivative::matchNumberInteger(SPtrTokenVectorIterator &iterator) {
+
+                Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
+
+                if (type != Scanning::TokenType::NumberInteger) {
+                    std::string msg{"Invalid token is found"};
+                    throw Exceptions::Exception{msg};
+                }
+
+                _sptrSyntaxModel->_sptrSyntaxNodeStack
+                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
+                                                                                 (*iterator)->lexeme()));
+
+                ++iterator;
+            }
+
             void JsonDerivative::matchNumber(SPtrTokenVectorIterator &iterator) {
 
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
@@ -317,6 +333,9 @@ namespace CldeParser {
                 }
                 else if (type == Scanning::TokenType::Number) {
                     matchNumber(iterator);
+                }
+                else if (type == Scanning::TokenType::NumberInteger) {
+                    matchNumberInteger(iterator);
                 }
                 else if (type == Scanning::TokenType::BoolTrue) {
                     matchTrue(iterator);

@@ -13,15 +13,40 @@ namespace CldeParser {
     namespace Scanning {
         namespace Tokenizers {
 
-            class NumberInteger {
-            
+            class NumberInteger : public Tokenizer {
+
+                enum class NumberIntegerState {
+                    Start = 0,
+                    Number = 1,
+                    Closing = 2
+                };
+
+                enum class NumberSpecialToken {
+                    Minus = 45,
+                };
+
+                bool isMinus(char character);
+                bool isDigit(char character);
+                bool isDigitOneToNine(char character);
+
             public:
                 NumberInteger() = default;
                 NumberInteger(const NumberInteger &) = default;
                 NumberInteger(NumberInteger &&) = default;
                 NumberInteger &operator=(const NumberInteger &) = default;
                 NumberInteger &operator=(NumberInteger &&) = default;
-                virtual ~NumberInteger() = default;
+                ~NumberInteger() = default;
+
+                // Tokenizer
+                bool BeginWithCharacter(char character) override;
+                const StateSet &CompleteStates() const override;
+                const StateSet &AcceptedStates() const override;
+                const TransitionMap &Transitions() const override;
+                SPtrToken CreateSPtrToken() override;
+
+            protected:
+                bool IsValid(char character) override;
+                bool CoreValidate(char character) override;
             };
         }
     }

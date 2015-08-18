@@ -28,6 +28,7 @@ namespace CldeParser {
                 void matchCurlyBraceOpen(SPtrTokenVectorIterator &iterator);
                 void matchCurlyBraceClosing(SPtrTokenVectorIterator &iterator);
                 void matchString(SPtrTokenVectorIterator &iterator);
+                void matchNumberInteger(SPtrTokenVectorIterator &iterator);
                 void matchNumber(SPtrTokenVectorIterator &iterator);
                 void matchTrue(SPtrTokenVectorIterator &iterator);
                 void matchFalse(SPtrTokenVectorIterator &iterator);

@@ -38,7 +38,8 @@ namespace CldeParser {
             Division = 24,
             BoolFalse = 25,
             BoolTrue = 26,
-            Null = 27
+            Null = 27,
+            NumberInteger = 28
         };
 
         std::string CopyToString(int id);
