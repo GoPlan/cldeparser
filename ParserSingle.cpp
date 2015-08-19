@@ -3,15 +3,18 @@
 //
 
 #include "ParserSingle.h"
+#include "Exceptions/ParserException.h"
 
 namespace CldeParser {
 
     SPtrSyntaxModel ParserSingle::Parse(const SPtrTokenVector &sptrTokens) {
 
-        SPtrTokenVectorIterator cIter = sptrTokens.cbegin();
+        auto cIter = sptrTokens.cbegin();
 
         if (!_sptrDerivative->Derive(cIter)) {
-            //TODO: exception
+            int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+            std::string msg{"Derivative can not match " + (*cIter)->CopyToString()};
+            throw Exceptions::ParserException{code, msg};
         }
 
         return _sptrDerivative->SyntaxModel();

@@ -7,6 +7,7 @@
 #include "JsonFactory.h"
 #include "JsonValueFactory.h"
 #include "../../Scanning/TokenType.h"
+#include "../../Exceptions/ParserException.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -33,7 +34,8 @@ namespace CldeParser {
                     sptrJsonEntity = JsonFactory::CreateSPtrJsonObject();
                 }
                 else {
-                    //TODO: exception
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownEntityType;
+                    throw Exceptions::ParserException{code, std::string{}};
                 }
 
                 // Push entity into scope stack
@@ -58,8 +60,8 @@ namespace CldeParser {
                     switch (sptrScopeEntity->Type()) {
 
                         case JsonEntityType::Unknown: {
-                            //TODO: exception
-                            break;
+                            int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownEntityType;
+                            throw Exceptions::ParserException{code, std::string{}};
                         }
 
                         case JsonEntityType::Object: {
@@ -129,8 +131,8 @@ namespace CldeParser {
                     }
 
                     default:
-                        //TODO: exception
-                        break;
+                        int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownValueType;
+                        throw Exceptions::ParserException{code, std::string{}};
                 }
 
                 return result;

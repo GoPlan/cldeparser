@@ -6,6 +6,7 @@
 #include "../../Scanning/TokenType.h"
 #include "../../Exceptions/Exception.h"
 #include "JsonFactory.h"
+#include "../../Exceptions/ParserException.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -21,8 +22,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::BracketOpen) {
-                    std::string msg{"Unexpected token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -37,8 +39,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::BracketClosing) {
-                    std::string msg{"Unexpected token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -53,8 +56,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::CurlyBraceOpen) {
-                    std::string msg{"Unexpected token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -69,8 +73,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::CurlyBraceClosing) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -85,8 +90,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::Comma) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 ++iterator;
@@ -97,8 +103,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::Colon) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 ++iterator;
@@ -109,8 +116,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::Id) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -157,8 +165,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::Number) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -173,8 +182,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::BoolTrue) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -189,8 +199,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::BoolFalse) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -205,8 +216,9 @@ namespace CldeParser {
                 Scanning::TokenType type = (Scanning::TokenType) (*iterator)->id();
 
                 if (type != Scanning::TokenType::Null) {
-                    std::string msg{"Invalid token is found"};
-                    throw Exceptions::Exception{msg};
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
+                    throw Exceptions::ParserException{code, msg};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeStack
@@ -240,8 +252,7 @@ namespace CldeParser {
                 }
 
                 else {
-                    std::string msg{"Invalid token"};
-                    throw Exceptions::Exception{msg};
+                    return false;
                 }
 
                 return true;
@@ -355,13 +366,15 @@ namespace CldeParser {
                     array_stmt(iterator);
                 }
                 else {
-                    //TODO: exception
+                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownValueType;
+                    throw Exceptions::ParserException{code, std::string{}};
                 }
             }
 
             SPtrSyntaxModel JsonDerivative::SyntaxModel() {
                 return _sptrSyntaxModel;
             }
+
             void JsonDerivative::Reset() {
                 _sptrSyntaxModel->Reset();
             }

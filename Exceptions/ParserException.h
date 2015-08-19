@@ -5,20 +5,28 @@
 #ifndef CLDEPARSER_EXCEPTIONS_PARSEREXCEPTION_H
 #define CLDEPARSER_EXCEPTIONS_PARSEREXCEPTION_H
 
-#include <exception>
+#include "Exception.h"
 
 namespace CldeParser {
     namespace Exceptions {
 
-        class ParserException : std::exception {
+        class ParserException : public Exceptions::Exception {
+
+            int _id;
 
         public:
-            ParserException() = default;
+            ParserException(int id, const std::string& message);
             ParserException(const ParserException &) = default;
             ParserException(ParserException &&) = default;
             ParserException &operator=(const ParserException &) = default;
             ParserException &operator=(ParserException &&) = default;
             virtual ~ParserException() = default;
+
+            enum class ParserExceptionCode {
+                UnmatchedToken = 0,
+                UnknownEntityType = 1,
+                UnknownValueType = 2
+             };
         };
     }
 }
