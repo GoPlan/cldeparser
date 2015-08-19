@@ -2,13 +2,13 @@
 // Created by LE, Duc Anh on 7/29/15.
 //
 
-#ifndef CLDEPARSER_CORE_IPRINTFORMATTER_H
-#define CLDEPARSER_CORE_IPRINTFORMATTER_H
+#ifndef CLDEPARSER_COMMON_IPRINTFORMATTER_H
+#define CLDEPARSER_COMMON_IPRINTFORMATTER_H
 
 #include <string>
 
 namespace CldeParser {
-    namespace Core {
+    namespace Common {
 
         class IPrintable;
 
@@ -19,4 +19,4 @@ namespace CldeParser {
 }
 
 
-#endif //CLDEPARSER_CORE_IPRINTFORMATTER_H
+#endif //CLDEPARSER_COMMON_IPRINTFORMATTER_H

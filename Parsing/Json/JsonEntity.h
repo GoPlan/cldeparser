@@ -8,7 +8,7 @@
 #include <memory>
 #include <unordered_map>
 #include <vector>
-#include "../../Core/IPrintable.h"
+#include "../../Common/IPrintable.h"
 
 namespace CldeParser {
     namespace Parsing {
@@ -26,7 +26,7 @@ namespace CldeParser {
             using SPtrJsonEntityMap = std::unordered_map<std::string, SPtrJsonEntity>;
             using SPtrJsonEntityVector = std::vector<SPtrJsonEntity>;
 
-            class JsonEntity : public Core::IPrintable {
+            class JsonEntity : public Common::IPrintable {
 
             public:
                 JsonEntity() = default;

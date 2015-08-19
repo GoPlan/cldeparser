@@ -21,7 +21,7 @@ namespace CldeParser {
                 entity = 5
             };
 
-            struct JsonValue : public Core::IPrintable {
+            struct JsonValue : public Common::IPrintable {
                 int id;
                 int intValue;
                 double doubleValue;

@@ -7,11 +7,11 @@
 
 #include <string>
 #include <vector>
-#include "Core/IPrintable.h"
+#include "Common/IPrintable.h"
 
 namespace CldeParser {
 
-    class Token : public Core::IPrintable {
+    class Token : public Common::IPrintable {
 
     public:
         Token(int id, const std::string &word) : _id{id}, _lexeme{word} { };

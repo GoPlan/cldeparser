@@ -6,11 +6,11 @@
 #define CLDEPARSER_SYNTAXNODE_H
 
 #include <string>
-#include "Core/IPrintable.h"
+#include "Common/IPrintable.h"
 
 namespace CldeParser {
 
-    class SyntaxNode : public Core::IPrintable {
+    class SyntaxNode : public Common::IPrintable {
 
     public:
         SyntaxNode(int id, std::string const &value);

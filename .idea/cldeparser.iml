@@ -6,9 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/CldeParser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CldeParserFactory.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CldeParserFactory.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Core/IComparable.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Core/IPrintFormatter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Core/IPrintable.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Common/IComparable.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Common/IPrintFormatter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Common/IPrintable.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Derivative.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Derivative.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Examples/example01.cpp" isTestSource="false" />

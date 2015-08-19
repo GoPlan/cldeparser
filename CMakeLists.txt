@@ -11,9 +11,9 @@ add_subdirectory(Parsing/Json)
 
 
 add_library(foundation STATIC
-        Core/IPrintable.h
-        Core/IPrintFormatter.h
-        Core/IComparable.h
+        Common/IPrintable.h
+        Common/IPrintFormatter.h
+        Common/IComparable.h
         Token.cpp
         Token.h
         Tokenizer.cpp

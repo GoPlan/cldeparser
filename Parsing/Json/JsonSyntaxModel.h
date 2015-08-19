@@ -18,7 +18,7 @@ namespace CldeParser {
 
             class JsonSyntaxModel : public SyntaxModel,
                                     public std::enable_shared_from_this<JsonSyntaxModel>,
-                                    public Core::IPrintable {
+                                    public Common::IPrintable {
 
                 friend class JsonDerivative;
                 friend class JsonSyntaxModelHelper;
