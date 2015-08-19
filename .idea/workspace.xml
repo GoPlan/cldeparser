@@ -3,17 +3,17 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
       <config projectName="cldeparser" targetName="cldeparser" />
-      <config projectName="cldeparser" targetName="scanner" />
+      <config projectName="cldeparser" targetName="exceptions" />
       <config projectName="cldeparser" targetName="scanner_example" />
       <config projectName="cldeparser" targetName="parser-simplemath" />
+      <config projectName="cldeparser" targetName="scanner" />
       <config projectName="cldeparser" targetName="example01" />
       <config projectName="cldeparser" targetName="exception" />
       <config projectName="cldeparser" targetName="parser-json" />
       <config projectName="cldeparser" targetName="foundation" />
-      <config projectName="cldeparser" targetName="cldejson" />
-      <config projectName="cldeparser" targetName="exceptions" />
-      <config projectName="cldeparser" targetName="parser" />
       <config projectName="cldeparser" targetName="json" />
+      <config projectName="cldeparser" targetName="parser" />
+      <config projectName="cldeparser" targetName="cldejson" />
       <config projectName="cldeparser" targetName="common" />
     </generated>
   </component>
@@ -24,14 +24,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aeda09b7-3cb9-411c-b832-6925168cac33" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Derivative.cpp" afterPath="$PROJECT_DIR$/Derivative.cpp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scanning/Tokenizers/SquareBracketClosing.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scanning/Tokenizers/SquareBracketClosing.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scanning/Tokenizers/SquareBracketOpen.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Scanning/Tokenizers/SquareBracketOpen.h" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scanning/CMakeLists.txt" afterPath="$PROJECT_DIR$/Scanning/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CldeParser.h" afterPath="$PROJECT_DIR$/CldeParser.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonFactory.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonFactory.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonDerivative.h" afterPath="$PROJECT_DIR$/Parsing/Json/JsonDerivative.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonException.h" afterPath="$PROJECT_DIR$/Parsing/Json/JsonException.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Exceptions/ParserException.cpp" afterPath="$PROJECT_DIR$/Exceptions/ParserException.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Exceptions/ParserException.h" afterPath="$PROJECT_DIR$/Exceptions/ParserException.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ParserSingle.cpp" afterPath="$PROJECT_DIR$/ParserSingle.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cldeparser.iml" afterPath="$PROJECT_DIR$/.idea/cldeparser.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.h" afterPath="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonSyntaxNode.h" afterPath="$PROJECT_DIR$/Parsing/Json/JsonSyntaxNode.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Parsing/Json/JsonValue.cpp" afterPath="$PROJECT_DIR$/Parsing/Json/JsonValue.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scanning/TokenType.cpp" afterPath="$PROJECT_DIR$/Scanning/TokenType.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scanning/TokenType.h" afterPath="$PROJECT_DIR$/Scanning/TokenType.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scanning/TokenizerFactory.cpp" afterPath="$PROJECT_DIR$/Scanning/TokenizerFactory.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cldeparser.iws" />
@@ -53,31 +62,109 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="JsonDerivative.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+              <folding>
+                <element signature="e#143#172#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5485636">
+              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CldeParser.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CldeParser.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="JsonDerivative.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="369" column="75" selection-start-line="369" selection-start-column="75" selection-end-line="369" selection-end-column="75" />
+              <caret line="362" column="39" selection-start-line="362" selection-start-column="39" selection-end-line="362" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JsonSyntaxModel.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.9904241">
-              <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserException.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Exceptions/ParserException.cpp">
+      <file leaf-file-name="JsonValue.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValue.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Json.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parsing/Json/Json.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="e#124#151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parsing.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parsing/Parsing.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParserFactory.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parsing/ParserFactory.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="33" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParserFactory.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parsing/ParserFactory.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#45#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonException.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonException.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -91,8 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Token.h" />
-        <option value="$PROJECT_DIR$/SyntaxModel.h" />
         <option value="$PROJECT_DIR$/SyntaxNode.cpp" />
         <option value="$PROJECT_DIR$/Derivative.h" />
         <option value="$PROJECT_DIR$/SyntaxNode.h" />
@@ -100,28 +185,19 @@
         <option value="$PROJECT_DIR$/Parsing/Json/Helper/JsonSyntaxModelHelper.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModelHelper.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModelHelper.cpp" />
-        <option value="$PROJECT_DIR$/Parsing/Json/JsonValueFactory.cpp" />
         <option value="$PROJECT_DIR$/Scanning/Tokenizers/NumberReal.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonValueFactory.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonEntity.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonArray.h" />
-        <option value="$PROJECT_DIR$/Parsing/Json/JsonValue.h" />
-        <option value="$PROJECT_DIR$/Parsing/Json/JsonValue.cpp" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonObject.cpp" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonArray.cpp" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonObject.h" />
         <option value="$PROJECT_DIR$/Scanning/Tokenizers/Number.cpp" />
         <option value="$PROJECT_DIR$/Scanning/Tokenizers/NumberInteger.cpp" />
-        <option value="$PROJECT_DIR$/Scanning/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Scanning/TokenizerFactory.h" />
-        <option value="$PROJECT_DIR$/Scanning/TokenizerFactory.cpp" />
         <option value="$PROJECT_DIR$/Scanning/Tokenizers/NumberInteger.h" />
-        <option value="$PROJECT_DIR$/Parsing/Json/JsonDerivative.h" />
-        <option value="$PROJECT_DIR$/Scanning/TokenType.h" />
-        <option value="$PROJECT_DIR$/Scanning/TokenType.cpp" />
         <option value="$PROJECT_DIR$/CldeParserFactory.h" />
         <option value="$PROJECT_DIR$/Parsing/Parsing.h" />
-        <option value="$PROJECT_DIR$/CldeParser.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/Json.h" />
         <option value="$PROJECT_DIR$/Parser.cpp" />
         <option value="$PROJECT_DIR$/Parser.h" />
@@ -130,9 +206,6 @@
         <option value="$PROJECT_DIR$/Scanning/Tokenizers/String.h" />
         <option value="$PROJECT_DIR$/Scanning/Tokenizers/String.cpp" />
         <option value="$PROJECT_DIR$/Scanner.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Parsing/Json/JsonSyntaxNode.h" />
-        <option value="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonFactory.cpp" />
@@ -140,8 +213,22 @@
         <option value="$PROJECT_DIR$/Exceptions/ParserException.cpp" />
         <option value="$PROJECT_DIR$/ParserSingle.cpp" />
         <option value="$PROJECT_DIR$/Exceptions/ParserException.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonDerivative.h" />
+        <option value="$PROJECT_DIR$/Scanning/TokenType.h" />
+        <option value="$PROJECT_DIR$/Scanning/TokenType.cpp" />
+        <option value="$PROJECT_DIR$/Scanning/Tokenizers/SquareBracketOpen.cpp" />
+        <option value="$PROJECT_DIR$/Scanning/TokenizerFactory.cpp" />
+        <option value="$PROJECT_DIR$/Scanning/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonSyntaxNode.h" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp" />
         <option value="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.cpp" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonValueFactory.cpp" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonValue.h" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonValue.cpp" />
+        <option value="$PROJECT_DIR$/Parsing/Json/JsonException.h" />
+        <option value="$PROJECT_DIR$/CldeParser.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -219,52 +306,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Parsing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Json" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cldeparser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Exceptions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -429,95 +470,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="91" />
+      <option name="time" value="94" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="iterator" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/NumberInteger.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Parsing.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonObject.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="56" selection-start-line="30" selection-start-column="56" selection-end-line="30" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parser.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="46" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CldeParserFactory.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CldeParserFactory.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SyntaxNode.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SyntaxNode.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SyntaxModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SyntaxModel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Token.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Token.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -581,69 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValueFactory.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonArray.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonObject.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/ParserFactory.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/ParserFactory.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonSyntaxNode.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/Json.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CldeParser.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Parsing/Json/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -703,30 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonEntity.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonFactory.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonException.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Derivative.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -751,26 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Exceptions/ParserException.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -801,19 +659,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp">
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonArray.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="369" column="75" selection-start-line="369" selection-start-column="75" selection-end-line="369" selection-end-column="75" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#134#157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Number.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/Tokenizers/Null.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonFactory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonObject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding>
+            <element signature="e#135#152#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iterator">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1178" column="0" selection-start-line="1178" selection-start-column="0" selection-end-line="1178" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonSyntaxNode.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/TokenType.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/TokenType.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/TokenizerFactory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#73#0" expanded="false" />
+            <marker date="1439966097000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1439966097000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scanning/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonEntity.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding>
+            <element signature="e#135#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="27" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+          <folding>
+            <element signature="e#146#176#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonSyntaxModel.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9904241">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonSyntaxNode.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValueFactory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValueFactory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonValue.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonException.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/Json.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#124#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/ParserFactory.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/ParserFactory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#45#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+          <folding>
+            <element signature="e#143#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Json/JsonDerivative.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="362" column="39" selection-start-line="362" selection-start-column="39" selection-end-line="362" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CldeParser.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Parsing/Parsing.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5485636">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

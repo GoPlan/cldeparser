@@ -14,7 +14,7 @@ namespace CldeParser {
             class JsonException : Exceptions::Exception {
 
             public:
-                JsonException() = default;
+                JsonException(std::string const &message) : Exception{message} { };
                 JsonException(const JsonException &) = default;
                 JsonException(JsonException &&) = default;
                 JsonException &operator=(const JsonException &) = default;

@@ -2,7 +2,6 @@
 #include <iostream>
 #include "CldeParser.h"
 #include "Parsing/Json/Json.h"
-#include "ParserSingle.h"
 
 using namespace CldeParser;
 
@@ -13,6 +12,8 @@ int main() {
 
     // Scanning
     Scanner scanner;
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
+    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateTab());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNull());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBoolTrue());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBoolFalse());
@@ -22,8 +23,6 @@ int main() {
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateString());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateColon());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateComma());
-    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
-    scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateTab());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateCurlyBraceOpen());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateCurlyBraceClosing());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketOpen());

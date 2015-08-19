@@ -17,8 +17,6 @@
 #include "Tokenizers/Space.h"
 #include "Tokenizers/Tab.h"
 #include "Tokenizers/Comma.h"
-#include "Tokenizers/SquareBracketOpen.h"
-#include "Tokenizers/SquareBracketClosing.h"
 #include "Tokenizers/AngleBracketOpen.h"
 #include "Tokenizers/AngleBracketClosing.h"
 #include "Tokenizers/ForwardSlash.h"
@@ -79,12 +77,6 @@ namespace CldeParser {
         }
         SPtrTokenizer TokenizerFactory::CreateComma() {
             return std::make_shared<Tokenizers::Comma>();
-        }
-        SPtrTokenizer TokenizerFactory::CreateSquareBracketOpen() {
-            return std::make_shared<Tokenizers::SquareBracketOpen>();
-        }
-        SPtrTokenizer TokenizerFactory::CreateSquareBracketClosing() {
-            return std::make_shared<Tokenizers::SquareBracketClosing>();
         }
         SPtrTokenizer TokenizerFactory::CreateAngleBracketOpen() {
             return std::make_shared<Tokenizers::AngleBracketOpen>();

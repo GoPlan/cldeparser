@@ -6,7 +6,9 @@
 #define CLDEPARSER_PARSING_JSON_JSONDERIVATIVE_H
 
 #include "../../Derivative.h"
+#include "../../Exceptions/ParserException.h"
 #include "JsonSyntaxModel.h"
+#include "JsonFactory.h"
 
 namespace CldeParser {
     namespace Parsing {

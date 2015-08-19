@@ -41,10 +41,6 @@ add_library(scanner STATIC
     Tokenizers/AngleBracketOpen.h
     Tokenizers/AngleBracketClosing.cpp
     Tokenizers/AngleBracketClosing.h
-    Tokenizers/SquareBracketOpen.cpp
-    Tokenizers/SquareBracketOpen.h
-    Tokenizers/SquareBracketClosing.cpp
-    Tokenizers/SquareBracketClosing.h
     Tokenizers/ForwardSlash.cpp
     Tokenizers/ForwardSlash.h
     Tokenizers/BackwardSlash.cpp

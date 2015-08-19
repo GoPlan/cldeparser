@@ -2,24 +2,23 @@
 // Created by LE, Duc Anh on 8/13/15.
 //
 
-#include <iostream>
 #include "JsonSyntaxModel.h"
 #include "JsonFactory.h"
 #include "JsonValueFactory.h"
-#include "../../Scanning/TokenType.h"
-#include "../../Exceptions/ParserException.h"
+#include "JsonObject.h"
+#include "JsonArray.h"
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
 
             void JsonSyntaxModel::Reset() {
-                _sptrSyntaxNodeStack.clear();
+                _sptrSyntaxNodeQueue.clear();
                 _sptrEntityScopeStack.clear();
             }
 
             SPtrJsonEntity JsonSyntaxModel::CreateSPtrJsonEnity() {
-                auto iterator = _sptrSyntaxNodeStack.cbegin();
+                auto iterator = _sptrSyntaxNodeQueue.cbegin();
                 return createSPtrJsonEntity(iterator);
             }
 
@@ -27,10 +26,10 @@ namespace CldeParser {
 
                 SPtrJsonEntity sptrJsonEntity;
 
-                if ((*iterator)->id() == (int) JsonSyntaxNodeType::ArrayOpen) {
+                if ((*iterator)->id() == (int) JsonSyntaxNodeType::BracketOpen) {
                     sptrJsonEntity = JsonFactory::CreateSPtrJsonArray();
                 }
-                else if ((*iterator)->id() == (int) JsonSyntaxNodeType::ObjectOpen) {
+                else if ((*iterator)->id() == (int) JsonSyntaxNodeType::CurlyBraceOpen) {
                     sptrJsonEntity = JsonFactory::CreateSPtrJsonObject();
                 }
                 else {
@@ -42,12 +41,13 @@ namespace CldeParser {
                 _sptrEntityScopeStack.push_back(sptrJsonEntity);
                 ++iterator;
 
-                for (; iterator != _sptrSyntaxNodeStack.cend(); ++iterator) {
+                for (; iterator != _sptrSyntaxNodeQueue.cend(); ++iterator) {
 
                     auto &sptrIdNode = *iterator;
 
-                    if ((sptrIdNode->id() == (int) Scanning::TokenType::CurlyBraceClosing
-                         || sptrIdNode->id() == (int) Scanning::TokenType::BracketClosing) && !_sptrEntityScopeStack.empty()) {
+                    if ((sptrIdNode->id() == (int) JsonSyntaxNodeType::CurlyBraceClosing
+                         || sptrIdNode->id() == (int) JsonSyntaxNodeType::BracketClosing)
+                        && !_sptrEntityScopeStack.empty()) {
 
                         // Pop the (entity) scope stack
                         _sptrEntityScopeStack.pop_back();
@@ -84,48 +84,48 @@ namespace CldeParser {
             SPtrJsonValue JsonSyntaxModel::createSPtrJsonValue(SPtrJsonSyntaxNodeIterator &iterator) {
 
                 auto &sptrValueNode = *iterator;
-                auto type = (Scanning::TokenType) sptrValueNode->id();
+                auto type = (JsonSyntaxNodeType) sptrValueNode->id();
 
                 SPtrJsonValue result;
 
                 switch (type) {
 
-                    case Scanning::TokenType::String: {
+                    case JsonSyntaxNodeType::String: {
                         result = JsonValueFactory::CreateString(sptrValueNode->value());
                         break;
                     }
 
-                    case Scanning::TokenType::Number: {
+                    case JsonSyntaxNodeType::Number: {
                         result = JsonValueFactory::CreateDouble(sptrValueNode->value());
                         break;
                     }
 
-                    case Scanning::TokenType::NumberInteger: {
+                    case JsonSyntaxNodeType::NumberInteger: {
                         result = JsonValueFactory::CreateInteger(sptrValueNode->value());
                         break;
                     }
 
-                    case Scanning::TokenType::BoolTrue: {
+                    case JsonSyntaxNodeType::BooleanTrue: {
                         result = JsonValueFactory::CreateBooleanTrue();
                         break;
                     }
 
-                    case Scanning::TokenType::BoolFalse: {
+                    case JsonSyntaxNodeType::BooleanFalse: {
                         result = JsonValueFactory::CreateBooleanFalse();
                         break;
                     }
 
-                    case Scanning::TokenType::Null: {
+                    case JsonSyntaxNodeType::Null: {
                         result = JsonValueFactory::CreateNull();
                         break;
                     }
 
-                    case Scanning::TokenType::CurlyBraceOpen: {
+                    case JsonSyntaxNodeType::CurlyBraceOpen: {
                         result = JsonValueFactory::CreateEntityValue(createSPtrJsonEntity(iterator));
                         break;
                     }
 
-                    case Scanning::TokenType::BracketOpen: {
+                    case JsonSyntaxNodeType::BracketOpen: {
                         result = JsonValueFactory::CreateEntityValue(createSPtrJsonEntity(iterator));
                         break;
                     }
@@ -136,6 +136,21 @@ namespace CldeParser {
                 }
 
                 return result;
+            }
+
+            std::string JsonSyntaxModel::CopyToString() const {
+
+                std::string msg{};
+
+                for (auto &sptrNode : _sptrSyntaxNodeQueue) {
+
+                    if (!msg.empty())
+                        msg += ", ";
+
+                    msg += sptrNode->CopyToString();
+                }
+
+                return msg;
             }
         }
     }

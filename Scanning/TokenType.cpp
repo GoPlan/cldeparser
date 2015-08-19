@@ -17,7 +17,7 @@ namespace CldeParser {
                 case TokenType::BracketOpen:
                     return "BracketOpen";
                 case TokenType::BracketClosing:
-                    return "BracketClose";
+                    return "BracketClosing";
                 case TokenType::Comma:
                     return "Comma";
                 case TokenType::Colon:
@@ -38,10 +38,6 @@ namespace CldeParser {
                     return "ParenthesesOpen";
                 case TokenType::ParenthesesClosing:
                     return "ParenthesesClosing";
-                case TokenType::SquareBracketOpen:
-                    return "SquareBracketOpen";
-                case TokenType::SquareBracketClosing:
-                    return "SquareBracketClosing";
                 case TokenType::AngleBracketOpen:
                     return "AngleBracketOpen";
                 case TokenType::AngleBracketClosing:

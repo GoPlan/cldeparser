@@ -13,17 +13,19 @@ namespace CldeParser {
         namespace Json {
 
             enum class JsonSyntaxNodeType {
-                Unknown = 0,
-                ObjectOpen,
-                ObjectClosing,
-                ArrayOpen,
-                ArrayClosing,
-                Id,
-                ValueString,
-                ValueNumber,
-                ValueTrue,
-                ValueFalse,
-                ValueNull
+                CurlyBraceOpen = 1,
+                CurlyBraceClosing = 2,
+                BracketOpen = 3,
+                BracketClosing = 4,
+                Comma = 5,
+                Colon = 6,
+                String = 8,
+                Number = 9,
+                Id = 10,
+                BooleanFalse = 25,
+                BooleanTrue = 26,
+                Null = 27,
+                NumberInteger = 28,
             };
 
             class JsonSyntaxNode : public SyntaxNode {

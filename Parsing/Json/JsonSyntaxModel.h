@@ -6,23 +6,25 @@
 #define CLDEPARSER_PARSING_JSON_JSONSYNTAXMODEL_H
 
 #include "../../SyntaxModel.h"
+#include "../../Exceptions/ParserException.h"
 #include "JsonEntity.h"
 #include "JsonSyntaxNode.h"
-#include "JsonObject.h"
-#include "JsonArray.h"
+#include "JsonValue.h"
+
 
 namespace CldeParser {
     namespace Parsing {
         namespace Json {
 
             class JsonSyntaxModel : public SyntaxModel,
-                                    public std::enable_shared_from_this<JsonSyntaxModel> {
+                                    public std::enable_shared_from_this<JsonSyntaxModel>,
+                                    public Core::IPrintable {
 
                 friend class JsonDerivative;
                 friend class JsonSyntaxModelHelper;
 
                 SPtrJsonEntityVector _sptrEntityScopeStack;
-                SPtrJsonSyntaxNodeVector _sptrSyntaxNodeStack;
+                SPtrJsonSyntaxNodeVector _sptrSyntaxNodeQueue;
 
                 SPtrJsonValue createSPtrJsonValue(SPtrJsonSyntaxNodeIterator &iterator);
                 SPtrJsonEntity createSPtrJsonEntity(SPtrJsonSyntaxNodeIterator &iterator);
@@ -33,10 +35,13 @@ namespace CldeParser {
                 JsonSyntaxModel(JsonSyntaxModel &&) = default;
                 JsonSyntaxModel &operator=(const JsonSyntaxModel &) = default;
                 JsonSyntaxModel &operator=(JsonSyntaxModel &&) = default;
-                virtual ~JsonSyntaxModel() = default;
+                ~JsonSyntaxModel() = default;
 
                 // SyntaxModel
                 void Reset() override;
+
+                // IPrintable
+                std::string CopyToString() const override;
 
                 // Locals
                 SPtrJsonEntity CreateSPtrJsonEnity();

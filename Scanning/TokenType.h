@@ -26,8 +26,6 @@ namespace CldeParser {
             Tab = 12,
             ParenthesesOpen = 13,
             ParenthesesClosing = 14,
-            SquareBracketOpen = 15,
-            SquareBracketClosing = 16,
             AngleBracketOpen = 17,
             AngleBracketClosing = 18,
             BackwardSlash = 19,

@@ -10,6 +10,7 @@
 #include "Tokenizer.h"
 #include "Scanner.h"
 #include "Parser.h"
+#include "ParserSingle.h"
 
 // Scanner
 #include "Scanning/Scanning.h"
