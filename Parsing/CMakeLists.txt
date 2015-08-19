@@ -4,6 +4,7 @@ project(cldeparser)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_library(parser STATIC
-
-
+        Parsing.h
+        ParserFactory.cpp
+        ParserFactory.h
 )

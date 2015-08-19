@@ -15,6 +15,7 @@ namespace CldeParser {
 
     public:
         Token(int id, const std::string &word) : _id{id}, _lexeme{word} { };
+        Token(int id, int index, std::string const &word) : _id{id}, _index{index}, _lexeme{word} { };
         Token(int id, const char *word) : _id{id}, _lexeme{word} { };
         Token(const Token &) = default;
         Token(Token &&) = default;
@@ -31,6 +32,7 @@ namespace CldeParser {
 
     protected:
         int _id;
+        int _index;
         std::string _lexeme;
     };
 
@@ -41,6 +43,7 @@ namespace CldeParser {
     using SPtrTokenSetIterator = SPtrTokenSet::iterator;
 
     SPtrToken CreateSPtrToken(int id, const std::string &lexeme);
+    SPtrToken CreateSPtrToken(int id, int index, std::string const &lexeme);
 }
 
 

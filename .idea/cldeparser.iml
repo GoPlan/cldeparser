@@ -23,6 +23,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Parser.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ParserSingle.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ParserSingle.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Parsing/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/Json.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/JsonArray.cpp" isTestSource="false" />
@@ -45,12 +46,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/JsonValue.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/JsonValueFactory.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/JsonValueFactory.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/Tables/JsonSymbolTable.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/Tables/JsonSymbolTable.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/Tables/JsonTypeTable.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Parsing/Json/Tables/JsonTypeTable.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/ParserFactory.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/ParserFactory.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Parsing/Parsing.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Parsing/SimpleMath/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Parsing/SimpleMath/SimpleMathDerivative.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Parsing/SimpleMath/SimpleMathDerivative.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanner.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanner.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanning/CMakeLists.txt" isTestSource="false" />
@@ -105,10 +107,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/SemiColon.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/Space.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/Space.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/SquareBracketClosing.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/SquareBracketClosing.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/SquareBracketOpen.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/SquareBracketOpen.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/String.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/String.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Scanning/Tokenizers/Subtracting.cpp" isTestSource="false" />

@@ -11,8 +11,12 @@ namespace CldeParser {
         return std::make_shared<Token>(id, lexeme);
     }
 
+    SPtrToken CreateSPtrToken(int id, int index, std::string const &lexeme) {
+        return std::make_shared<Token>(id, index, lexeme);
+    }
+
     std::string Token::CopyToString() const {
-        std::string msg = "<" + Scanning::CopyToString(_id) + ", " + _lexeme + ">";
+        std::string msg{"<" + Scanning::CopyToString(_id) + ", " + _lexeme + ">"};
         return msg;
     }
 }
