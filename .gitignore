@@ -90,5 +90,5 @@ Makefile.in
 *.app
 
 # CMake & Builds generated files
-/Build
+/.idea
 /CMake
