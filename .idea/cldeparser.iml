@@ -11,7 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Common/IPrintable.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Derivative.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Derivative.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Examples/example01.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Examples/example-json.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Examples/example-math.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exceptions/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exceptions/Exception.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exceptions/Exception.h" isTestSource="false" />
@@ -121,7 +122,6 @@
       <sourceFolder url="file://$MODULE_DIR$/Token.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tokenizer.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Tokenizer.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

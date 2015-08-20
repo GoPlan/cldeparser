@@ -89,4 +89,6 @@ Makefile.in
 *.out
 *.app
 
-
+# CMake & Builds generated files
+/Build
+/CMake
