@@ -60,7 +60,7 @@ add_executable(example-math Examples/example-math.cpp)
 target_link_libraries(example-math cldeparser-static)
 
 
-# Install - Source directory variable has trailing dash to ommit its copy into the destination
+# Install - Source directory variable has trailing dash to ommit copying itself into the destination
 install(DIRECTORY Source/ DESTINATION include
         FILES_MATCHING PATTERN "*.h"
 )
