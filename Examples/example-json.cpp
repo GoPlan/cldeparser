@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
-#include "../CldeParser.h"
-#include "../Parsing/Json/Json.h"
+#include "../Source/CldeParser.h"
+#include "../Source/Parsing/Json/Json.h"
 
 using namespace CldeParser;
 

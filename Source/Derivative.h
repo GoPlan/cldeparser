@@ -20,8 +20,8 @@ namespace CldeParser {
         Derivative &operator=(Derivative &&) = default;
         virtual ~Derivative() = default;
 
-        virtual // Locals
-        bool Derive(SPtrTokenVectorIterator &sptrTokenIterator);
+        // Locals
+        virtual bool Derive(SPtrTokenVectorIterator &sptrTokenIterator);
 
         // Locals - Virtual
         virtual SPtrSyntaxModel SyntaxModel() = 0;

@@ -3,35 +3,35 @@ project(cldeparser)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 
-add_subdirectory(Exceptions)
-add_subdirectory(Scanning)
-add_subdirectory(Parsing)
-add_subdirectory(Parsing/Json)
+add_subdirectory(Source/Exceptions)
+add_subdirectory(Source/Scanning)
+add_subdirectory(Source/Parsing)
+add_subdirectory(Source/Parsing/Json)
 
 
 set(SOURCE_FILES
-        Common/IPrintable.h
-        Common/IPrintFormatter.h
-        Common/IComparable.h
-        CldeParser.h
-        Token.cpp
-        Token.h
-        Tokenizer.cpp
-        Tokenizer.h
-        Scanner.cpp
-        Scanner.h
-        Parser.cpp
-        Parser.h
-        Derivative.cpp
-        Derivative.h
-        SyntaxNode.cpp
-        SyntaxNode.h
-        SyntaxModel.cpp
-        SyntaxModel.h
-        CldeParserFactory.cpp
-        CldeParserFactory.h
-        ParserSingle.cpp
-        ParserSingle.h
+        Source/Common/IPrintable.h
+        Source/Common/IPrintFormatter.h
+        Source/Common/IComparable.h
+        Source/CldeParser.h
+        Source/Token.cpp
+        Source/Token.h
+        Source/Tokenizer.cpp
+        Source/Tokenizer.h
+        Source/Scanner.cpp
+        Source/Scanner.h
+        Source/Parser.cpp
+        Source/Parser.h
+        Source/Derivative.cpp
+        Source/Derivative.h
+        Source/SyntaxNode.cpp
+        Source/SyntaxNode.h
+        Source/SyntaxModel.cpp
+        Source/SyntaxModel.h
+        Source/CldeParserFactory.cpp
+        Source/CldeParserFactory.h
+        Source/ParserSingle.cpp
+        Source/ParserSingle.h
 )
 
 
@@ -54,6 +54,18 @@ target_link_libraries(${CMAKE_PROJECT_NAME}-shared scanner parser parser-json ex
 add_executable(example-json Examples/example-json.cpp)
 target_link_libraries(example-json cldeparser-static)
 
+
 # Example - math
 add_executable(example-math Examples/example-math.cpp)
 target_link_libraries(example-math cldeparser-static)
+
+
+# Install - Source directory variable has trailing dash to ommit its copy into the destination
+install(DIRECTORY Source/ DESTINATION include
+        FILES_MATCHING PATTERN "*.h"
+)
+
+install(TARGETS ${CMAKE_PROJECT_NAME}-static ${CMAKE_PROJECT_NAME}-shared
+        LIBRARY DESTINATION ./
+        ARCHIVE DESTINATION ./
+)
