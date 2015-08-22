@@ -17,15 +17,21 @@ namespace CldeParser {
             }
 
             const StateSet &Tab::CompleteStates() const {
-                throw Exceptions::ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "CompleteStates is not supported"};
             }
 
             const StateSet &Tab::AcceptedStates() const {
-                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "AcceptedStates is not supported"};
             }
 
             const TransitionMap &Tab::Transitions() const {
-                throw Exceptions::ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "TransitionMap is not supported"};
             }
 
             bool Tab::IsValid(char character) {

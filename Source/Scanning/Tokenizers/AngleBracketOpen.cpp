@@ -17,15 +17,21 @@ namespace CldeParser {
             }
 
             const StateSet &AngleBracketOpen::CompleteStates() const {
-                throw Exceptions::ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "CompleteStates is not supported"};
             }
 
             const StateSet &AngleBracketOpen::AcceptedStates() const {
-                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "AcceptedStates is not supported"};
             }
 
             const TransitionMap &AngleBracketOpen::Transitions() const {
-                throw Exceptions::ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "TransitionMap is not supported"};
             }
 
             bool AngleBracketOpen::IsValid(char character) {

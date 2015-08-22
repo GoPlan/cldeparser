@@ -25,15 +25,21 @@ namespace CldeParser {
             }
 
             const StateSet &NumberInteger::CompleteStates() const {
-                throw Exceptions::ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "CompleteStates is not supported"};
             }
 
             const StateSet &NumberInteger::AcceptedStates() const {
-                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "AcceptedStates is not supported"};
             }
 
             const TransitionMap &NumberInteger::Transitions() const {
-                throw Exceptions::ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "TransitionMap is not supported"};
             }
 
             SPtrToken NumberInteger::CreateSPtrToken() {

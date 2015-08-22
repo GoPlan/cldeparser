@@ -13,15 +13,21 @@ namespace CldeParser {
             }
 
             const StateSet &SemiColon::CompleteStates() const {
-                throw Exceptions::ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "CompleteStates is not supported"};
             }
 
             const StateSet &SemiColon::AcceptedStates() const {
-                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "AcceptedStates is not supported"};
             }
 
             const TransitionMap &SemiColon::Transitions() const {
-                throw Exceptions::ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "TransitionMap is not supported"};
             }
 
             SPtrToken SemiColon::CreateSPtrToken() {

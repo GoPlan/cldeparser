@@ -5,26 +5,28 @@
 #ifndef CLDEPARSER_EXCEPTIONS_SCANNEREXCEPTION_H
 #define CLDEPARSER_EXCEPTIONS_SCANNEREXCEPTION_H
 
-#include <exception>
 #include <string>
+#include "Exception.h"
 
 namespace CldeParser {
     namespace Exceptions {
 
-        class ScannerException : public std::exception {
+        class ScannerException : public Exception {
 
-            std::string _message;
+            int _id;
 
         public:
-            ScannerException(const std::string &message);
+            ScannerException(int id, const std::string &message) : Exception{message}, _id{id} { }
             ScannerException(const ScannerException &) = default;
             ScannerException(ScannerException &&) = default;
             ScannerException &operator=(const ScannerException &) = default;
             ScannerException &operator=(ScannerException &&) = default;
             virtual ~ScannerException() = default;
 
-            // Exceptions
-            virtual const char *what() const noexcept override;
+            enum class ScannerExceptionCode {
+                TokenUnmatchable,
+                TokenizerUnsupportedFunction
+            };
         };
     }
 }

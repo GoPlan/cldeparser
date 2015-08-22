@@ -30,9 +30,10 @@ namespace CldeParser {
             }
 
             if (matchedTokenizers.size() == 0) {
-                std::string msg{"Unrecognized symbol: "};
-                msg.append(1, *cIter);
-                throw Exceptions::ScannerException{msg};
+                std::string msg{*cIter};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenUnmatchable, msg};
+
             }
 
             tokens.push_back(ProcessAndMoveNext(cIter, cEndr, matchedTokenizers));

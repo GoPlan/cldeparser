@@ -17,15 +17,21 @@ namespace CldeParser {
             }
 
             const StateSet &Division::CompleteStates() const {
-                throw Exceptions::ScannerException{"CompleteStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "CompleteStates is not supported"};
             }
 
             const StateSet &Division::AcceptedStates() const {
-                throw Exceptions::ScannerException{"AcceptedStates is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "AcceptedStates is not supported"};
             }
 
             const TransitionMap &Division::Transitions() const {
-                throw Exceptions::ScannerException{"TransitionMap is not supported"};
+                throw Exceptions::ScannerException{
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenizerUnsupportedFunction,
+                        "TransitionMap is not supported"};
             }
 
             bool Division::IsValid(char character) {

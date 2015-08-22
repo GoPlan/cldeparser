@@ -37,17 +37,16 @@ set(SOURCE_FILES
 
 # Libraries - shared & static
 add_library(${CMAKE_PROJECT_NAME}-static STATIC ${SOURCE_FILES})
-add_library(${CMAKE_PROJECT_NAME}-shared SHARED ${SOURCE_FILES})
+add_library(${CMAKE_PROJECT_NAME} SHARED ${SOURCE_FILES})
 
 if (APPLE)
-    set_property(TARGET ${CMAKE_PROJECT_NAME}-shared PROPERTY PREFIX "lib")
-    set_property(TARGET ${CMAKE_PROJECT_NAME}-shared PROPERTY OUTPUT_NAME "${CMAKE_PROJECT_NAME}.so")
-    set_property(TARGET ${CMAKE_PROJECT_NAME}-shared PROPERTY SUFFIX "")
-    set_property(TARGET ${CMAKE_PROJECT_NAME}-shared PROPERTY SOVERSION "0.7.0")
+    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY PREFIX "lib")
+    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SUFFIX "")
+    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SOVERSION "0.7.0")
 endif ()
 
 target_link_libraries(${CMAKE_PROJECT_NAME}-static scanner parser parser-json exceptions)
-target_link_libraries(${CMAKE_PROJECT_NAME}-shared scanner parser parser-json exceptions)
+target_link_libraries(${CMAKE_PROJECT_NAME} scanner parser parser-json exceptions)
 
 
 # Example - json
@@ -65,7 +64,7 @@ install(DIRECTORY Source/ DESTINATION include
         FILES_MATCHING PATTERN "*.h"
 )
 
-install(TARGETS ${CMAKE_PROJECT_NAME}-static ${CMAKE_PROJECT_NAME}-shared
+install(TARGETS ${CMAKE_PROJECT_NAME}-static ${CMAKE_PROJECT_NAME}
         LIBRARY DESTINATION ./
         ARCHIVE DESTINATION ./
 )
