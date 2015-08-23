@@ -8,7 +8,7 @@
 #include <string>
 #include "JsonEntity.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 

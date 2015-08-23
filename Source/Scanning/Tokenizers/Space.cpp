@@ -4,7 +4,7 @@
 
 #include "Space.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Space::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Space, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Space, _lexeme);
             }
 
             const StateSet &Space::CompleteStates() const {

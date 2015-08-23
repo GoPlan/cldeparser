@@ -4,9 +4,10 @@
 
 #include "Scanner.h"
 #include "Exceptions/ScannerException.h"
+#include "Common/IDefines.h"
 #include <iostream>
 
-namespace CldeParser {
+namespace CLDEParser {
 
     SPtrTokenizerVector &Scanner::Tokenizers() {
         return _tokenizers;
@@ -30,10 +31,25 @@ namespace CldeParser {
             }
 
             if (matchedTokenizers.size() == 0) {
-                std::string msg{*cIter};
-                throw Exceptions::ScannerException{
-                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenUnmatchable, msg};
 
+                std::string desc;
+                desc.reserve(Common::BufferSize::EIGHTY);
+
+                auto cTokenEnd = tokens.cend();
+                auto cTokenIter = tokens.cbegin();
+
+                if (tokens.size() > _exceptionTokenNo) {
+                    cTokenIter = cTokenIter + (tokens.size() - _exceptionTokenNo);
+                }
+
+                for (; cTokenIter != cTokenEnd; ++cTokenIter) {
+                    desc += (*cTokenIter)->CopyToString();
+                }
+
+                desc += *cIter;
+
+                throw Exceptions::ScannerException{
+                        (*cIter), (int) Exceptions::ScannerException::ScannerExceptionCode::TokenUnmatchable, desc};
             }
 
             tokens.push_back(ProcessAndMoveNext(cIter, cEndr, matchedTokenizers));

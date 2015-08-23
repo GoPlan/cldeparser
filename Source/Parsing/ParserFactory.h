@@ -7,7 +7,7 @@
 
 #include "../Derivative.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
 
         struct ParserFactory {

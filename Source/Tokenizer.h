@@ -12,7 +12,7 @@
 #include <list>
 #include "Token.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     using StateSet = std::set<int>;
     using ActionMap = std::unordered_map<char, int>;

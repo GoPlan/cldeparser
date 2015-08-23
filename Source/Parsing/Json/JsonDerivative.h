@@ -10,7 +10,7 @@
 #include "JsonSyntaxModel.h"
 #include "JsonFactory.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 

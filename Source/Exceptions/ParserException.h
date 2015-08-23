@@ -7,15 +7,13 @@
 
 #include "Exception.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Exceptions {
 
-        class ParserException : public Exceptions::Exception {
-
-            int _id;
+        class ParserException : public Exception {
 
         public:
-            ParserException(int id, const std::string& message);
+            ParserException(int code, const std::string &description);
             ParserException(const ParserException &) = default;
             ParserException(ParserException &&) = default;
             ParserException &operator=(const ParserException &) = default;
@@ -26,7 +24,9 @@ namespace CldeParser {
                 UnmatchedToken = 0,
                 UnknownEntityType = 1,
                 UnknownValueType = 2
-             };
+            };
+
+            static std::string CopyToString(ParserExceptionCode code);
         };
     }
 }

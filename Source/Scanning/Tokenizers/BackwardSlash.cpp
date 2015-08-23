@@ -4,7 +4,7 @@
 
 #include "BackwardSlash.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken BackwardSlash::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::BackwardSlash, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::BackwardSlash, _lexeme);
             }
 
             const StateSet &BackwardSlash::CompleteStates() const {

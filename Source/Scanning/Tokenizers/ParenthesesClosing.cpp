@@ -4,7 +4,7 @@
 
 #include "ParenthesesClosing.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken ParenthesesClosing::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::ParenthesesClosing, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::ParenthesesClosing, _lexeme);
             }
 
             const StateSet &ParenthesesClosing::CompleteStates() const {

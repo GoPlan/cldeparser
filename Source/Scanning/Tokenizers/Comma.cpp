@@ -4,7 +4,7 @@
 
 #include "Comma.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Comma::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Comma, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Comma, _lexeme);
             }
 
             const StateSet &Comma::CompleteStates() const {

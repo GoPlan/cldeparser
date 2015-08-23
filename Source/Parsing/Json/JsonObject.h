@@ -9,7 +9,7 @@
 #include "JsonEntity.h"
 #include "JsonValue.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 

@@ -7,7 +7,7 @@
 
 #include <string>
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Common {
 
         class IPrintable;

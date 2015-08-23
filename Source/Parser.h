@@ -9,7 +9,7 @@
 #include "Derivative.h"
 #include "Exceptions/Exception.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     class Parser {
 

@@ -8,7 +8,7 @@
 #include <string>
 #include "IPrintFormatter.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Common {
 
         struct IPrintable {

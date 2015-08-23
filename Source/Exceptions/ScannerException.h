@@ -8,15 +8,16 @@
 #include <string>
 #include "Exception.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Exceptions {
 
         class ScannerException : public Exception {
 
-            int _id;
+            char _token;
 
         public:
-            ScannerException(int id, const std::string &message) : Exception{message}, _id{id} { }
+            ScannerException(int code, std::string const &description);
+            ScannerException(char token, int code, std::string const &description);
             ScannerException(const ScannerException &) = default;
             ScannerException(ScannerException &&) = default;
             ScannerException &operator=(const ScannerException &) = default;
@@ -24,9 +25,11 @@ namespace CldeParser {
             virtual ~ScannerException() = default;
 
             enum class ScannerExceptionCode {
-                TokenUnmatchable,
-                TokenizerUnsupportedFunction
+                TokenUnmatchable = 0,
+                TokenizerUnsupportedFunction = 1
             };
+
+            static std::string CopyToString(ScannerExceptionCode code);
         };
     }
 }

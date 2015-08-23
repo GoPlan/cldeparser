@@ -32,21 +32,21 @@ set(SOURCE_FILES
         Source/CldeParserFactory.h
         Source/ParserSingle.cpp
         Source/ParserSingle.h
-)
+        Source/Common/IDefines.h)
 
 
 # Libraries - shared & static
-add_library(${CMAKE_PROJECT_NAME}-static STATIC ${SOURCE_FILES})
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SOURCE_FILES})
+add_library(cldeparser-static STATIC ${SOURCE_FILES})
+add_library(cldeparser SHARED ${SOURCE_FILES})
 
 if (APPLE)
-    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY PREFIX "lib")
-    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SUFFIX "")
-    set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY SOVERSION "0.7.0")
+    set_property(TARGET cldeparser PROPERTY PREFIX "lib")
+    set_property(TARGET cldeparser PROPERTY SUFFIX "")
+    set_property(TARGET cldeparser PROPERTY SOVERSION "0.7.0")
 endif ()
 
-target_link_libraries(${CMAKE_PROJECT_NAME}-static scanner parser parser-json exceptions)
-target_link_libraries(${CMAKE_PROJECT_NAME} scanner parser parser-json exceptions)
+target_link_libraries(cldeparser-static scanner parser parser-json exceptions)
+target_link_libraries(cldeparser scanner parser parser-json exceptions)
 
 
 # Example - json
@@ -64,7 +64,7 @@ install(DIRECTORY Source/ DESTINATION include
         FILES_MATCHING PATTERN "*.h"
 )
 
-install(TARGETS ${CMAKE_PROJECT_NAME}-static ${CMAKE_PROJECT_NAME}
+install(TARGETS cldeparser-static cldeparser
         LIBRARY DESTINATION ./
         ARCHIVE DESTINATION ./
 )

@@ -8,7 +8,7 @@
 #include "Token.h"
 #include "SyntaxModel.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     class Derivative {
 

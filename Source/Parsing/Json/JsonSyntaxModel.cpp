@@ -8,7 +8,7 @@
 #include "JsonObject.h"
 #include "JsonArray.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 

@@ -4,7 +4,7 @@
 
 #include "SyntaxModel.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     void SyntaxModel::Reset() {
         //
     }

@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_COMMON_ICOMPARABLE_H
 #define CLDEPARSER_COMMON_ICOMPARABLE_H
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Common {
         struct IComparable {
             virtual bool Lesser(const IComparable &target) = 0;

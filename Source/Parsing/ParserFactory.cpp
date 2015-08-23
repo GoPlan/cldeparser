@@ -5,7 +5,7 @@
 #include "ParserFactory.h"
 #include "Json/JsonDerivative.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
 
         SPtrDerivative ParserFactory::CreateJsonDerivative() {

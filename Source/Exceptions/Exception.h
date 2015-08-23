@@ -8,15 +8,13 @@
 #include <string>
 #include <exception>
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Exceptions {
 
         class Exception : public std::exception {
 
-            std::string _message;
-
         public:
-            Exception(const std::string &message);
+            Exception(int code, const std::string &message);
             Exception(const Exception &) = default;
             Exception(Exception &&) = default;
             Exception &operator=(const Exception &) = default;
@@ -25,6 +23,12 @@ namespace CldeParser {
 
             // Exceptions
             virtual const char *what() const noexcept override;
+
+        protected:
+            int _code;
+            std::string _message;
+            std::string _description;
+
         };
     }
 }

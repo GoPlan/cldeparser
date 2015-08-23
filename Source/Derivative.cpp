@@ -4,7 +4,7 @@
 
 #include "Derivative.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     bool Derivative::Derive(SPtrTokenVectorIterator &sptrTokenIterator) {
         return CoreDerive(sptrTokenIterator);

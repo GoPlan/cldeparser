@@ -4,7 +4,7 @@
 
 #include "Division.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Division::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Division, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Division, _lexeme);
             }
 
             const StateSet &Division::CompleteStates() const {

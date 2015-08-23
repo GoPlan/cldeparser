@@ -7,11 +7,13 @@
 
 #include "Token.h"
 #include "Tokenizer.h"
+#include "Common/IDefines.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     class Scanner {
 
+        int _exceptionTokenNo{Common::BufferSize::SIXTYFOUR};
         SPtrTokenizerVector _tokenizers;
 
     public:
@@ -25,6 +27,8 @@ namespace CldeParser {
         // Locals
         SPtrTokenizerVector &Tokenizers();
         SPtrTokenVector Scan(const std::string &string);
+        int exceptionTokenNo() const { return _exceptionTokenNo; }
+        void setExceptionTokenNo(int exceptionTokenNo) { _exceptionTokenNo = exceptionTokenNo; }
 
     protected:
         SPtrToken ProcessAndMoveNext(std::string::const_iterator &cIter,

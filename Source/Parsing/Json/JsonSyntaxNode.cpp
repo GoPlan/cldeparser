@@ -5,7 +5,7 @@
 #include "JsonSyntaxNode.h"
 
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
             JsonSyntaxNode::JsonSyntaxNode(int id, std::string const &value)

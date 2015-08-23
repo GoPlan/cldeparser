@@ -4,7 +4,7 @@
 
 #include "Colon.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -31,7 +31,7 @@ namespace CldeParser {
             }
 
             SPtrToken Colon::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Colon, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Colon, _lexeme);
             }
 
             bool Colon::IsValid(char character) {

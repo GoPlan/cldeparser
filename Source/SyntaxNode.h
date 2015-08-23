@@ -8,7 +8,7 @@
 #include <string>
 #include "Common/IPrintable.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     class SyntaxNode : public Common::IPrintable {
 

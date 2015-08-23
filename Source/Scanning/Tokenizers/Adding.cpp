@@ -4,7 +4,7 @@
 
 #include "Adding.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Adding::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Adding, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Adding, _lexeme);
             }
 
             const StateSet &Adding::CompleteStates() const {

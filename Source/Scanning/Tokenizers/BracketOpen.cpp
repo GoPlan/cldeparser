@@ -4,7 +4,7 @@
 
 #include "BracketOpen.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken BracketOpen::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::BracketOpen, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::BracketOpen, _lexeme);
             }
 
             const StateSet &BracketOpen::CompleteStates() const {

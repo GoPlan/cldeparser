@@ -4,7 +4,7 @@
 
 #include "Subtracting.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Subtracting::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Subtracting, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Subtracting, _lexeme);
             }
 
             const StateSet &Subtracting::CompleteStates() const {

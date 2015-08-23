@@ -9,7 +9,7 @@
 #include <vector>
 #include "Common/IPrintable.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     class Token : public Common::IPrintable {
 

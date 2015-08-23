@@ -5,7 +5,7 @@
 #include "Token.h"
 #include "Scanning/TokenType.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     SPtrToken CreateSPtrToken(int id, const std::string &lexeme) {
         return std::make_shared<Token>(id, lexeme);
@@ -16,8 +16,7 @@ namespace CldeParser {
     }
 
     std::string Token::CopyToString() const {
-        std::string msg{"<" + Scanning::CopyToString(_id) + ", " + _lexeme + ">"};
-        return msg;
+        return _lexeme;
     }
 }
 

@@ -4,7 +4,7 @@
 
 #include "Tokenizer.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     bool Tokenizer::IsValid(char character) {
         return true;
@@ -33,7 +33,7 @@ namespace CldeParser {
     }
 
     SPtrToken Tokenizer::CreateSPtrToken() {
-        return CldeParser::CreateSPtrToken(0, _lexeme);
+        return CLDEParser::CreateSPtrToken(0, _lexeme);
     }
 
     bool Tokenizer::CoreValidate(char character) {

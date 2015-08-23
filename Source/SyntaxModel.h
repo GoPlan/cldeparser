@@ -9,7 +9,7 @@
 #include <vector>
 #include "SyntaxNode.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     class SyntaxModel {
 

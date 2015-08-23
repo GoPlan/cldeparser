@@ -9,7 +9,7 @@
 #include "JsonSyntaxNode.h"
 #include "../../Derivative.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
             struct JsonFactory {

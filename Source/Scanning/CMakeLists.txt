@@ -61,4 +61,4 @@ add_library(scanner STATIC
         Tokenizers/Null.h
         Tokenizers/NumberInteger.cpp
         Tokenizers/NumberInteger.h
-)
+        Formatter/TokenizerFormatter.cpp Formatter/TokenizerFormatter.h)

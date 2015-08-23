@@ -4,7 +4,7 @@
 
 #include "SyntaxNode.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     SyntaxNode::SyntaxNode(int id, std::string const &value)
             : _id{id}, _value{value} {
         //

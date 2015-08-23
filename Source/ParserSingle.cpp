@@ -5,7 +5,7 @@
 #include "ParserSingle.h"
 #include "Exceptions/ParserException.h"
 
-namespace CldeParser {
+namespace CLDEParser {
 
     SPtrSyntaxModel ParserSingle::Parse(const SPtrTokenVector &sptrTokens) {
 

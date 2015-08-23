@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_PARSING_JSON_TABLES_JSONSYMBOLTABLE_H
 #define CLDEPARSER_PARSING_JSON_TABLES_JSONSYMBOLTABLE_H
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
             namespace Tables {

@@ -4,10 +4,11 @@
 
 #include "Exception.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Exceptions {
 
-        Exception::Exception(const std::string &message) : _message{message} {
+        Exception::Exception(int code, const std::string &message)
+                : _code{code}, _description{message} {
             //
         }
 

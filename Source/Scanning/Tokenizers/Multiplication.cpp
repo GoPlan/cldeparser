@@ -4,7 +4,7 @@
 
 #include "Multiplication.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Multiplication::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Multiplication, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Multiplication, _lexeme);
             }
 
             const StateSet &Multiplication::CompleteStates() const {

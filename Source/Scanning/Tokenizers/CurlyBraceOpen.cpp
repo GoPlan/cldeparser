@@ -4,7 +4,7 @@
 
 #include "CurlyBraceOpen.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken CurlyBraceOpen::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::CurlyBraceOpen, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::CurlyBraceOpen, _lexeme);
             }
 
             const StateSet &CurlyBraceOpen::CompleteStates() const {

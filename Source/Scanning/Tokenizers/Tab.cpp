@@ -4,7 +4,7 @@
 
 #include "Tab.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Tab::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Tab, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Tab, _lexeme);
             }
 
             const StateSet &Tab::CompleteStates() const {

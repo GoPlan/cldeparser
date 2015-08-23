@@ -30,7 +30,7 @@
 #include "Tokenizers/Null.h"
 #include "Tokenizers/NumberInteger.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
 
         SPtrTokenizer TokenizerFactory::CreateCurlyBraceOpen() {

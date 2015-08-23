@@ -4,7 +4,7 @@
 
 #include "Number.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -42,7 +42,7 @@ namespace CldeParser {
             }
 
             SPtrToken Number::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Number, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Number, _lexeme);
             }
 
             const StateSet &Number::CompleteStates() const {

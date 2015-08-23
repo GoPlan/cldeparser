@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_CLDEPARSERFACTORY_H
 #define CLDEPARSER_CLDEPARSERFACTORY_H
 
-namespace CldeParser {
+namespace CLDEParser {
     struct CldeParserFactory {
 
     };

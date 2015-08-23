@@ -4,7 +4,7 @@
 
 #include "Id.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -26,7 +26,7 @@ namespace CldeParser {
             }
 
             SPtrToken Id::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Id, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Id, _lexeme);
             }
 
             const StateSet &Id::CompleteStates() const {

@@ -3,9 +3,10 @@
 //
 
 #include "Parser.h"
+#include "Exceptions/ParserException.h"
 
 
-namespace CldeParser {
+namespace CLDEParser {
 
     SPtrSyntaxModelVector Parser::Parse(const SPtrTokenVector &sptrTokens) {
 
@@ -24,8 +25,9 @@ namespace CldeParser {
             }
 
             if (matchedDerivatives.size() == 0) {
-                std::string msg{"No derivative is matched"};
-                throw Exceptions::Exception{msg};
+                throw Exceptions::ParserException{
+                        (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken,
+                        std::string{"No derivative is matched"}};
             }
 
             syntaxTrees.push_back(ProcessAndMoveNext(startTokenIterator, endingTokenIterator,

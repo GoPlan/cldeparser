@@ -4,7 +4,7 @@
 
 #include "BoolTrue.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken BoolTrue::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::BoolTrue, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::BoolTrue, _lexeme);
             }
 
             const StateSet &BoolTrue::CompleteStates() const {

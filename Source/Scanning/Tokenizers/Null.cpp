@@ -4,7 +4,7 @@
 
 #include "Null.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken Null::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::Null, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::Null, _lexeme);
             }
 
             const StateSet &Null::CompleteStates() const {

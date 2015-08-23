@@ -4,7 +4,7 @@
 
 #include "AngleBracketClosing.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken AngleBracketClosing::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::AngleBracketClosing, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::AngleBracketClosing, _lexeme);
             }
 
             const StateSet &AngleBracketClosing::CompleteStates() const {

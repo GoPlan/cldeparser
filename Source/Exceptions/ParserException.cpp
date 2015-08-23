@@ -3,14 +3,29 @@
 //
 
 #include "ParserException.h"
+#include "../Common/IDefines.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Exceptions {
 
-
-        ParserException::ParserException(int id, const std::string &message)
-                : Exception{message}, _id{id} {
+        ParserException::ParserException(int code, const std::string &description)
+                : Exception{code, description} {
             //
+            _message.reserve(Common::BufferSize::EIGHTY);
+            _message += "[" + ParserException::CopyToString((ParserExceptionCode) _code) + "]";
+            _message += " " + _description;
+        }
+
+        std::string ParserException::CopyToString(ParserException::ParserExceptionCode code) {
+
+            switch (code) {
+                case ParserExceptionCode::UnmatchedToken:
+                    return "UnmatchedToken";
+                case ParserExceptionCode::UnknownEntityType:
+                    return "UnknownEntityType";
+                case ParserExceptionCode::UnknownValueType:
+                    return "UnknownValueType";
+            }
         }
     }
 }

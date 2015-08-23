@@ -4,7 +4,7 @@
 
 #include "String.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -164,7 +164,7 @@ namespace CldeParser {
             }
 
             SPtrToken String::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::String, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::String, _lexeme);
             }
         }
     }

@@ -4,7 +4,7 @@
 
 #include "TokenType.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         std::string CopyToString(int id) {
             switch ((TokenType) id) {

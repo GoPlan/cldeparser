@@ -4,7 +4,7 @@
 
 #include "SemiColon.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -31,7 +31,7 @@ namespace CldeParser {
             }
 
             SPtrToken SemiColon::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::SemiColon, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::SemiColon, _lexeme);
             }
 
             bool SemiColon::IsValid(char character) {

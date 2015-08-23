@@ -7,14 +7,14 @@
 
 #include "../../Exceptions/Exception.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 
             class JsonException : Exceptions::Exception {
 
             public:
-                JsonException(std::string const &message) : Exception{message} { };
+                JsonException(int code, std::string const &message) : Exception{code, message} { };
                 JsonException(const JsonException &) = default;
                 JsonException(JsonException &&) = default;
                 JsonException &operator=(const JsonException &) = default;

@@ -10,7 +10,7 @@
 #include "../../Exceptions/ScannerException.h"
 
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 

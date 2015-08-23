@@ -4,7 +4,7 @@
 
 #include "NumberInteger.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -43,7 +43,7 @@ namespace CldeParser {
             }
 
             SPtrToken NumberInteger::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::NumberInteger, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::NumberInteger, _lexeme);
             }
 
             bool NumberInteger::IsValid(char character) {

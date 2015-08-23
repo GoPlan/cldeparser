@@ -7,7 +7,7 @@
 
 #include "../Tokenizer.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         class TokenizerFactory {
         public:

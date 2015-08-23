@@ -4,7 +4,7 @@
 
 #include "ForwardSlash.h"
 
-namespace CldeParser {
+namespace CLDEParser {
     namespace Scanning {
         namespace Tokenizers {
 
@@ -13,7 +13,7 @@ namespace CldeParser {
             }
 
             SPtrToken ForwardSlash::CreateSPtrToken() {
-                return CldeParser::CreateSPtrToken((int) TokenType::ForwardSlash, _lexeme);
+                return CLDEParser::CreateSPtrToken((int) TokenType::ForwardSlash, _lexeme);
             }
 
             const StateSet &ForwardSlash::CompleteStates() const {
