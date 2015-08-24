@@ -40,7 +40,7 @@ add_library(cldeparser SHARED ${SOURCE_FILES})
 
 if (APPLE)
     set_property(TARGET cldeparser PROPERTY PREFIX "lib")
-    set_property(TARGET cldeparser PROPERTY SUFFIX "")
+    set_property(TARGET cldeparser PROPERTY SUFFIX ".so")
     set_property(TARGET cldeparser PROPERTY SOVERSION "0.7.0")
 endif ()
 
