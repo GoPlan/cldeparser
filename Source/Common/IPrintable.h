@@ -13,7 +13,7 @@ namespace CLDEParser {
 
         struct IPrintable {
             virtual std::string CopyToString() const = 0;
-            virtual std::string CopyToString(const IPrintFormatter &formatter) const { return formatter.Print(*this); };
+            virtual std::string CopyToString(IPrintFormatter const &formatter) const { return formatter.Print(*this); };
         };
     }
 }

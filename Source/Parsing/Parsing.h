@@ -6,5 +6,6 @@
 #define CLDEPARSER_PARSING_H
 
 #include "ParserFactory.h"
+#include "Json/Json.h"
 
 #endif //CLDEPARSER_PARSING_H

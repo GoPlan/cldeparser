@@ -4,6 +4,8 @@ project(cldeparser)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_library(scanner STATIC
+        Formatter/TokenizerFormatter.cpp
+        Formatter/TokenizerFormatter.h
         Scanning.h
         TokenType.h
         TokenType.cpp
@@ -61,4 +63,6 @@ add_library(scanner STATIC
         Tokenizers/Null.h
         Tokenizers/NumberInteger.cpp
         Tokenizers/NumberInteger.h
-        Formatter/TokenizerFormatter.cpp Formatter/TokenizerFormatter.h)
+        TokenHelper.cpp
+        TokenHelper.h
+)

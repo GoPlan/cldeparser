@@ -18,6 +18,10 @@ namespace CLDEParser {
     std::string Token::CopyToString() const {
         return _lexeme;
     }
+
+    std::string Token::CopyToString(const Common::IPrintFormatter &formatter) const {
+        return Common::IPrintable::CopyToString(formatter);
+    }
 }
 
 

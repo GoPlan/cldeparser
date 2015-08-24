@@ -1,7 +1,6 @@
 #include <string>
 #include <iostream>
 #include "../Source/CLDEParser.h"
-#include "../Source/Parsing/Json/Json.h"
 
 using namespace CLDEParser;
 
@@ -36,19 +35,12 @@ int main() {
     try {
 
         // Scanning
-        SPtrTokenVector tokens = scanner.Scan(example);
-        SPtrTokenVector filtered(tokens.size());
-
-        // Remove Space tokens
-        std::copy_if(tokens.cbegin(), tokens.cend(), filtered.begin(),
-                     [](SPtrToken const &token) -> bool {
-                         return token->id() != (int) Scanning::TokenType::Space;
-                     });
-
-        filtered.shrink_to_fit();
+        auto tokens = scanner.Scan(example);
+        auto filteredCodes = Scanning::TokenHelper::DefaultFilterCodes();
+        auto filteredTokens = Scanning::TokenHelper::Filter(filteredCodes, tokens);
 
         // Parsing
-        auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filtered));
+        auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filteredTokens));
         auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
 
         std::cout << "Input:  " << example << std::endl;

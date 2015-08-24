@@ -11,7 +11,8 @@
 
 namespace CLDEParser {
 
-    class Token : public Common::IPrintable {
+    class Token : public Common::IPrintable,
+                  public std::enable_shared_from_this<Token> {
 
     public:
         Token(int id, const std::string &word) : _id{id}, _lexeme{word} { };
@@ -29,6 +30,7 @@ namespace CLDEParser {
 
         // IPrintable
         std::string CopyToString() const override;
+        std::string CopyToString(const Common::IPrintFormatter &formatter) const override;
 
     protected:
         int _id;

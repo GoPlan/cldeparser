@@ -12,7 +12,6 @@ namespace CLDEParser {
         namespace Formatter {
 
             struct TokenizerFormatter : public Common::IPrintFormatter {
-
                 virtual std::string Print(const Common::IPrintable &printable) const;
             };
         }

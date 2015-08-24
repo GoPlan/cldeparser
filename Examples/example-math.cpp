@@ -3,14 +3,16 @@
 //
 
 #include <iostream>
-#include "CLDEParser.h"
+#include "../Source/CLDEParser.h"
+#include "../Source/Scanning/Formatter/TokenizerFormatter.h"
 
 using namespace CLDEParser;
 
 int main() {
 
-    std::string example{"(15 + 7) * 21 / 15 ; abc"};
+    std::string example{"(15 + 7) * 21 / 15"};
 
+    Scanning::Formatter::TokenizerFormatter tokenizerFormatter;
     Scanner scanner;
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNumber());
@@ -24,11 +26,7 @@ int main() {
     SPtrTokenVector tokens = scanner.Scan(example);
 
     for (auto &token : tokens) {
-
-        if (token->id() == (int) Scanning::TokenType::Space)
-            continue;
-
-        std::cout << token->CopyToString() << std::endl;
+        std::cout << token->CopyToString(dynamic_cast<Common::IPrintFormatter const &>(tokenizerFormatter)) << std::endl;
     }
 
     return EXIT_SUCCESS;

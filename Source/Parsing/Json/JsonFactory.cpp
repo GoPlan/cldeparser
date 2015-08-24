@@ -11,10 +11,6 @@ namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 
-            SPtrDerivative JsonFactory::CreateSPtrJsonDerivative() {
-                return std::make_shared<Json::JsonDerivative>();
-            }
-
             SPtrJsonEntity JsonFactory::CreateSPtrJsonObject() {
                 return std::make_shared<JsonObject>();
             }

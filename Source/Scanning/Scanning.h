@@ -6,6 +6,6 @@
 #define CLDEPARSER_SCANNING_SCANNING_H
 
 #include "TokenizerFactory.h"
-#include "TokenType.h"
+#include "TokenHelper.h"
 
 #endif //CLDEPARSER_SCANNING_H

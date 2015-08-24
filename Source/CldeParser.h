@@ -6,16 +6,15 @@
 #define CLDEPARSER_CLDEPARSER_H
 
 // Foundation
-#include "Token.h"
 #include "Tokenizer.h"
 #include "Scanner.h"
 #include "Parser.h"
 #include "ParserSingle.h"
 
-// Scanner
+// Scanning
 #include "Scanning/Scanning.h"
 
-// Parse
+// Parsing
 #include "Parsing/Parsing.h"
 
 #endif //CLDEPARSER_CLDEPARSER_H

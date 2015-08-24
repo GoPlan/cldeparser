@@ -13,7 +13,6 @@ namespace CLDEParser {
     namespace Parsing {
         namespace Json {
             struct JsonFactory {
-                static SPtrDerivative CreateSPtrJsonDerivative();
                 static SPtrJsonEntity CreateSPtrJsonObject();
                 static SPtrJsonEntity CreateSPtrJsonArray();
                 static SPtrJsonSyntaxNode CreateSPtrJsonSyntaxNode(int id, std::string const &value);
