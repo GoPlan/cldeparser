@@ -49,7 +49,7 @@ namespace CLDEParser {
                 desc += *cIter;
 
                 throw Exceptions::ScannerException{
-                        (*cIter), (int) Exceptions::ScannerException::ScannerExceptionCode::TokenUnmatchable, desc};
+                        (int) Exceptions::ScannerException::ScannerExceptionCode::TokenUnmatchable, desc, (*cIter)};
             }
 
             tokens.push_back(ProcessAndMoveNext(cIter, cEndr, matchedTokenizers));

@@ -37,12 +37,12 @@ namespace CLDEParser {
                 void matchNull(SPtrTokenVectorIterator &iterator);
 
                 // NonTerminal matching
-                void object_stmt(SPtrTokenVectorIterator &iterator);
+                bool object_stmt(SPtrTokenVectorIterator &iterator);
+                bool array_stmt(SPtrTokenVectorIterator &iterator);
                 void object(SPtrTokenVectorIterator &iterator);
                 void pair(SPtrTokenVectorIterator &iterator);
                 void name(SPtrTokenVectorIterator &iterator);
                 void pair_add(SPtrTokenVectorIterator &iterator);
-                void array_stmt(SPtrTokenVectorIterator &iterator);
                 void array(SPtrTokenVectorIterator &iterator);
                 void value(SPtrTokenVectorIterator &iterator);
                 void value_add(SPtrTokenVectorIterator &iterator);

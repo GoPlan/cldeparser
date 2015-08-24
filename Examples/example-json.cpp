@@ -8,10 +8,14 @@ using namespace CLDEParser;
 int main() {
 
     std::string example{
-            "{ 'a\\t01' : { \"first\\u1ab4Name\": \"\", age : 34, lastName : '' }, a02 : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0]}"};
+            "{ 'a\\t01' : { \"first\\u1ab4Name\": 'Le', age : 134, \"lastName\" : \"Duc-Anh\" }, a02 : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0]}"};
+
+
+    Scanner scanner;
+    ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivative()};
+
 
     // Scanning
-    Scanner scanner;
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateTab());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNull());
@@ -28,24 +32,37 @@ int main() {
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketOpen());
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketClosing());
 
-    SPtrTokenVector tokens = scanner.Scan(example);
-    SPtrTokenVector filtered(tokens.size());
 
-    // Remove Space tokens
-    std::copy_if(tokens.cbegin(), tokens.cend(), filtered.begin(),
-                 [](SPtrToken const &token) -> bool {
-                     return token->id() != (int) Scanning::TokenType::Space;
-                 });
+    try {
 
-    filtered.shrink_to_fit();
 
-    // Parsing
-    ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivative()};
-    auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filtered));
-    auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
+        // Scanning
+        SPtrTokenVector tokens = scanner.Scan(example);
+        SPtrTokenVector filtered(tokens.size());
 
-    std::cout << "Input:  " << example << std::endl;
-    std::cout << "Output: " << sptrJsonEntity->CopyToString() << std::endl;
+
+        // Remove Space tokens
+        std::copy_if(tokens.cbegin(), tokens.cend(), filtered.begin(),
+                     [](SPtrToken const &token) -> bool {
+                         return token->id() != (int) Scanning::TokenType::Space;
+                     });
+
+        filtered.shrink_to_fit();
+
+
+        // Parsing
+        auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filtered));
+        auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
+
+        std::cout << "Input:  " << example << std::endl;
+        std::cout << "Output: " << sptrJsonEntity->CopyToString() << std::endl;
+
+
+    } catch (Exceptions::Exception &ex) {
+
+        std::cerr << ex.what() << std::endl;
+
+    }
 
     return EXIT_SUCCESS;
 }

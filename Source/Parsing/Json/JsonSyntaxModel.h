@@ -6,10 +6,10 @@
 #define CLDEPARSER_PARSING_JSON_JSONSYNTAXMODEL_H
 
 #include "../../SyntaxModel.h"
-#include "../../Exceptions/ParserException.h"
 #include "JsonEntity.h"
 #include "JsonSyntaxNode.h"
 #include "JsonValue.h"
+#include "JsonException.h"
 
 
 namespace CLDEParser {

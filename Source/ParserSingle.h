@@ -8,11 +8,13 @@
 #include "SyntaxModel.h"
 #include "Derivative.h"
 #include "Exceptions/Exception.h"
+#include "Common/IDefines.h"
 
 namespace CLDEParser {
 
     class ParserSingle {
 
+        int _exceptionTokenNo{Common::BufferSize::SIXTYFOUR};
         SPtrDerivative _sptrDerivative;
 
     public:
@@ -24,7 +26,7 @@ namespace CLDEParser {
         virtual ~ParserSingle() = default;
 
         // Locals
-        virtual SPtrSyntaxModel Parse(const SPtrTokenVector &sptrTokens);
+        virtual SPtrSyntaxModel Parse(SPtrTokenVector const &sptrTokens);
     };
 }
 

@@ -13,11 +13,13 @@ namespace CLDEParser {
 
         class ScannerException : public Exception {
 
+            int _code;
             char _token;
+            std::string _description;
 
         public:
             ScannerException(int code, std::string const &description);
-            ScannerException(char token, int code, std::string const &description);
+            ScannerException(int code, std::string const &description, char token);
             ScannerException(const ScannerException &) = default;
             ScannerException(ScannerException &&) = default;
             ScannerException &operator=(const ScannerException &) = default;

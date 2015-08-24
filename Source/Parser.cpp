@@ -25,9 +25,8 @@ namespace CLDEParser {
             }
 
             if (matchedDerivatives.size() == 0) {
-                throw Exceptions::ParserException{
-                        (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken,
-                        std::string{"No derivative is matched"}};
+                int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                throw Exceptions::ParserException{code, startTokenIterator};
             }
 
             syntaxTrees.push_back(ProcessAndMoveNext(startTokenIterator, endingTokenIterator,

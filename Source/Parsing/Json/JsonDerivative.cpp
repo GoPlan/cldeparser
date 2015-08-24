@@ -15,12 +15,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchBracketOpen(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::BracketOpen) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::BracketOpen) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -32,12 +29,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchBracketClosing(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::BracketClosing) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::BracketClosing) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -49,12 +43,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchCurlyBraceOpen(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::CurlyBraceOpen) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::CurlyBraceOpen) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -66,12 +57,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchCurlyBraceClosing(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::CurlyBraceClosing) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::CurlyBraceClosing) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -83,12 +71,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchComma(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::Comma) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::Comma) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 ++iterator;
@@ -96,12 +81,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchColon(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::Colon) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::Colon) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 ++iterator;
@@ -109,12 +91,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchId(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::Id) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::Id) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -126,12 +105,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchString(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::String) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::String) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -143,12 +119,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchNumberInteger(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::NumberInteger) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::NumberInteger) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -160,12 +133,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchNumber(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::Number) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::Number) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -177,12 +147,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchTrue(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::BooleanTrue) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::BooleanTrue) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -194,12 +161,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchFalse(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::BooleanFalse) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::BooleanFalse) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -211,12 +175,9 @@ namespace CLDEParser {
 
             void JsonDerivative::matchNull(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type != JsonSyntaxNodeType::Null) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::Null) {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-                    std::string msg{"Unexpected token is found " + (*iterator)->CopyToString()};
-                    throw Exceptions::ParserException{code, msg};
+                    throw Exceptions::ParserException{code, iterator};
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
@@ -237,42 +198,41 @@ namespace CLDEParser {
 
             bool JsonDerivative::json(SPtrTokenVectorIterator &iterator) {
 
-                JsonSyntaxNodeType type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type == JsonSyntaxNodeType::CurlyBraceOpen
-                    || type == JsonSyntaxNodeType::CurlyBraceClosing) {
-                    object_stmt(iterator);
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::CurlyBraceOpen
+                    || (JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::CurlyBraceClosing) {
+                    return object_stmt(iterator);
                 }
 
-                else if (type == JsonSyntaxNodeType::BracketOpen
-                         || type == JsonSyntaxNodeType::BracketClosing) {
-                    array_stmt(iterator);
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BracketOpen
+                    || (JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BracketClosing) {
+                    return array_stmt(iterator);
                 }
 
-                else {
-                    return false;
-                }
+                return false;
+            }
+
+            bool JsonDerivative::object_stmt(SPtrTokenVectorIterator &iterator) {
+
+                matchCurlyBraceOpen(iterator);
+                object(iterator);
+                matchCurlyBraceClosing(iterator);
 
                 return true;
             }
 
-            void JsonDerivative::object_stmt(SPtrTokenVectorIterator &iterator) {
-                matchCurlyBraceOpen(iterator);
-                object(iterator);
-                matchCurlyBraceClosing(iterator);
-            }
+            bool JsonDerivative::array_stmt(SPtrTokenVectorIterator &iterator) {
 
-            void JsonDerivative::array_stmt(SPtrTokenVectorIterator &iterator) {
                 matchBracketOpen(iterator);
                 array(iterator);
                 matchBracketClosing(iterator);
+
+                return true;
             }
 
             void JsonDerivative::object(SPtrTokenVectorIterator &iterator) {
 
-                auto type = (JsonSyntaxNodeType) (*iterator)->id();
-
-                if (type == JsonSyntaxNodeType::Id || type == JsonSyntaxNodeType::String) {
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Id
+                    || (JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::String) {
                     pair(iterator);
                 }
 
@@ -373,7 +333,7 @@ namespace CLDEParser {
 
                 else {
                     int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownValueType;
-                    throw Exceptions::ParserException{code, std::string{}};
+                    throw Exceptions::ParserException{code, iterator};
                 }
             }
 

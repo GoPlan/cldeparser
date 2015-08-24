@@ -9,15 +9,15 @@ namespace CLDEParser {
     namespace Exceptions {
 
         ScannerException::ScannerException(int code, std::string const &description)
-                : Exception{code, description} {
+                : _code{code}, _description{description} {
             //
             _message.reserve(Common::BufferSize::EIGHTY);
             _message += "[" + ScannerException::CopyToString((ScannerExceptionCode) _code) + "]";
             _message += " at \"" + _description + "\"";
         }
 
-        ScannerException::ScannerException(char token, int code, std::string const &description)
-                : Exception{code, description}, _token{token} {
+        ScannerException::ScannerException(int code, std::string const &description, char token)
+                : _code{code}, _description{description}, _token{token} {
             //
             _message.reserve(Common::BufferSize::EIGHTY);
             _message += "[" + ScannerException::CopyToString((ScannerExceptionCode) _code) + " " + _token + "]";

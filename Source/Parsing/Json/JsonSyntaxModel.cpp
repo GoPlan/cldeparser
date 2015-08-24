@@ -33,8 +33,8 @@ namespace CLDEParser {
                     sptrJsonEntity = JsonFactory::CreateSPtrJsonObject();
                 }
                 else {
-                    int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownEntityType;
-                    throw Exceptions::ParserException{code, std::string{}};
+                    int code = (int) JsonException::JsonExceptionCode::UnknownSyntaxNode;
+                    throw JsonException{code, iterator};
                 }
 
                 // Push entity into scope stack
@@ -60,8 +60,8 @@ namespace CLDEParser {
                     switch (sptrScopeEntity->Type()) {
 
                         case JsonEntityType::Unknown: {
-                            int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownEntityType;
-                            throw Exceptions::ParserException{code, std::string{}};
+                            int code = (int) JsonException::JsonExceptionCode::UnknownSyntaxNode;
+                            throw JsonException{code, iterator};
                         }
 
                         case JsonEntityType::Object: {
@@ -131,8 +131,8 @@ namespace CLDEParser {
                     }
 
                     default:
-                        int code = (int) Exceptions::ParserException::ParserExceptionCode::UnknownValueType;
-                        throw Exceptions::ParserException{code, std::string{}};
+                        int code = (int) JsonException::JsonExceptionCode::UnknownValueType;
+                        throw JsonException{code, iterator};
                 }
 
                 return result;

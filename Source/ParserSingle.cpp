@@ -4,17 +4,36 @@
 
 #include "ParserSingle.h"
 #include "Exceptions/ParserException.h"
+#include "Common/IDefines.h"
 
 namespace CLDEParser {
 
-    SPtrSyntaxModel ParserSingle::Parse(const SPtrTokenVector &sptrTokens) {
+    SPtrSyntaxModel ParserSingle::Parse(SPtrTokenVector const &sptrTokens) {
 
-        auto cIter = sptrTokens.cbegin();
+        auto iterator = sptrTokens.cbegin();
 
-        if (!_sptrDerivative->Derive(cIter)) {
-            int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
-            std::string msg{"Derivative can not match " + (*cIter)->CopyToString()};
-            throw Exceptions::ParserException{code, msg};
+        try {
+
+            if (!_sptrDerivative->Derive(iterator)) {
+                int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
+                throw Exceptions::ParserException{code, iterator};
+            }
+
+        } catch (Exceptions::ParserException &ex) {
+
+            std::string _description;
+
+            _description.reserve(Common::BufferSize::EIGHTY);
+
+            auto exIter = sptrTokens.cbegin();
+
+            for (; exIter != ex.Iterator(); ++exIter) {
+                _description += (*exIter)->CopyToString();
+            }
+
+            _description += (*(ex.Iterator()))->CopyToString();
+
+            throw Exceptions::ParserException{(int) ex.Code(), iterator, _description};
         }
 
         return _sptrDerivative->SyntaxModel();
