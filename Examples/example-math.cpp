@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../Source/CldeParser.h"
+#include "CLDEParser.h"
 
 using namespace CLDEParser;
 

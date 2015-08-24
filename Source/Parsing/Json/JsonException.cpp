@@ -14,6 +14,7 @@ namespace CLDEParser {
                 //
                 _message.clear();
                 _message.reserve(Common::BufferSize::EIGHTY);
+                _message += "[Json]";
                 _message += "[";
                 _message += JsonException::CopyToString((JsonExceptionCode) _code);
                 _message += ": " + (*iterator)->CopyToString();

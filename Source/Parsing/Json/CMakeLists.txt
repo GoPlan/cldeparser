@@ -25,8 +25,4 @@ add_library(parser-json STATIC
         JsonSyntaxModel.h
         JsonValueFactory.cpp
         JsonValueFactory.h
-        Tables/JsonSymbolTable.cpp
-        Tables/JsonSymbolTable.h
-        Tables/JsonTypeTable.cpp
-        Tables/JsonTypeTable.h
 )

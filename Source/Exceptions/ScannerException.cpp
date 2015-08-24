@@ -12,6 +12,7 @@ namespace CLDEParser {
                 : _code{code}, _description{description} {
             //
             _message.reserve(Common::BufferSize::EIGHTY);
+            _message += "[Scanner]";
             _message += "[" + ScannerException::CopyToString((ScannerExceptionCode) _code) + "]";
             _message += " at \"" + _description + "\"";
         }
@@ -20,6 +21,7 @@ namespace CLDEParser {
                 : _code{code}, _description{description}, _token{token} {
             //
             _message.reserve(Common::BufferSize::EIGHTY);
+            _message += "[Scanner]";
             _message += "[" + ScannerException::CopyToString((ScannerExceptionCode) _code) + " " + _token + "]";
             _message += " at \"" + _description + "\"";
         }

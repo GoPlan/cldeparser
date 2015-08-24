@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include "../Source/CldeParser.h"
+#include "../Source/CLDEParser.h"
 #include "../Source/Parsing/Json/Json.h"
 
 using namespace CLDEParser;
@@ -8,10 +8,10 @@ using namespace CLDEParser;
 int main() {
 
     std::string example{
-            "{ 'a\\t01' : { \"first\\u1ab4Name\": 'Le', age : 134, \"lastName\" : \"Duc-Anh\" }, a02 : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0]}"};
+            "{ 'a\\t01' : { \"first\\u1ab4Name\": 'Le', age : 134, \"lastName\" : \"Duc-Anh\" }, array : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0]}"};
 
 
-    Scanner scanner;
+    Scanner scanner{};
     ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivative()};
 
 
@@ -35,11 +35,9 @@ int main() {
 
     try {
 
-
         // Scanning
         SPtrTokenVector tokens = scanner.Scan(example);
         SPtrTokenVector filtered(tokens.size());
-
 
         // Remove Space tokens
         std::copy_if(tokens.cbegin(), tokens.cend(), filtered.begin(),
@@ -48,7 +46,6 @@ int main() {
                      });
 
         filtered.shrink_to_fit();
-
 
         // Parsing
         auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filtered));

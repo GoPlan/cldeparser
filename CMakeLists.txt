@@ -10,10 +10,11 @@ add_subdirectory(Source/Parsing/Json)
 
 
 set(SOURCE_FILES
+        Source/Common/IDefines.h
         Source/Common/IPrintable.h
         Source/Common/IPrintFormatter.h
         Source/Common/IComparable.h
-        Source/CldeParser.h
+        Source/CLDEParser.h
         Source/Token.cpp
         Source/Token.h
         Source/Tokenizer.cpp
@@ -28,11 +29,9 @@ set(SOURCE_FILES
         Source/SyntaxNode.h
         Source/SyntaxModel.cpp
         Source/SyntaxModel.h
-        Source/CldeParserFactory.cpp
-        Source/CldeParserFactory.h
         Source/ParserSingle.cpp
         Source/ParserSingle.h
-        Source/Common/IDefines.h)
+)
 
 
 # Libraries - shared & static

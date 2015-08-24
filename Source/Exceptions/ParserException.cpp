@@ -15,6 +15,7 @@ namespace CLDEParser {
             //
             _message.clear();
             _message.reserve(Common::BufferSize::EIGHTY);
+            _message += "[Parser]";
             _message += "[";
             _message += ParserException::CopyToString((ParserExceptionCode) _code);
             _message += ": " + (*iterator)->CopyToString();
@@ -27,6 +28,7 @@ namespace CLDEParser {
             //
             _message.clear();
             _message.reserve(Common::BufferSize::EIGHTY);
+            _message += "[Parser]";
             _message += "[";
             _message += ParserException::CopyToString((ParserExceptionCode) _code);
             _message += ": " + (*iterator)->CopyToString();
