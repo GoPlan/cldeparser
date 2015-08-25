@@ -15,7 +15,7 @@ set(SOURCE_FILES
         Source/Common/IPrintable.h
         Source/Common/IPrintFormatter.h
         Source/Common/IComparable.h
-        Source/CLDEParser.h
+        Source/CldeParser.h
         Source/Token.cpp
         Source/Token.h
         Source/Tokenizer.cpp
@@ -59,14 +59,11 @@ target_link_libraries(example-math cldeparser-static)
 
 
 # Install - Source directory variable has trailing dash to ommit copying itself into the destination
-install(DIRECTORY Source/ DESTINATION include
-        FILES_MATCHING PATTERN "*.h"
-)
-
+install(FILES LICENSE.txt README.md DESTINATION ./)
+install(DIRECTORY Source/ DESTINATION include FILES_MATCHING PATTERN "*.h")
 install(TARGETS cldeparser-static cldeparser
         LIBRARY DESTINATION ./
-        ARCHIVE DESTINATION ./
-)
+        ARCHIVE DESTINATION ./)
 
 
 # Extra folder (containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked)
