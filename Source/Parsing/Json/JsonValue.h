@@ -13,12 +13,12 @@ namespace CLDEParser {
         namespace Json {
 
             enum class JsonValueType {
-                null = 0,
-                string = 1,
-                integer = 2,
-                real = 3,
-                boolean = 4,
-                entity = 5
+                Null = 0,
+                String = 1,
+                Integer = 2,
+                Real = 3,
+                Boolean = 4,
+                Entity = 5
             };
 
             struct JsonValue : public Common::IPrintable {
@@ -31,6 +31,9 @@ namespace CLDEParser {
 
                 // IPrintable
                 std::string CopyToString() const override;
+
+                // Locals
+                JsonValueType Type() { return (JsonValueType) id; }
             };
 
             using SPtrJsonValue = std::shared_ptr<JsonValue>;

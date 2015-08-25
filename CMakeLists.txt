@@ -73,8 +73,12 @@ install(TARGETS cldeparser-static cldeparser
 set(EXTRA_DIR "Extra")
 set(TEST_SOURCE
         Test/main.cpp
-        Test/case01.hpp
-        Test/JsonParserInstance.cpp Test/JsonParserInstance.h Test/JsonTestFixture.cpp Test/JsonTestFixture.h)
+        Test/Case00_FeatureTest.hpp
+        Test/JsonParserInstance.cpp
+        Test/JsonParserInstance.h
+        Test/JsonTestFixture.cpp
+        Test/JsonTestFixture.h
+        Test/Case01_OtherTest.hpp)
 
 include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
 LINK_DIRECTORIES(${EXTRA_DIR}/gtest-1.7.0/lib)

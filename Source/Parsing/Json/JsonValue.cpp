@@ -12,22 +12,22 @@ namespace CLDEParser {
 
                 switch ((JsonValueType) id) {
 
-                    case JsonValueType::null:
+                    case JsonValueType::Null:
                         return "null";
 
-                    case JsonValueType::string:
+                    case JsonValueType::String:
                         return strValue;
 
-                    case JsonValueType::integer:
+                    case JsonValueType::Integer:
                         return std::to_string(intValue);
 
-                    case JsonValueType::real:
+                    case JsonValueType::Real:
                         return std::to_string(doubleValue);
 
-                    case JsonValueType::boolean:
+                    case JsonValueType::Boolean:
                         return std::to_string(boolValue);
 
-                    case JsonValueType::entity:
+                    case JsonValueType::Entity:
                         return sptrJsonEntity->CopyToString();
                 }
             }

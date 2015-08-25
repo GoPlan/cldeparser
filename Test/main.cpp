@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <gtest/gtest.h>
-#include "case01.hpp"
+#include "Case00_FeatureTest.hpp"
 
 int main(int argc, char *argv[]) {
     ::testing::InitGoogleTest(&argc, argv);
