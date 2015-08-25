@@ -26,14 +26,14 @@ namespace CLDEParser {
 
         // Locals
         SPtrTokenizerVector &Tokenizers();
-        SPtrTokenVector Scan(const std::string &string);
-        int exceptionTokenNo() const { return _exceptionTokenNo; }
+        SPtrTokenVector Scan(const std::string &string) const;
+        int ExceptionTokenNo() const { return _exceptionTokenNo; }
         void setExceptionTokenNo(int exceptionTokenNo) { _exceptionTokenNo = exceptionTokenNo; }
 
     protected:
         SPtrToken ProcessAndMoveNext(std::string::const_iterator &cIter,
                                      std::string::const_iterator &cEnd,
-                                     SPtrTokenizerList &matchedTokenizers);
+                                     SPtrTokenizerList &matchedTokenizers) const;
     };
 }
 

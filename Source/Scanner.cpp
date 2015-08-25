@@ -13,7 +13,7 @@ namespace CLDEParser {
         return _tokenizers;
     }
 
-    SPtrTokenVector Scanner::Scan(const std::string &string) {
+    SPtrTokenVector Scanner::Scan(const std::string &string) const {
 
         SPtrTokenizerList matchedTokenizers;
         SPtrTokenVector tokens;
@@ -60,7 +60,7 @@ namespace CLDEParser {
 
     SPtrToken Scanner::ProcessAndMoveNext(std::string::const_iterator &cIter,
                                           std::string::const_iterator &cEnd,
-                                          SPtrTokenizerList &matchedTokenizers) {
+                                          SPtrTokenizerList &matchedTokenizers) const {
 
         std::vector<SPtrTokenizerList::const_iterator> unmatched;
         SPtrTokenizer sptrTokenizer;

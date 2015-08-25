@@ -40,7 +40,7 @@ int main() {
         auto filteredTokens = Scanning::TokenHelper::Filter(filteredCodes, tokens);
 
         // Parsing
-        auto sptrSyntaxModel = std::dynamic_pointer_cast<Parsing::Json::JsonSyntaxModel>(parser.Parse(filteredTokens));
+        auto sptrSyntaxModel = parser.ParseCast<Parsing::Json::JsonSyntaxModel>(filteredTokens);
         auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
 
         std::cout << "Input:  " << example << std::endl;

@@ -19,7 +19,7 @@ namespace CLDEParser {
 
             SPtrJsonEntity JsonSyntaxModel::CreateSPtrJsonEnity() {
                 auto iterator = _sptrSyntaxNodeQueue.cbegin();
-                return createSPtrJsonEntity(iterator);
+                return (iterator != _sptrSyntaxNodeQueue.cend()) ? createSPtrJsonEntity(iterator) : SPtrJsonEntity{};
             }
 
             SPtrJsonEntity JsonSyntaxModel::createSPtrJsonEntity(SPtrJsonSyntaxNodeIterator &iterator) {

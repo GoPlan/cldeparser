@@ -26,7 +26,12 @@ namespace CLDEParser {
         virtual ~ParserSingle() = default;
 
         // Locals
-        virtual SPtrSyntaxModel Parse(SPtrTokenVector const &sptrTokens);
+        virtual SPtrSyntaxModel Parse(SPtrTokenVector const &sptrTokens) const;
+
+        template<typename T>
+        std::shared_ptr<T> ParseCast(SPtrTokenVector const &sptrTokens) const {
+            return std::dynamic_pointer_cast<T>(Parse(sptrTokens));
+        }
     };
 }
 

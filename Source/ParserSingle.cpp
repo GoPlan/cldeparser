@@ -8,12 +8,18 @@
 
 namespace CLDEParser {
 
-    SPtrSyntaxModel ParserSingle::Parse(SPtrTokenVector const &sptrTokens) {
+    SPtrSyntaxModel ParserSingle::Parse(SPtrTokenVector const &sptrTokens) const {
 
         auto iterator = sptrTokens.cbegin();
 
         try {
 
+            // Empty string returns a nullptr entity
+            if(iterator == sptrTokens.cend()){
+                return _sptrDerivative->SyntaxModel();
+            }
+
+            // Process
             if (!_sptrDerivative->Derive(iterator)) {
                 int code = (int) Exceptions::ParserException::ParserExceptionCode::UnmatchedToken;
                 throw Exceptions::ParserException{code, iterator};

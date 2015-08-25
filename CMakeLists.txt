@@ -7,6 +7,7 @@ add_subdirectory(Source/Exceptions)
 add_subdirectory(Source/Scanning)
 add_subdirectory(Source/Parsing)
 add_subdirectory(Source/Parsing/Json)
+add_subdirectory(Test)
 
 
 set(SOURCE_FILES
@@ -52,7 +53,6 @@ target_link_libraries(cldeparser scanner parser parser-json exceptions)
 add_executable(example-json Examples/example-json.cpp)
 target_link_libraries(example-json cldeparser-static)
 
-
 # Example - math
 add_executable(example-math Examples/example-math.cpp)
 target_link_libraries(example-math cldeparser-static)
@@ -67,3 +67,18 @@ install(TARGETS cldeparser-static cldeparser
         LIBRARY DESTINATION ./
         ARCHIVE DESTINATION ./
 )
+
+
+# Extra folder (containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked)
+set(EXTRA_DIR "Extra")
+set(TEST_SOURCE
+        Test/main.cpp
+        Test/case01.hpp
+        Test/JsonParserInstance.cpp Test/JsonParserInstance.h Test/JsonTestFixture.cpp Test/JsonTestFixture.h)
+
+include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
+LINK_DIRECTORIES(${EXTRA_DIR}/gtest-1.7.0/lib)
+
+# Targets
+add_executable(cldeparser-apptest ${TEST_SOURCE})
+target_link_libraries(cldeparser-apptest gtest cldeparser-static)

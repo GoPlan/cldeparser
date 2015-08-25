@@ -92,3 +92,4 @@ Makefile.in
 # CMake & Builds generated files
 /.idea
 /CMake
+/Extra
