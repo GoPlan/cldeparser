@@ -9,7 +9,10 @@ namespace CLDEParser {
     namespace Scanning {
 
         std::vector<int> TokenHelper::DefaultFilterCodes() {
-            return {(int) TokenType::Space, (int) TokenType::Tab};
+            return {(int) TokenType::Space,
+                    (int) TokenType::Tab,
+                    (int) TokenType::CarriageReturn,
+                    (int) TokenType::LineFeed};
         }
 
         CLDEParser::SPtrTokenVector TokenHelper::Filter(std::vector<int> const &filteredCodes,

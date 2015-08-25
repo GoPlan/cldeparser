@@ -34,6 +34,7 @@ namespace CLDEParser {
 
                 // Locals
                 JsonValueType Type() { return (JsonValueType) id; }
+                bool IsNull() { return id == (int) JsonValueType::Null; }
             };
 
             using SPtrJsonValue = std::shared_ptr<JsonValue>;

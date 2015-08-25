@@ -78,7 +78,7 @@ set(TEST_SOURCE
         Test/JsonParserInstance.h
         Test/JsonTestFixture.cpp
         Test/JsonTestFixture.h
-        Test/Case01_OtherTest.hpp)
+)
 
 include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
 LINK_DIRECTORIES(${EXTRA_DIR}/gtest-1.7.0/lib)

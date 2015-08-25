@@ -16,6 +16,8 @@ namespace CLDEParser {
         void JsonParserInstance::init() {
             _scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
             _scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateTab());
+            _scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateCarriageReturn());
+            _scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateLineFeed());
             _scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateNull());
             _scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBoolTrue());
             _scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBoolFalse());

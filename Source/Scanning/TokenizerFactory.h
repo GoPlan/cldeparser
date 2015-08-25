@@ -39,6 +39,8 @@ namespace CLDEParser {
             static SPtrTokenizer CreateBoolFalse();
             static SPtrTokenizer CreateBoolTrue();
             static SPtrTokenizer CreateNull();
+            static SPtrTokenizer CreateCarriageReturn();
+            static SPtrTokenizer CreateLineFeed();
         };
     }
 }

@@ -13,6 +13,43 @@ namespace CLDEParser {
                 //
             }
 
+            bool JsonDerivative::isObjectFirstFollow(SPtrTokenVectorIterator &iterator) {
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BracketOpen) {
+                    return true;
+                }
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::CurlyBraceOpen) {
+                    return true;
+                }
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::String) {
+                    return true;
+                }
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BooleanFalse) {
+                    return true;
+                }
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BooleanTrue) {
+                    return true;
+                }
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Null) {
+                    return true;
+                }
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Number) {
+                    return true;
+                }
+
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::NumberInteger) {
+                    return true;
+                }
+
+                return false;
+            }
+
             void JsonDerivative::matchBracketOpen(SPtrTokenVectorIterator &iterator) {
 
                 if ((JsonSyntaxNodeType) (*iterator)->id() != JsonSyntaxNodeType::BracketOpen) {
@@ -270,10 +307,13 @@ namespace CLDEParser {
 
             void JsonDerivative::array(SPtrTokenVectorIterator &iterator) {
 
-                _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) JsonSyntaxNodeType::Id,
-                                                                                 std::string{}));
-                value(iterator);
+                if (isObjectFirstFollow(iterator)) {
+
+                    _sptrSyntaxModel->_sptrSyntaxNodeQueue
+                                    .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) JsonSyntaxNodeType::Id,
+                                                                                     std::string{}));
+                    value(iterator);
+                }
 
                 if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Comma) {
                     value_add(iterator);
@@ -340,7 +380,6 @@ namespace CLDEParser {
             SPtrSyntaxModel JsonDerivative::SyntaxModel() {
                 return _sptrSyntaxModel;
             }
-
             void JsonDerivative::Reset() {
                 _sptrSyntaxModel->Reset();
             }

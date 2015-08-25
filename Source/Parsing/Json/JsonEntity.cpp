@@ -3,7 +3,14 @@
 //
 
 #include "JsonEntity.h"
+#include "JsonException.h"
 
 
+namespace CLDEParser {
+    namespace Parsing {
+        namespace Json {
 
 
+        }
+    }
+}

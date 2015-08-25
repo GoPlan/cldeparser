@@ -65,4 +65,4 @@ add_library(scanner STATIC
         Tokenizers/NumberInteger.h
         TokenHelper.cpp
         TokenHelper.h
-)
+        Tokenizers/CarriageReturn.cpp Tokenizers/CarriageReturn.h Tokenizers/LineFeed.cpp Tokenizers/LineFeed.h)

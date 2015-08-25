@@ -26,7 +26,8 @@ namespace CLDEParser {
             using SPtrJsonEntityMap = std::unordered_map<std::string, SPtrJsonEntity>;
             using SPtrJsonEntityVector = std::vector<SPtrJsonEntity>;
 
-            class JsonEntity : public Common::IPrintable {
+            class JsonEntity : public Common::IPrintable,
+                               public std::enable_shared_from_this<JsonEntity> {
 
             public:
                 JsonEntity() = default;
@@ -37,7 +38,7 @@ namespace CLDEParser {
                 virtual ~JsonEntity() = default;
 
                 // Accessors & Mutators
-                JsonEntityType &Type() { return _type; }
+                JsonEntityType const &Type() const { return _type; }
 
             protected:
                 JsonEntity(JsonEntityType type) : _type{type} { };

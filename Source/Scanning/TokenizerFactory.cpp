@@ -29,6 +29,8 @@
 #include "Tokenizers/BoolTrue.h"
 #include "Tokenizers/Null.h"
 #include "Tokenizers/NumberInteger.h"
+#include "Tokenizers/CarriageReturn.h"
+#include "Tokenizers/LineFeed.h"
 
 namespace CLDEParser {
     namespace Scanning {
@@ -110,6 +112,12 @@ namespace CLDEParser {
         }
         SPtrTokenizer TokenizerFactory::CreateNull() {
             return std::make_shared<Tokenizers::Null>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateCarriageReturn() {
+            return std::make_shared<Tokenizers::CarriageReturn>();
+        }
+        SPtrTokenizer TokenizerFactory::CreateLineFeed() {
+            return std::make_shared<Tokenizers::LineFeed>();
         }
     }
 }

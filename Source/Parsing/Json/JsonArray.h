@@ -30,8 +30,9 @@ namespace CLDEParser {
 
             protected:
                 SPtrJsonValueVector _container;
-
             };
+
+            using SPtrJsonArray = std::shared_ptr<JsonArray>;
         }
     }
 }

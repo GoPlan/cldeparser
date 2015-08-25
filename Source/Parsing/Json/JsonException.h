@@ -19,6 +19,7 @@ namespace CLDEParser {
                 std::string _description;
 
             public:
+                JsonException(int code, std::string const &description);
                 JsonException(int code, SPtrJsonSyntaxNodeIterator const &iterator);
                 JsonException(const JsonException &) = default;
                 JsonException(JsonException &&) = default;
@@ -28,7 +29,10 @@ namespace CLDEParser {
 
                 enum class JsonExceptionCode {
                     UnknownSyntaxNode,
-                    UnknownValueType
+                    UnknownValueType,
+                    InvalidTypeCasting,
+                    UnSupportedValueType,
+                    ValueIsNull
                 };
 
                 static std::string CopyToString(JsonExceptionCode code);

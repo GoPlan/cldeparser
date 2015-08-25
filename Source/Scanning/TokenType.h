@@ -11,7 +11,7 @@ namespace CLDEParser {
     namespace Scanning {
 
         enum class TokenType {
-            End = 0,	 
+            End = 0,
             CurlyBraceOpen = 1,
             CurlyBraceClosing = 2,
             BracketOpen = 3,
@@ -37,7 +37,9 @@ namespace CLDEParser {
             BoolFalse = 25,
             BoolTrue = 26,
             Null = 27,
-            NumberInteger = 28
+            NumberInteger = 28,
+            CarriageReturn = 29,
+            LineFeed = 30
         };
 
         std::string CopyToString(int id);

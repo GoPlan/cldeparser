@@ -2,7 +2,6 @@
 // Created by LE, Duc Anh on 8/25/15.
 //
 
-#include <iostream>
 #include <gtest/gtest.h>
 #include "Case00_FeatureTest.hpp"
 

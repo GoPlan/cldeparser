@@ -62,6 +62,10 @@ namespace CLDEParser {
                     return "Null";
                 case TokenType::NumberInteger:
                     return "NumberInteger";
+                case TokenType::CarriageReturn:
+                    return "CarriageReturn";
+                case TokenType::LineFeed:
+                    return "LineFeed";
             }
         }
     }
