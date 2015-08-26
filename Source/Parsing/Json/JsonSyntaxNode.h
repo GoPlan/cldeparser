@@ -36,12 +36,13 @@ namespace CLDEParser {
                 JsonSyntaxNode(JsonSyntaxNode &&) = default;
                 JsonSyntaxNode &operator=(const JsonSyntaxNode &) = default;
                 JsonSyntaxNode &operator=(JsonSyntaxNode &&) = default;
-                virtual ~JsonSyntaxNode() = default;
+                ~JsonSyntaxNode() = default;
 
                 // IPrintable
-                virtual std::string CopyToString() const override;
+                std::string CopyToString() const override;
             };
 
+            using UPtrJsonSyntaxNode = std::unique_ptr<JsonSyntaxNode>;
             using SPtrJsonSyntaxNode = std::shared_ptr<JsonSyntaxNode>;
             using SPtrJsonSyntaxNodeVector = std::vector<SPtrJsonSyntaxNode>;
             using SPtrJsonSyntaxNodeIterator = SPtrJsonSyntaxNodeVector::const_iterator;

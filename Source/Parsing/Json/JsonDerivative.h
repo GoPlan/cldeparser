@@ -54,7 +54,7 @@ namespace CLDEParser {
                 JsonDerivative(JsonDerivative &&) = default;
                 JsonDerivative &operator=(const JsonDerivative &) = default;
                 JsonDerivative &operator=(JsonDerivative &&) = default;
-                virtual ~JsonDerivative() = default;
+                ~JsonDerivative() = default;
 
                 // Derivatives
                 virtual SPtrSyntaxModel SyntaxModel() override;

@@ -47,6 +47,7 @@ namespace CLDEParser {
         virtual bool CoreValidate(char character);
     };
 
+    using UPtrTokenizer = std::unique_ptr<Tokenizer>;
     using SPtrTokenizer = std::shared_ptr<Tokenizer>;
     using SPtrTokenizerVector = std::vector<SPtrTokenizer>;
     using SPtrTokenizerList = std::list<SPtrTokenizer>;

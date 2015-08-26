@@ -11,16 +11,16 @@ namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 
-            SPtrJsonEntity JsonFactory::CreateSPtrJsonObject() {
-                return std::make_shared<JsonObject>();
+            UPtrJsonEntity JsonFactory::CreateJsonObjectInstance() {
+                return std::unique_ptr<JsonEntity>(new JsonObject());
             }
 
-            SPtrJsonEntity JsonFactory::CreateSPtrJsonArray() {
-                return std::make_shared<JsonArray>();
+            UPtrJsonEntity JsonFactory::CreateJsonArrayInstance() {
+                return std::unique_ptr<JsonEntity>(new JsonArray());
             }
 
-            SPtrJsonSyntaxNode JsonFactory::CreateSPtrJsonSyntaxNode(int id, std::string const &value) {
-                return std::make_shared<JsonSyntaxNode>(id, value);
+            UPtrJsonSyntaxNode JsonFactory::CreateJsonSyntaxNodeInstance(int id, std::string const &value) {
+                return std::unique_ptr<JsonSyntaxNode>(new JsonSyntaxNode(id, value));
             }
         }
     }

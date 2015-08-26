@@ -33,6 +33,7 @@ namespace CLDEParser {
 
     };
 
+    using UPtrDerivative = std::unique_ptr<Derivative>;
     using SPtrDerivative = std::shared_ptr<Derivative>;
     using SPtrDerivativeVector = std::vector<SPtrDerivative>;
 }

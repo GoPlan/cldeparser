@@ -27,10 +27,10 @@ namespace CLDEParser {
                 SPtrJsonEntity sptrJsonEntity;
 
                 if ((*iterator)->id() == (int) JsonSyntaxNodeType::BracketOpen) {
-                    sptrJsonEntity = JsonFactory::CreateSPtrJsonArray();
+                    sptrJsonEntity = JsonFactory::CreateJsonArrayInstance();
                 }
                 else if ((*iterator)->id() == (int) JsonSyntaxNodeType::CurlyBraceOpen) {
-                    sptrJsonEntity = JsonFactory::CreateSPtrJsonObject();
+                    sptrJsonEntity = JsonFactory::CreateJsonObjectInstance();
                 }
                 else {
                     int code = (int) JsonException::JsonExceptionCode::UnknownSyntaxNode;

@@ -8,6 +8,8 @@ set(INSTALL_DIR "${EXTRA_DIR}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_INSTALL_PREFIX ${INSTALL_DIR}/${CMAKE_PROJECT_NAME}-${VERSION})
 
+# Note: Extra folder (containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked)
+
 
 add_subdirectory(Source/Exceptions)
 add_subdirectory(Source/Scanning)

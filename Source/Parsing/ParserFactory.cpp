@@ -8,8 +8,8 @@
 namespace CLDEParser {
     namespace Parsing {
 
-        SPtrDerivative ParserFactory::CreateJsonDerivative() {
-            return std::make_shared<Json::JsonDerivative>();
+        UPtrDerivative ParserFactory::CreateJsonDerivativeInstance() {
+            return std::unique_ptr<Json::JsonDerivative>(new Json::JsonDerivative());
         }
     }
 }

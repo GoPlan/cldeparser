@@ -8,6 +8,7 @@
 namespace CLDEParser {
     namespace Parsing {
         namespace Json {
+
             JsonSyntaxNode::JsonSyntaxNode(int id, std::string const &value)
                     : SyntaxNode{id, value} {
                 //

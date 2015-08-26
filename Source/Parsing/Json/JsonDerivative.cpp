@@ -35,8 +35,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -49,8 +49,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -63,8 +63,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -77,8 +77,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -111,8 +111,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -125,8 +125,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -139,8 +139,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -153,8 +153,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -167,8 +167,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -181,8 +181,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -195,8 +195,8 @@ namespace CLDEParser {
                 }
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((*iterator)->id(),
-                                                                                 (*iterator)->lexeme()));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((*iterator)->id(),
+                                                                                     (*iterator)->lexeme()));
 
                 ++iterator;
             }
@@ -287,8 +287,8 @@ namespace CLDEParser {
                 if (isValueFirstOrFollow(iterator)) {
 
                     _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                    .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) JsonSyntaxNodeType::Id,
-                                                                                     std::string{}));
+                                    .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((int) JsonSyntaxNodeType::Id,
+                                                                                         std::string{}));
                     value(iterator);
                 }
 
@@ -302,8 +302,8 @@ namespace CLDEParser {
                 matchComma(iterator);
 
                 _sptrSyntaxModel->_sptrSyntaxNodeQueue
-                                .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) JsonSyntaxNodeType::Id,
-                                                                                 std::string{}));
+                                .push_back(JsonFactory::CreateJsonSyntaxNodeInstance((int) JsonSyntaxNodeType::Id,
+                                                                                     std::string{}));
 
                 value(iterator);
 

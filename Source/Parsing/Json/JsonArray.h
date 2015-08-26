@@ -20,7 +20,7 @@ namespace CLDEParser {
                 JsonArray(JsonArray &&) = default;
                 JsonArray &operator=(const JsonArray &) = default;
                 JsonArray &operator=(JsonArray &&) = default;
-                virtual ~JsonArray() = default;
+                ~JsonArray() = default;
 
                 // IPrintable
                 std::string CopyToString() const override;
@@ -32,6 +32,7 @@ namespace CLDEParser {
                 SPtrJsonValueVector _container;
             };
 
+            using UPtrJsonArray = std::unique_ptr<JsonArray>;
             using SPtrJsonArray = std::shared_ptr<JsonArray>;
         }
     }

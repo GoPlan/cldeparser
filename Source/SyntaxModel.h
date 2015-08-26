@@ -25,6 +25,7 @@ namespace CLDEParser {
         virtual void Reset() = 0;
     };
 
+    using UPtrSyntaxModel = std::unique_ptr<SyntaxModel>;
     using SPtrSyntaxModel = std::shared_ptr<SyntaxModel>;
     using SPtrSyntaxModelVector = std::vector<SPtrSyntaxModel>;
 }

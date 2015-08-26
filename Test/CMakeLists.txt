@@ -1,5 +1,4 @@
 
-# Extra folder (containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked)
 set(TEST_SOURCE
         main.cpp
         Case00_FeatureTest.hpp

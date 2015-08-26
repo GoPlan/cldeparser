@@ -11,7 +11,7 @@ int main() {
 
 
     Scanner scanner{};
-    ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivative()};
+    ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivativeInstance()};
 
 
     // Scanning

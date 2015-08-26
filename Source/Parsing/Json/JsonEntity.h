@@ -22,6 +22,7 @@ namespace CLDEParser {
 
             class JsonEntity;
 
+            using UPtrJsonEntity = std::unique_ptr<JsonEntity>;
             using SPtrJsonEntity = std::shared_ptr<JsonEntity>;
             using SPtrJsonEntityMap = std::unordered_map<std::string, SPtrJsonEntity>;
             using SPtrJsonEntityVector = std::vector<SPtrJsonEntity>;

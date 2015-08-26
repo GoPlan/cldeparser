@@ -35,89 +35,89 @@
 namespace CLDEParser {
     namespace Scanning {
 
-        SPtrTokenizer TokenizerFactory::CreateCurlyBraceOpen() {
-            return std::make_shared<Tokenizers::CurlyBraceOpen>();
+        UPtrTokenizer TokenizerFactory::CreateCurlyBraceOpen() {
+            return std::unique_ptr<Tokenizers::CurlyBraceOpen>(new Tokenizers::CurlyBraceOpen());
         }
-        SPtrTokenizer TokenizerFactory::CreateCurlyBraceClosing() {
-            return std::make_shared<Tokenizers::CurlyBraceClosing>();
+        UPtrTokenizer TokenizerFactory::CreateCurlyBraceClosing() {
+            return std::unique_ptr<Tokenizers::CurlyBraceClosing>(new Tokenizers::CurlyBraceClosing());
         }
-        SPtrTokenizer TokenizerFactory::CreateBracketOpen() {
-            return std::make_shared<Tokenizers::BracketOpen>();
+        UPtrTokenizer TokenizerFactory::CreateBracketOpen() {
+            return std::unique_ptr<Tokenizers::BracketOpen>(new Tokenizers::BracketOpen());
         }
-        SPtrTokenizer TokenizerFactory::CreateBracketClosing() {
-            return std::make_shared<Tokenizers::BracketClosing>();
+        UPtrTokenizer TokenizerFactory::CreateBracketClosing() {
+            return std::unique_ptr<Tokenizers::BracketClosing>(new Tokenizers::BracketClosing());
         }
-        SPtrTokenizer TokenizerFactory::CreateParenthesesOpen() {
-            return std::make_shared<Tokenizers::ParenthesesOpen>();
+        UPtrTokenizer TokenizerFactory::CreateParenthesesOpen() {
+            return std::unique_ptr<Tokenizers::ParenthesesOpen>(new Tokenizers::ParenthesesOpen());
         }
-        SPtrTokenizer TokenizerFactory::CreateParenthesesClosing() {
-            return std::make_shared<Tokenizers::ParenthesesClosing>();
+        UPtrTokenizer TokenizerFactory::CreateParenthesesClosing() {
+            return std::unique_ptr<Tokenizers::ParenthesesClosing>(new Tokenizers::ParenthesesClosing());
         }
-        SPtrTokenizer TokenizerFactory::CreateSemiColon() {
-            return std::make_shared<Tokenizers::SemiColon>();
+        UPtrTokenizer TokenizerFactory::CreateSemiColon() {
+            return std::unique_ptr<Tokenizers::SemiColon>(new Tokenizers::SemiColon());
         }
-        SPtrTokenizer TokenizerFactory::CreateColon() {
-            return std::make_shared<Tokenizers::Colon>();
+        UPtrTokenizer TokenizerFactory::CreateColon() {
+            return std::unique_ptr<Tokenizers::Colon>(new Tokenizers::Colon());
         }
-        SPtrTokenizer TokenizerFactory::CreateId() {
-            return std::make_shared<Tokenizers::Id>();
+        UPtrTokenizer TokenizerFactory::CreateId() {
+            return std::unique_ptr<Tokenizers::Id>(new Tokenizers::Id());
         }
-        SPtrTokenizer TokenizerFactory::CreateNumber() {
-            return std::make_shared<Tokenizers::Number>();
+        UPtrTokenizer TokenizerFactory::CreateNumber() {
+            return std::unique_ptr<Tokenizers::Number>(new Tokenizers::Number());
         }
-        SPtrTokenizer TokenizerFactory::CreateNumberInteger() {
-            return std::make_shared<Tokenizers::NumberInteger>();
+        UPtrTokenizer TokenizerFactory::CreateNumberInteger() {
+            return std::unique_ptr<Tokenizers::NumberInteger>(new Tokenizers::NumberInteger());
         }
-        SPtrTokenizer TokenizerFactory::CreateString() {
-            return std::make_shared<Tokenizers::String>();
+        UPtrTokenizer TokenizerFactory::CreateString() {
+            return std::unique_ptr<Tokenizers::String>(new Tokenizers::String());
         }
-        SPtrTokenizer TokenizerFactory::CreateSpace() {
-            return std::make_shared<Tokenizers::Space>();
+        UPtrTokenizer TokenizerFactory::CreateSpace() {
+            return std::unique_ptr<Tokenizers::Space>(new Tokenizers::Space());
         }
-        SPtrTokenizer TokenizerFactory::CreateTab() {
-            return std::make_shared<Tokenizers::Tab>();
+        UPtrTokenizer TokenizerFactory::CreateTab() {
+            return std::unique_ptr<Tokenizers::Tab>(new Tokenizers::Tab());
         }
-        SPtrTokenizer TokenizerFactory::CreateComma() {
-            return std::make_shared<Tokenizers::Comma>();
+        UPtrTokenizer TokenizerFactory::CreateComma() {
+            return std::unique_ptr<Tokenizers::Comma>(new Tokenizers::Comma());
         }
-        SPtrTokenizer TokenizerFactory::CreateAngleBracketOpen() {
-            return std::make_shared<Tokenizers::AngleBracketOpen>();
+        UPtrTokenizer TokenizerFactory::CreateAngleBracketOpen() {
+            return std::unique_ptr<Tokenizers::BracketOpen>(new Tokenizers::BracketOpen());
         }
-        SPtrTokenizer TokenizerFactory::CreateAngleBracketClosing() {
-            return std::make_shared<Tokenizers::AngleBracketClosing>();
+        UPtrTokenizer TokenizerFactory::CreateAngleBracketClosing() {
+            return std::unique_ptr<Tokenizers::BracketClosing>(new Tokenizers::BracketClosing());
         }
-        SPtrTokenizer TokenizerFactory::CreateForwardSlash() {
-            return std::make_shared<Tokenizers::ForwardSlash>();
+        UPtrTokenizer TokenizerFactory::CreateForwardSlash() {
+            return std::unique_ptr<Tokenizers::ForwardSlash>(new Tokenizers::ForwardSlash());
         }
-        SPtrTokenizer TokenizerFactory::CreateBackwardSlash() {
-            return std::make_shared<Tokenizers::BackwardSlash>();
+        UPtrTokenizer TokenizerFactory::CreateBackwardSlash() {
+            return std::unique_ptr<Tokenizers::BackwardSlash>(new Tokenizers::BackwardSlash());
         }
-        SPtrTokenizer TokenizerFactory::CreateAdding() {
-            return std::make_shared<Tokenizers::Adding>();
+        UPtrTokenizer TokenizerFactory::CreateAdding() {
+            return std::unique_ptr<Tokenizers::Adding>(new Tokenizers::Adding());
         }
-        SPtrTokenizer TokenizerFactory::CreateSubtracting() {
-            return std::make_shared<Tokenizers::Subtracting>();
+        UPtrTokenizer TokenizerFactory::CreateSubtracting() {
+            return std::unique_ptr<Tokenizers::Subtracting>(new Tokenizers::Subtracting());
         }
-        SPtrTokenizer TokenizerFactory::CreateMultiplication() {
-            return std::make_shared<Tokenizers::Multiplication>();
+        UPtrTokenizer TokenizerFactory::CreateMultiplication() {
+            return std::unique_ptr<Tokenizers::Multiplication>(new Tokenizers::Multiplication());
         }
-        SPtrTokenizer TokenizerFactory::CreateDivision() {
-            return std::make_shared<Tokenizers::Division>();
+        UPtrTokenizer TokenizerFactory::CreateDivision() {
+            return std::unique_ptr<Tokenizers::Division>(new Tokenizers::Division());
         }
-        SPtrTokenizer TokenizerFactory::CreateBoolFalse() {
-            return std::make_shared<Tokenizers::BoolFalse>();
+        UPtrTokenizer TokenizerFactory::CreateBoolFalse() {
+            return std::unique_ptr<Tokenizers::BoolFalse>(new Tokenizers::BoolFalse());
         }
-        SPtrTokenizer TokenizerFactory::CreateBoolTrue() {
-            return std::make_shared<Tokenizers::BoolTrue>();
+        UPtrTokenizer TokenizerFactory::CreateBoolTrue() {
+            return std::unique_ptr<Tokenizers::BoolTrue>(new Tokenizers::BoolTrue());
         }
-        SPtrTokenizer TokenizerFactory::CreateNull() {
-            return std::make_shared<Tokenizers::Null>();
+        UPtrTokenizer TokenizerFactory::CreateNull() {
+            return std::unique_ptr<Tokenizers::Null>(new Tokenizers::Null());
         }
-        SPtrTokenizer TokenizerFactory::CreateCarriageReturn() {
-            return std::make_shared<Tokenizers::CarriageReturn>();
+        UPtrTokenizer TokenizerFactory::CreateCarriageReturn() {
+            return std::unique_ptr<Tokenizers::CarriageReturn>(new Tokenizers::CarriageReturn());
         }
-        SPtrTokenizer TokenizerFactory::CreateLineFeed() {
-            return std::make_shared<Tokenizers::LineFeed>();
+        UPtrTokenizer TokenizerFactory::CreateLineFeed() {
+            return std::unique_ptr<Tokenizers::LineFeed>(new Tokenizers::LineFeed());
         }
     }
 }

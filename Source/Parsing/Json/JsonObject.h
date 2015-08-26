@@ -21,7 +21,7 @@ namespace CLDEParser {
                 JsonObject(JsonObject &&) = default;
                 JsonObject &operator=(const JsonObject &) = default;
                 JsonObject &operator=(JsonObject &&) = default;
-                virtual ~JsonObject() = default;
+                ~JsonObject() = default;
 
                 // IPrintable
                 std::string CopyToString() const override;
@@ -35,6 +35,7 @@ namespace CLDEParser {
 
             };
 
+            using UPtrJsonObject = std::unique_ptr<JsonObject>;
             using SPtrJsonObject = std::shared_ptr<JsonObject>;
         }
     }
