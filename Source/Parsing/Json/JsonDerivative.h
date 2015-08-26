@@ -20,7 +20,7 @@ namespace CLDEParser {
 
                 // Main
                 bool json(SPtrTokenVectorIterator &iterator);
-                bool isObjectFirstFollow(SPtrTokenVectorIterator &iterator);
+                bool isValueFirstOrFollow(SPtrTokenVectorIterator &iterator);
 
                 // Terminal matching
                 void matchId(SPtrTokenVectorIterator &iterator);

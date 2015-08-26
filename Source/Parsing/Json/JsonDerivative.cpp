@@ -13,39 +13,16 @@ namespace CLDEParser {
                 //
             }
 
-            bool JsonDerivative::isObjectFirstFollow(SPtrTokenVectorIterator &iterator) {
+            bool JsonDerivative::isValueFirstOrFollow(SPtrTokenVectorIterator &iterator) {
 
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BracketOpen) {
-                    return true;
-                }
-
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::CurlyBraceOpen) {
-                    return true;
-                }
-
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::String) {
-                    return true;
-                }
-
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BooleanFalse) {
-                    return true;
-                }
-
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BooleanTrue) {
-                    return true;
-                }
-
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Null) {
-                    return true;
-                }
-
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Number) {
-                    return true;
-                }
-
-                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::NumberInteger) {
-                    return true;
-                }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BracketOpen) { return true; }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::CurlyBraceOpen) { return true; }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::String) { return true; }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BooleanFalse) { return true; }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::BooleanTrue) { return true; }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Null) { return true; }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::Number) { return true; }
+                if ((JsonSyntaxNodeType) (*iterator)->id() == JsonSyntaxNodeType::NumberInteger) { return true; }
 
                 return false;
             }
@@ -307,7 +284,7 @@ namespace CLDEParser {
 
             void JsonDerivative::array(SPtrTokenVectorIterator &iterator) {
 
-                if (isObjectFirstFollow(iterator)) {
+                if (isValueFirstOrFollow(iterator)) {
 
                     _sptrSyntaxModel->_sptrSyntaxNodeQueue
                                     .push_back(JsonFactory::CreateSPtrJsonSyntaxNode((int) JsonSyntaxNodeType::Id,

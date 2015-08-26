@@ -1,8 +1,3 @@
-cmake_minimum_required(VERSION 3.2)
-project(cldeparser)
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
 add_library(scanner STATIC
         Formatter/TokenizerFormatter.cpp
         Formatter/TokenizerFormatter.h
@@ -65,4 +60,8 @@ add_library(scanner STATIC
         Tokenizers/NumberInteger.h
         TokenHelper.cpp
         TokenHelper.h
-        Tokenizers/CarriageReturn.cpp Tokenizers/CarriageReturn.h Tokenizers/LineFeed.cpp Tokenizers/LineFeed.h)
+        Tokenizers/CarriageReturn.cpp
+        Tokenizers/CarriageReturn.h
+        Tokenizers/LineFeed.cpp
+        Tokenizers/LineFeed.h
+)

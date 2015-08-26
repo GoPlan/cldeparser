@@ -1,6 +1,17 @@
-cmake_minimum_required(VERSION 3.2)
-project(cldeparser)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# Extra folder (containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked)
+set(TEST_SOURCE
+        main.cpp
+        Case00_FeatureTest.hpp
+        JsonParserInstance.cpp
+        JsonParserInstance.h
+        JsonTestFixture.cpp
+        JsonTestFixture.h
+)
 
+include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
+LINK_DIRECTORIES(${EXTRA_DIR}/gtest-1.7.0/lib)
 
+# Targets
+add_executable(cldeparser-apptest ${TEST_SOURCE})
+target_link_libraries(cldeparser-apptest gtest cldeparser-static)
