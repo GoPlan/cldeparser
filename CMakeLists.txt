@@ -53,9 +53,11 @@ if (APPLE)
     set_property(TARGET cldeparser PROPERTY SUFFIX ".so")
 endif ()
 
+
 # Example - json
 add_executable(example-json Examples/example-json.cpp)
 target_link_libraries(example-json cldeparser-static)
+
 
 # Example - math
 add_executable(example-math Examples/example-math.cpp)
@@ -64,7 +66,7 @@ target_link_libraries(example-math cldeparser-static)
 
 # Installation - Source directory variable has trailing dash to ommit copying itself into the destination
 install(FILES LICENSE.txt README.md DESTINATION ./)
-install(DIRECTORY Source/ DESTINATION include FILES_MATCHING PATTERN "*.h")
+install(DIRECTORY Source/ DESTINATION include/${CMAKE_PROJECT_NAME} FILES_MATCHING PATTERN "*.h")
 install(TARGETS cldeparser-static cldeparser
         LIBRARY DESTINATION ./
         ARCHIVE DESTINATION ./)

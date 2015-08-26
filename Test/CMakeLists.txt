@@ -10,7 +10,8 @@ set(TEST_SOURCE
 )
 
 include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
-LINK_DIRECTORIES(${EXTRA_DIR}/gtest-1.7.0/lib)
+link_directories(${EXTRA_DIR}/gtest-1.7.0/lib)
+
 
 # Targets
 add_executable(cldeparser-apptest ${TEST_SOURCE})
