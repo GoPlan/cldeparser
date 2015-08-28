@@ -93,3 +93,4 @@ Makefile.in
 /.idea
 /CMake
 /Extra
+/Build

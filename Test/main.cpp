@@ -4,6 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "Case00_FeatureTest.hpp"
+#include "Case01_ActualExamples.hpp"
 
 int main(int argc, char *argv[]) {
     ::testing::InitGoogleTest(&argc, argv);

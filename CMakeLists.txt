@@ -84,9 +84,30 @@ install(TARGETS cldeparser-static cldeparser
 )
 
 
-# Tests
+# AppTest
+
+add_library(apptest-lib STATIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/Test/Case00_FeatureTest.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Test/Case01_ActualExamples.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Test/JsonParserInstance.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Test/JsonParserInstance.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/Test/JsonTestFixture.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Test/JsonTestFixture.h
+)
+
+# gtest
 include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
 link_directories(${EXTRA_DIR}/gtest-1.7.0/lib)
-add_subdirectory(Test)
-add_executable(cldeparser-apptest ${TEST_SOURCE_FILES})
-target_link_libraries(cldeparser-apptest gtest cldeparser-static)
+
+# find cldeparser-static
+find_library(cldeparser-static cldeparser-static ${CMAKE_CURRENT_BINARY_DIR} NO_DEFAULT_PATH)
+add_executable(cldeparser-apptest Test/main.cpp)
+add_dependencies(cldeparser-apptest cldeparser-static)
+target_link_libraries(cldeparser-apptest gtest apptest-lib ${cldeparser-static})
+
+# copy testing examples
+add_custom_command(TARGET cldeparser-apptest POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/Test/JsonExamples
+        $<TARGET_FILE_DIR:cldeparser-apptest>/JsonExamples
+)
