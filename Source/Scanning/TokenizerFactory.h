@@ -9,16 +9,13 @@
 
 namespace CLDEParser {
     namespace Scanning {
-        class TokenizerFactory {
-        public:
+        struct TokenizerFactory {
             static UPtrTokenizer CreateCurlyBraceOpen();
             static UPtrTokenizer CreateCurlyBraceClosing();
             static UPtrTokenizer CreateBracketOpen();
             static UPtrTokenizer CreateBracketClosing();
             static UPtrTokenizer CreateParenthesesOpen();
             static UPtrTokenizer CreateParenthesesClosing();
-            static UPtrTokenizer CreateSquareBracketOpen();
-            static UPtrTokenizer CreateSquareBracketClosing();
             static UPtrTokenizer CreateAngleBracketOpen();
             static UPtrTokenizer CreateAngleBracketClosing();
             static UPtrTokenizer CreateForwardSlash();

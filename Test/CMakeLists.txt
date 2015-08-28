@@ -1,17 +1,14 @@
+# AppTest
 
-set(TEST_SOURCE
-        main.cpp
-        Case00_FeatureTest.hpp
-        JsonParserInstance.cpp
-        JsonParserInstance.h
-        JsonTestFixture.cpp
-        JsonTestFixture.h
+set(TEST_SOURCE_FILES
+        ${TEST_SOURCE_FILES}
+        ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/Case00_FeatureTest.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/JsonParserInstance.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/JsonParserInstance.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/JsonTestFixture.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/JsonTestFixture.h
+        PARENT_SCOPE
 )
 
-include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
-link_directories(${EXTRA_DIR}/gtest-1.7.0/lib)
 
-
-# Targets
-add_executable(cldeparser-apptest ${TEST_SOURCE})
-target_link_libraries(cldeparser-apptest gtest cldeparser-static)

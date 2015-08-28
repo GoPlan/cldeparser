@@ -3,9 +3,6 @@
 //
 
 #include "Scanner.h"
-#include "Exceptions/ScannerException.h"
-#include "Common/IDefines.h"
-#include <iostream>
 
 namespace CLDEParser {
 

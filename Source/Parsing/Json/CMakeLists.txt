@@ -25,3 +25,4 @@ add_library(parser-json STATIC
         JsonValueHelper.cpp
         JsonValueHelper.h
 )
+

@@ -5,8 +5,7 @@
 #ifndef CLDEPARSER_TEST_PARSERINSTANCE_H
 #define CLDEPARSER_TEST_PARSERINSTANCE_H
 
-#include "../Source/CLDEParser.h"
-#include "../Source/Parsing/Json/Json.h"
+#include "../Source/CldeParser.h"
 
 namespace CLDEParser {
     namespace Test {

@@ -8,6 +8,7 @@
 #include "Token.h"
 #include "Tokenizer.h"
 #include "Common/IDefines.h"
+#include "Exceptions/ScannerException.h"
 
 namespace CLDEParser {
 

@@ -19,7 +19,7 @@ namespace CLDEParser {
             Exception(Exception &&) = default;
             Exception &operator=(const Exception &) = default;
             Exception &operator=(Exception &&) = default;
-            virtual ~Exception() = default;
+            virtual ~Exception();
 
             // Exceptions
             virtual const char *what() const noexcept override;

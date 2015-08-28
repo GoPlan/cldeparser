@@ -24,7 +24,7 @@ namespace CLDEParser {
             ParserException(ParserException &&) = default;
             ParserException &operator=(const ParserException &) = default;
             ParserException &operator=(ParserException &&) = default;
-            virtual ~ParserException() = default;
+            ~ParserException();
 
             enum class ParserExceptionCode {
                 UnmatchedToken = 0,

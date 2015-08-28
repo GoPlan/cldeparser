@@ -10,6 +10,8 @@
 #include "Scanner.h"
 #include "Parser.h"
 #include "ParserSingle.h"
+#include "Version.h"
+#include "Exceptions/Exception.h"
 
 // Scanning
 #include "Scanning/Scanning.h"

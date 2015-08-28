@@ -24,7 +24,7 @@ namespace CLDEParser {
             ScannerException(ScannerException &&) = default;
             ScannerException &operator=(const ScannerException &) = default;
             ScannerException &operator=(ScannerException &&) = default;
-            virtual ~ScannerException() = default;
+            ~ScannerException();
 
             enum class ScannerExceptionCode {
                 TokenUnmatchable = 0,

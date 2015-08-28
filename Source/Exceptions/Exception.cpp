@@ -7,6 +7,10 @@
 namespace CLDEParser {
     namespace Exceptions {
 
+        Exception::~Exception() {
+            //
+        }
+
         const char *Exception::what() const noexcept {
             return _message.c_str();
         }

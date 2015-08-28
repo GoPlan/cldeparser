@@ -8,6 +8,10 @@
 namespace CLDEParser {
     namespace Exceptions {
 
+        ScannerException::~ScannerException() {
+            //
+        }
+
         ScannerException::ScannerException(int code, std::string const &description)
                 : _code{code}, _description{description} {
             //

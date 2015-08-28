@@ -3,6 +3,7 @@
 //
 
 #include "Space.h"
+#include "../../Exceptions/ScannerException.h"
 
 namespace CLDEParser {
     namespace Scanning {

@@ -8,6 +8,10 @@
 namespace CLDEParser {
     namespace Exceptions {
 
+        ParserException::~ParserException() {
+            //
+        }
+
         ParserException::ParserException(int code,
                                          SPtrTokenVectorIterator const &iterator,
                                          std::string const &description)
