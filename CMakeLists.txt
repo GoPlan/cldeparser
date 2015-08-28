@@ -3,7 +3,7 @@ project(cldeparser)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(EXTRA_DIR "${CMAKE_SOURCE_DIR}/Extra")
-set(VERSION 0.9.0)
+set(VERSION 1.0.0)
 set(INSTALL_DIR "${EXTRA_DIR}")
 set(CMAKE_INSTALL_PREFIX ${INSTALL_DIR}/${CMAKE_PROJECT_NAME}-${VERSION})
 # Note: Extra folder containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked
@@ -100,10 +100,8 @@ include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
 link_directories(${EXTRA_DIR}/gtest-1.7.0/lib)
 
 # find cldeparser-static
-find_library(cldeparser-static cldeparser-static ${CMAKE_CURRENT_BINARY_DIR} NO_DEFAULT_PATH)
 add_executable(cldeparser-apptest Test/main.cpp)
-add_dependencies(cldeparser-apptest cldeparser-static)
-target_link_libraries(cldeparser-apptest gtest apptest-lib ${cldeparser-static})
+target_link_libraries(cldeparser-apptest gtest apptest-lib cldeparser-static)
 
 # copy testing examples
 add_custom_command(TARGET cldeparser-apptest POST_BUILD
