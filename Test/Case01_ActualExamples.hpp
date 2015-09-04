@@ -15,9 +15,6 @@ namespace CLDEParser {
 
         TEST_F(JsonTestFixture, CustomerMap) {
 
-            char buffer[CLDEParser::Common::BufferSize::EIGHTY];
-            memset(buffer, 0x0, CLDEParser::Common::BufferSize::EIGHTY);
-
             std::ifstream file{CUSTOMERMAP_JSON};
             ASSERT_TRUE(!file.operator!());
 

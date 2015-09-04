@@ -22,12 +22,12 @@ namespace CLDEParser {
             };
 
             struct JsonValue : public Common::IPrintable {
-                int id;
-                int intValue;
-                double doubleValue;
-                bool boolValue;
-                std::string strValue;
-                SPtrJsonEntity sptrJsonEntity;
+                int id{0};
+                int intValue{0};
+                double doubleValue{0};
+                bool boolValue{false};
+                std::string strValue{};
+                SPtrJsonEntity sptrJsonEntity{};
 
                 // IPrintable
                 std::string CopyToString() const override;

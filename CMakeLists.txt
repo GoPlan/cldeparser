@@ -69,6 +69,13 @@ endif ()
 add_executable(example-json Examples/example-json.cpp)
 target_link_libraries(example-json cldeparser-static)
 
+add_custom_target(valgrind-example-json ALL
+        COMMAND valgrind ./example-json
+        COMMENT example-json
+)
+
+add_dependencies(valgrind-example-json example-json)
+
 
 # Example - math
 add_executable(example-math Examples/example-math.cpp)
@@ -85,7 +92,6 @@ install(TARGETS cldeparser-static cldeparser
 
 
 # AppTest
-
 add_library(apptest-lib STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/Test/Case00_FeatureTest.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/Test/Case01_ActualExamples.hpp
@@ -109,3 +115,11 @@ add_custom_command(TARGET cldeparser-apptest POST_BUILD
         ${CMAKE_SOURCE_DIR}/Test/JsonExamples
         $<TARGET_FILE_DIR:cldeparser-apptest>/JsonExamples
 )
+
+# Valgrind cldeparser-apptest
+add_custom_target(valgrind-cldeparser-apptest ALL
+        COMMAND valgrind -v --leak-check=full --show-leak-kinds=all --track-origins=yes ./cldeparser-apptest
+        COMMENT cldeparser-apptest
+)
+
+add_dependencies(valgrind-cldeparser-apptest cldeparser-apptest)
