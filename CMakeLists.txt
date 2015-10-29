@@ -4,8 +4,6 @@ project(cldeparser)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(EXTRA_DIR "${CMAKE_SOURCE_DIR}/Extra")
 set(VERSION 1.0.0)
-set(INSTALL_DIR "${EXTRA_DIR}")
-set(CMAKE_INSTALL_PREFIX ${INSTALL_DIR}/${CMAKE_PROJECT_NAME}-${VERSION})
 # Note: Extra folder containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked
 
 set(SOURCE_FILES
@@ -69,20 +67,15 @@ endif ()
 add_executable(example-json Examples/example-json.cpp)
 target_link_libraries(example-json cldeparser-static)
 
-add_custom_target(valgrind-example-json ALL
-        COMMAND valgrind ./example-json
-        COMMENT example-json
-)
-
-add_dependencies(valgrind-example-json example-json)
-
-
 # Example - math
 add_executable(example-math Examples/example-math.cpp)
 target_link_libraries(example-math cldeparser-static)
 
 
 # Installation - Source directory variable has trailing dash to ommit copying itself into the destination
+set(INSTALL_DIR "${EXTRA_DIR}")
+set(CMAKE_INSTALL_PREFIX ${INSTALL_DIR}/${CMAKE_PROJECT_NAME}-${VERSION})
+
 install(FILES LICENSE.txt README.md DESTINATION ./)
 install(DIRECTORY Source/ DESTINATION include/${CMAKE_PROJECT_NAME} FILES_MATCHING PATTERN "*.h")
 install(TARGETS cldeparser-static cldeparser
@@ -90,6 +83,9 @@ install(TARGETS cldeparser-static cldeparser
         ARCHIVE DESTINATION ./
 )
 
+# gtest
+include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
+link_directories(${EXTRA_DIR}/gtest-1.7.0/lib)
 
 # AppTest
 add_library(apptest-lib STATIC
@@ -101,25 +97,22 @@ add_library(apptest-lib STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/Test/JsonTestFixture.h
 )
 
-# gtest
-include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
-link_directories(${EXTRA_DIR}/gtest-1.7.0/lib)
-
 # find cldeparser-static
 add_executable(cldeparser-apptest Test/main.cpp)
 target_link_libraries(cldeparser-apptest gtest apptest-lib cldeparser-static)
 
 # copy testing examples
-add_custom_command(TARGET cldeparser-apptest POST_BUILD
+add_custom_command(
+        TARGET cldeparser-apptest POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/Test/JsonExamples
         $<TARGET_FILE_DIR:cldeparser-apptest>/JsonExamples
 )
 
-# Valgrind cldeparser-apptest
-add_custom_target(valgrind-cldeparser-apptest ALL
-        COMMAND valgrind -v --leak-check=full --show-leak-kinds=all --track-origins=yes ./cldeparser-apptest
-        COMMENT cldeparser-apptest
+# Enable Valgrind
+enable_testing()
+add_test(
+        NAME cldeparser-valgrind
+        COMMAND valgrind -v --leak-check=summary --show-leak-kinds=all --track-origins=yes ./cldeparser-apptest
 )
 
-add_dependencies(valgrind-cldeparser-apptest cldeparser-apptest)
