@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.2)
 project(cldeparser)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-set(EXTRA_DIR "${CMAKE_SOURCE_DIR}/Extra")
+set(STORAGE /Volumes/External-SSD)
+set(EXTRA_DIR "${STORAGE}/Extra")
 set(VERSION 1.0.0)
 # Note: Extra folder containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked
 
@@ -85,7 +86,7 @@ install(TARGETS cldeparser-static cldeparser
 
 # gtest
 include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
-link_directories(${EXTRA_DIR}/gtest-1.7.0/lib)
+link_directories(${EXTRA_DIR}/gtest-1.7.0/build)
 
 # AppTest
 add_library(apptest-lib STATIC
