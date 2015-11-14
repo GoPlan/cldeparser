@@ -14,7 +14,6 @@ namespace CLDEParser {
 
     class ParserSingle {
 
-        int _exceptionTokenNo{Common::BufferSize::SIXTYFOUR};
         SPtrDerivative _sptrDerivative;
 
     public:

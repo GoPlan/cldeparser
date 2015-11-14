@@ -22,7 +22,7 @@ namespace CLDEParser {
         }
 
         ScannerException::ScannerException(int code, std::string const &description, char token)
-                : _code{code}, _description{description}, _token{token} {
+                : _code{code}, _token{token}, _description{description} {
             //
             _message.reserve(Common::BufferSize::EIGHTY);
             _message += "[Scanner]";

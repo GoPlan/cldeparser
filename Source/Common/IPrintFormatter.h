@@ -10,7 +10,7 @@
 namespace CLDEParser {
     namespace Common {
 
-        class IPrintable;
+        struct IPrintable;
 
         struct IPrintFormatter {
             virtual std::string Print(const IPrintable &printable) const = 0;
