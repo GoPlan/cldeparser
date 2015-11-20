@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_SCANNING_TOKENIZERS_SPACE_H
 #define CLDEPARSER_SCANNING_TOKENIZERS_SPACE_H
 
-#include "../TokenType.h"
+#include "../../TokenType.h"
 #include "../../Tokenizer.h"
 
 namespace CLDEParser {

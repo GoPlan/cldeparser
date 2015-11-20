@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_SCANNING_TOKENIZERS_DIVISION_H
 #define CLDEPARSER_SCANNING_TOKENIZERS_DIVISION_H
 
-#include "../TokenType.h"
+#include "../../TokenType.h"
 #include "../../Tokenizer.h"
 #include "../../Exceptions/ScannerException.h"
 

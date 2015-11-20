@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_SCANNER_TOKENIZERFACTORY_H
 #define CLDEPARSER_SCANNER_TOKENIZERFACTORY_H
 
-#include "../Tokenizer.h"
+#include "Tokenizer.h"
 
 namespace CLDEParser {
     namespace Scanning {

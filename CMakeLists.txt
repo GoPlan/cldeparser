@@ -16,6 +16,9 @@ set(SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Exception.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Token.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Tokenizer.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/TokenHelper.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/TokenizerFactory.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/TokenType.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Scanner.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Parser.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Derivative.cpp
@@ -36,7 +39,8 @@ add_library(cldeparser-static STATIC ${COMPLETE_SOURCE})
 add_library(cldeparser SHARED ${COMPLETE_SOURCE})
 set_target_properties(cldeparser cldeparser-static PROPERTIES
         VERSION ${VERSION}
-        SOVERSION ${VERSION})
+        SOVERSION ${VERSION}
+)
 
 if (APPLE)
     set_property(TARGET cldeparser PROPERTY PREFIX "lib")
@@ -62,37 +66,6 @@ add_library(cldeparser-json-static STATIC ${CLDEPARSER_JSON_SOURCE_FILES})
 target_link_libraries(cldeparser-json cldeparser-static)
 target_link_libraries(cldeparser-json-static cldeparser-static)
 
-# gtest
-include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
-link_directories(${EXTRA_DIR}/gtest-1.7.0/build)
-
 # cldeparser-apptest
-add_executable(cldeparser-apptest
-        ${CMAKE_CURRENT_SOURCE_DIR}/Test/main.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Test/JsonParserInstance.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Test/JsonTestFixture.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Test/Case00_FeatureTest.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/Test/Case01_ActualExamples.cpp)
-
-target_link_libraries(cldeparser-apptest gtest cldeparser-static)
-
-# copy testing examples
-add_custom_command(
-        TARGET cldeparser-apptest POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${CMAKE_SOURCE_DIR}/Test/JsonExamples
-        $<TARGET_FILE_DIR:cldeparser-apptest>/JsonExamples)
-
-# Valgrind
-enable_testing()
-add_test(
-        NAME cldeparser-valgrind
-        COMMAND valgrind -v --leak-check=summary --show-leak-kinds=all --track-origins=yes ./cldeparser-apptest)
-
-# Example - json
-add_executable(example-json Examples/example-json.cpp)
-target_link_libraries(example-json cldeparser-static)
-
-# Example - math
-add_executable(example-math Examples/example-math.cpp)
-target_link_libraries(example-math cldeparser-static)
+add_subdirectory(test)
+add_subdirectory(examples)

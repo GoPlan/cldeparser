@@ -6,7 +6,7 @@
 #define CLDEPARSER_SCANNING_TOKENFILTER_H
 
 #include <vector>
-#include "../Token.h"
+#include "Token.h"
 
 namespace CLDEParser {
     namespace Scanning {

@@ -6,7 +6,7 @@
 #define CLDEPARSER_SCANNING_TOKENIZERS_COLON_H
 
 #include "../../Tokenizer.h"
-#include "../TokenType.h"
+#include "../../TokenType.h"
 #include "../../Exceptions/ScannerException.h"
 
 namespace CLDEParser {

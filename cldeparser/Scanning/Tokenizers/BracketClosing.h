@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_SCANNING_TOKENIZERS_BRACKETCLOSING_H
 #define CLDEPARSER_SCANNING_TOKENIZERS_BRACKETCLOSING_H
 
-#include "../TokenType.h"
+#include "../../TokenType.h"
 #include "../../Tokenizer.h"
 #include "../../Exceptions/ScannerException.h"
 

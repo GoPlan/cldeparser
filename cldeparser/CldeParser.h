@@ -12,9 +12,7 @@
 #include "Exception.h"
 
 // Scanning
-#include "Scanning/Scanning.h"
-
-// Parsing
-#include "Parsing/Parsing.h"
+#include "TokenHelper.h"
+#include "TokenizerFactory.h"
 
 #endif //CLDEPARSER_CLDEPARSER_H
