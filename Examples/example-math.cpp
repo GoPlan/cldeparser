@@ -3,8 +3,8 @@
 //
 
 #include <iostream>
-#include "../Source/CLDEParser.h"
-#include "../Source/Scanning/Formatter/TokenizerFormatter.h"
+#include <cldeparser/CldeParser.h>
+#include <cldeparser/Scanning/Formatter/TokenizerFormatter.h>
 
 using namespace CLDEParser;
 

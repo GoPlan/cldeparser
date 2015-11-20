@@ -13,8 +13,6 @@ namespace CLDEParser {
 
         class JsonTestFixture : public ::testing::Test {
 
-            JsonParserInstance _parserInstance;
-
         public:
             JsonTestFixture() = default;
             JsonTestFixture(const JsonTestFixture &) = default;
@@ -24,11 +22,13 @@ namespace CLDEParser {
             virtual ~JsonTestFixture() = default;
 
             // Accessors
-            const JsonParserInstance &parserInstance() const { return _parserInstance; }
+            JsonParserInstance const &parserInstance() const { return _parserInstance; }
 
         protected:
             virtual void SetUp() override;
             virtual void TearDown() override;
+
+            JsonParserInstance _parserInstance;
         };
     }
 }

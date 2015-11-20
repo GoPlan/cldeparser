@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
-#include "../Source/CLDEParser.h"
+#include <cldeparser/CldeParser.h>
+#include <cldeparser/Parsing/Json/Json.h>
 
 using namespace CLDEParser;
 
@@ -9,11 +10,8 @@ int main() {
     std::string example{
             "{ 'a\\t01' : { \"first\\u1ab4Name\": 'Le', age : 134, \"lastName\" : \"Duc-Anh\" }, array : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0]}"};
 
-    Version version{};
     Scanner scanner{};
     ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivativeInstance()};
-
-    version.Print();
 
     // Scanning
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
