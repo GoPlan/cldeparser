@@ -7,7 +7,6 @@
 
 #include <cldeparser/Derivative.h>
 #include "JsonSyntaxModel.h"
-#include "JsonFactory.h"
 
 namespace CLDEParser {
     namespace Parsing {

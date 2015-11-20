@@ -8,7 +8,7 @@
 #include "SyntaxModel.h"
 #include "Derivative.h"
 #include "Exception.h"
-#include <cldeparser/Commons.h>
+#include "Commons.h"
 
 namespace CLDEParser {
 

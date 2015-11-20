@@ -6,7 +6,8 @@
 #define CLDEPARSER_EXCEPTIONS_SCANNEREXCEPTION_H
 
 #include <string>
-#include <cldeparser/cldeparser.h>
+#include "../Exception.h"
+#include "../Commons.h"
 
 namespace CLDEParser {
     namespace Exceptions {

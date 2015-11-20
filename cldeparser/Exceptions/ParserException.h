@@ -5,8 +5,8 @@
 #ifndef CLDEPARSER_EXCEPTIONS_PARSEREXCEPTION_H
 #define CLDEPARSER_EXCEPTIONS_PARSEREXCEPTION_H
 
-#include <cldeparser/Exception.h>
-#include <cldeparser/Token.h>
+#include "../Exception.h"   
+#include "../Token.h"
 
 namespace CLDEParser {
     namespace Exceptions {

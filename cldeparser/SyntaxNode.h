@@ -6,7 +6,7 @@
 #define CLDEPARSER_SYNTAXNODE_H
 
 #include <string>
-#include <cldeparser/Commons.h>
+#include "Commons.h"
 
 namespace CLDEParser {
 

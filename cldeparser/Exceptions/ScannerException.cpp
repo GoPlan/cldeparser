@@ -2,7 +2,6 @@
 // Created by LE, Duc Anh on 8/3/15.
 //
 
-#include <cldeparser/Commons.h>
 #include "ScannerException.h"
 
 namespace CLDEParser {

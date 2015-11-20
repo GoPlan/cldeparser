@@ -2,8 +2,9 @@
 // Created by LE, Duc Anh on 8/9/15.
 //
 
-#include "JsonDerivative.h"
 #include <cldeparser/Exceptions/ParserException.h>
+#include "JsonDerivative.h"
+#include "JsonFactory.h"
 
 namespace CLDEParser {
     namespace Parsing {
