@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <memory>
 
 struct Impl;
 
 @interface CLDEiOSParser : NSObject {
-    std::unique_ptr<Impl> _uptrImpl;
+    struct Impl * _ptrImpl;
 }
+
+-(void)printJson:(NSString*)jsonString;
 
 @end

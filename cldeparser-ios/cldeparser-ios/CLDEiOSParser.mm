@@ -59,10 +59,24 @@ struct Impl {
     self = [super init];
     
     if(self){
-        _uptrImpl.reset(new Impl());
+        _ptrImpl = new Impl();
     }
     
     return self;
+}
+
+- (void)printJson:(NSString *)jsonString {
+    try {
+        auto sptrJsonEntity = _ptrImpl->Parse(std::string([jsonString UTF8String]));
+        auto json = sptrJsonEntity->CopyToString();
+        NSLog(@"%s", json.c_str());
+    } catch (CLDEParser::Exceptions::Exception& ex) {
+        NSLog(@"%s", ex.what());
+    }
+}
+
+- (void)dealloc {
+    if(_ptrImpl != nullptr && _ptrImpl != NULL) delete _ptrImpl;
 }
 
 @end
