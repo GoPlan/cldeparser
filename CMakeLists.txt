@@ -7,6 +7,9 @@ set(EXTRA_DIR "${STORAGE}/Extra")
 set(VERSION 1.0.0)
 # Note: Extra folder containing supporting libraries such as gtest, gmock, valgrind ... Extra folder is not tracked
 
+# cldeparser public include
+include_directories(${CMAKE_SOURCE_DIR})
+
 set(SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Exceptions/ScannerException.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Exceptions/ParserException.cpp
@@ -18,8 +21,7 @@ set(SOURCE_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/Derivative.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/SyntaxNode.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/SyntaxModel.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/ParserSingle.cpp
-)
+        ${CMAKE_CURRENT_SOURCE_DIR}/cldeparser/ParserSingle.cpp)
 
 file(GLOB_RECURSE SCANNING_SOURCE cldeparser/Scanning/*.cpp)
 file(GLOB_RECURSE PARSING_SOURCE cldeparser/Parsing/*.cpp)
@@ -27,19 +29,14 @@ file(GLOB_RECURSE PARSING_SOURCE cldeparser/Parsing/*.cpp)
 set(COMPLETE_SOURCE
         ${SOURCE_FILES}
         ${SCANNING_SOURCE}
-        ${PARSING_SOURCE}
-)
-
-# cldeparser public include
-include_directories(${CMAKE_SOURCE_DIR})
+        ${PARSING_SOURCE})
 
 # Libraries - shared & static
 add_library(cldeparser-static STATIC ${COMPLETE_SOURCE})
 add_library(cldeparser SHARED ${COMPLETE_SOURCE})
 set_target_properties(cldeparser cldeparser-static PROPERTIES
         VERSION ${VERSION}
-        SOVERSION ${VERSION}
-)
+        SOVERSION ${VERSION})
 
 if (APPLE)
     set_property(TARGET cldeparser PROPERTY PREFIX "lib")
@@ -54,8 +51,16 @@ install(FILES LICENSE.txt README.md DESTINATION ./)
 install(DIRECTORY cldeparser/ DESTINATION include/${CMAKE_PROJECT_NAME} FILES_MATCHING PATTERN "*.h")
 install(TARGETS cldeparser-static cldeparser
         LIBRARY DESTINATION ./
-        ARCHIVE DESTINATION ./
-)
+        ARCHIVE DESTINATION ./)
+
+# cldeparser-json
+add_subdirectory(cldeparser-json)
+
+# Libraries - cldeparser-json - shared & static
+add_library(cldeparser-json ${CLDEPARSER_JSON_SOURCE_FILES})
+add_library(cldeparser-json-static STATIC ${CLDEPARSER_JSON_SOURCE_FILES})
+target_link_libraries(cldeparser-json cldeparser-static)
+target_link_libraries(cldeparser-json-static cldeparser-static)
 
 # gtest
 include_directories(${EXTRA_DIR}/gtest-1.7.0/include)
@@ -76,15 +81,13 @@ add_custom_command(
         TARGET cldeparser-apptest POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/Test/JsonExamples
-        $<TARGET_FILE_DIR:cldeparser-apptest>/JsonExamples
-)
+        $<TARGET_FILE_DIR:cldeparser-apptest>/JsonExamples)
 
 # Valgrind
 enable_testing()
 add_test(
         NAME cldeparser-valgrind
-        COMMAND valgrind -v --leak-check=summary --show-leak-kinds=all --track-origins=yes ./cldeparser-apptest
-)
+        COMMAND valgrind -v --leak-check=summary --show-leak-kinds=all --track-origins=yes ./cldeparser-apptest)
 
 # Example - json
 add_executable(example-json Examples/example-json.cpp)

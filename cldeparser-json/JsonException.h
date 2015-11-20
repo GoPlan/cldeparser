@@ -5,8 +5,7 @@
 #ifndef CLDEPARSER_PARSING_JSON_JSONEXCEPTION_H
 #define CLDEPARSER_PARSING_JSON_JSONEXCEPTION_H
 
-#include <cldeparser/cldeparser.h>
-#include <cldeparser/exception.h>
+#include <cldeparser/Exception.h>
 #include "JsonSyntaxNode.h"
 
 namespace CLDEParser {

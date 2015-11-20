@@ -11,7 +11,7 @@ int main() {
             "{ 'a\\t01' : { \"first\\u1ab4Name\": 'Le', age : 134, \"lastName\" : \"Duc-Anh\" }, array : [1.3E-2, 312.05 ,3.0 , 4.0, 5.0]}"};
 
     Scanner scanner{};
-    ParserSingle parser{Parsing::ParserFactory::CreateJsonDerivativeInstance()};
+    ParserSingle parser{Parsing::JsonParserFactory::CreateJsonDerivativeInstance()};
 
     // Scanning
     scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());

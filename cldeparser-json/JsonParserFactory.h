@@ -5,7 +5,7 @@
 #ifndef CLDEPARSER_PARSING_PARSERFACTORY_H
 #define CLDEPARSER_PARSING_PARSERFACTORY_H
 
-#include "../Derivative.h"
+#include <cldeparser/Derivative.h>
 
 namespace CLDEParser {
     namespace Parsing {

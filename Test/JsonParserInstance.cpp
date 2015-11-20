@@ -8,7 +8,7 @@ namespace CLDEParser {
     namespace Test {
 
         JsonParserInstance::JsonParserInstance()
-                : _scanner{}, _parser{Parsing::ParserFactory::CreateJsonDerivativeInstance()} {
+                : _scanner{}, _parser{Parsing::JsonParserFactory::CreateJsonDerivativeInstance()} {
             //
             init();
         }

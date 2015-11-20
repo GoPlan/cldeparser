@@ -3,6 +3,7 @@
 //
 
 #include "JsonDerivative.h"
+#include <cldeparser/Exceptions/ParserException.h>
 
 namespace CLDEParser {
     namespace Parsing {
