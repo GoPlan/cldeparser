@@ -7,8 +7,8 @@
 
 #include <gtest/gtest.h>
 #include <cldeparser-json/Json.h>
-#include <cldeparser-json/JsonDefaultParser.h>
 #include <cldeparser-json/JsonEntityHelper.h>
+#include <cldeparser-json/JsonDefaultParser.h>
 
 namespace CLDEParser {
     namespace Test {
