@@ -6,7 +6,9 @@
 #define CLDEPARSER_TEST_JSONTESTFIXTURE_H
 
 #include <gtest/gtest.h>
-#include "JsonParserInstance.h"
+#include <cldeparser-json/Json.h>
+#include <cldeparser-json/JsonDefaultParser.h>
+#include <cldeparser-json/JsonEntityHelper.h>
 
 namespace CLDEParser {
     namespace Test {
@@ -22,13 +24,13 @@ namespace CLDEParser {
             virtual ~JsonTestFixture() = default;
 
             // Accessors
-            JsonParserInstance const &parserInstance() const { return _parserInstance; }
+            CLDEParser::Parsing::Json::JsonDefaultParser const &parserInstance() const { return _parserInstance; }
 
         protected:
             virtual void SetUp() override;
             virtual void TearDown() override;
 
-            JsonParserInstance _parserInstance;
+            CLDEParser::Parsing::Json::JsonDefaultParser _parserInstance;
         };
     }
 }

@@ -8,7 +8,6 @@
 #include "JsonEntity.h"
 #include "JsonArray.h"
 #include "JsonObject.h"
-#include "JsonException.h"
 
 namespace CLDEParser {
     namespace Parsing {

@@ -2,6 +2,7 @@
 // Created by LE, Duc Anh on 8/9/15.
 //
 
+#include "JsonEntity.h"
 #include "JsonValue.h"
 
 namespace CLDEParser {
@@ -28,7 +29,8 @@ namespace CLDEParser {
                         return std::to_string(boolValue);
 
                     case JsonValueType::Entity:
-                        return sptrJsonEntity->CopyToString();
+                        auto sptrIPrintable = std::dynamic_pointer_cast<Common::IPrintable>(sptrJsonEntity);
+                        return sptrIPrintable->CopyToString();
                 }
             }
         }

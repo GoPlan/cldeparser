@@ -5,10 +5,12 @@
 #ifndef CLDEPARSER_PARSING_JSON_JSONENTITY_H
 #define CLDEPARSER_PARSING_JSON_JSONENTITY_H
 
+#include <cldeparser/Commons.h>
 #include <memory>
 #include <unordered_map>
 #include <vector>
-#include <cldeparser/Commons.h>
+
+#include "JsonValue.h"
 
 namespace CLDEParser {
     namespace Parsing {
@@ -20,19 +22,19 @@ namespace CLDEParser {
                 Array = 2
             };
 
-            class JsonEntity : public Common::IPrintable,
-                               public std::enable_shared_from_this<JsonEntity> {
+            class JsonEntity : public Common::IPrintable {
 
             public:
                 JsonEntity() = default;
-                JsonEntity(const JsonEntity &) = default;
-                JsonEntity(JsonEntity &&) = default;
-                JsonEntity &operator=(const JsonEntity &) = default;
-                JsonEntity &operator=(JsonEntity &&) = default;
                 virtual ~JsonEntity() = default;
 
                 // Accessors & Mutators
                 JsonEntityType const &Type() const { return _type; }
+
+                // Locals
+                virtual SPtrJsonValueVector &Container() = 0;
+                virtual SPtrJsonValue GetValue(std::string const &id) = 0;
+                virtual void SetValue(std::string const &id, SPtrJsonValue const &value) = 0;
 
             protected:
                 JsonEntity(JsonEntityType type) : _type{type} { };

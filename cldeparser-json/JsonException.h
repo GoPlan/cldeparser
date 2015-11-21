@@ -31,6 +31,7 @@ namespace CLDEParser {
                     UnknownSyntaxNode,
                     UnknownValueType,
                     InvalidTypeCasting,
+                    InvalidMethodInType,
                     UnSupportedValueType,
                     ValueIsNull
                 };

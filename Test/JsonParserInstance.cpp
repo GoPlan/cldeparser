@@ -3,12 +3,14 @@
 //
 
 #include "JsonParserInstance.h"
+#include <cldeparser-json/JsonDerivativeFactory.h>
+#include <cldeparser-json/JsonSyntaxModel.h>
 
 namespace CLDEParser {
     namespace Test {
 
         JsonParserInstance::JsonParserInstance()
-                : _scanner{}, _parser{Parsing::JsonParserFactory::CreateJsonDerivativeInstance()} {
+                : _scanner{}, _parser{Parsing::JsonDerivativeFactory::CreateJsonDerivativeInstance()} {
             //
             init();
         }

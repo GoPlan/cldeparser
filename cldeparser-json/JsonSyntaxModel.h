@@ -7,38 +7,31 @@
 
 #include <cldeparser/SyntaxModel.h>
 #include "JsonEntity.h"
-#include "JsonSyntaxNode.h"
-#include "JsonValue.h"
-#include "JsonException.h"
-
 
 namespace CLDEParser {
     namespace Parsing {
         namespace Json {
 
+            struct JsonSyntaxModelImpl;
+
             class JsonSyntaxModel : public SyntaxModel,
                                     public std::enable_shared_from_this<JsonSyntaxModel>,
                                     public Common::IPrintable {
 
+                JsonSyntaxModelImpl *_ptrImpl = nullptr;
+
                 friend class JsonDerivative;
                 friend class JsonSyntaxModelHelper;
 
-                SPtrJsonEntityVector _sptrEntityScopeStack;
-                SPtrJsonSyntaxNodeVector _sptrSyntaxNodeQueue;
-
-                SPtrJsonValue createSPtrJsonValue(SPtrJsonSyntaxNodeIterator &iterator);
-                SPtrJsonEntity createSPtrJsonEntity(SPtrJsonSyntaxNodeIterator &iterator);
-
             public:
-                JsonSyntaxModel() = default;
-                JsonSyntaxModel(JsonSyntaxModel const &) = default;
-                JsonSyntaxModel(JsonSyntaxModel &&) = default;
-                JsonSyntaxModel &operator=(JsonSyntaxModel const &) = default;
-                JsonSyntaxModel &operator=(JsonSyntaxModel &&) = default;
-                ~JsonSyntaxModel() = default;
+                JsonSyntaxModel();
+                JsonSyntaxModel(JsonSyntaxModel const &);
+                JsonSyntaxModel &operator=(JsonSyntaxModel const &);
+                ~JsonSyntaxModel();
 
                 // SyntaxModel
                 void Reset() override;
+                void AddLexeme(int id, std::string const &lexeme);
 
                 // IPrintable
                 std::string CopyToString() const override;

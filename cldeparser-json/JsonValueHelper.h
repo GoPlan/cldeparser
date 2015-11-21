@@ -6,7 +6,6 @@
 #define CLDEPARSER_PARSING_JSON_JSONVALUEHELPER_H
 
 #include "JsonValue.h"
-#include "JsonException.h"
 
 namespace CLDEParser {
     namespace Parsing {

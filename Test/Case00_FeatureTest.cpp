@@ -148,8 +148,8 @@ namespace CLDEParser {
             ASSERT_TRUE(sptrJsonObject->GetValue("y")->Type() == Parsing::Json::JsonValueType::Boolean);
             auto sptrJsonValueX = sptrJsonObject->GetValue("x");
             auto sptrJsonValueY = sptrJsonObject->GetValue("y");
-            ASSERT_TRUE(Parsing::Json::JsonValueHelper::ToBoolean(sptrJsonValueX) == true);
-            ASSERT_TRUE(Parsing::Json::JsonValueHelper::ToBoolean(sptrJsonValueY) == false);
+            ASSERT_TRUE(Parsing::Json::JsonValueHelper::ToBoolean(sptrJsonValueX));
+            ASSERT_TRUE(!Parsing::Json::JsonValueHelper::ToBoolean(sptrJsonValueY));
         }
     }
 }
