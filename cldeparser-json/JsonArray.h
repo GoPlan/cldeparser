@@ -26,10 +26,13 @@ namespace CLDEParser {
                 std::string CopyToString() const override;
 
                 // Locals
-                SPtrJsonValueVector &Container() { return _container; }
+                virtual SPtrJsonValueVector &Container() override { return _container; }
+                virtual SPtrJsonValue GetValue(std::string const &id) override;
+                virtual void SetValue(std::string const &id, SPtrJsonValue const &value) override;
 
             protected:
                 SPtrJsonValueVector _container;
+
             };
 
             using UPtrJsonArray = std::unique_ptr<JsonArray>;

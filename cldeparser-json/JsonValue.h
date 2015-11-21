@@ -5,12 +5,17 @@
 #ifndef CLDEPARSER_PARSING_JSON_JSONVALUE_H
 #define CLDEPARSER_PARSING_JSON_JSONVALUE_H
 
+#include <cldeparser/Commons.h>
+#include <unordered_map>
+#include <vector>
 #include <string>
-#include "JsonEntity.h"
 
 namespace CLDEParser {
     namespace Parsing {
         namespace Json {
+
+            class JsonEntity;
+            using SPtrJsonEntity = std::shared_ptr<JsonEntity>;
 
             enum class JsonValueType {
                 Null = 0,

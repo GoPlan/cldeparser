@@ -3,19 +3,11 @@
 //
 
 #include "JsonObject.h"
+#include "JsonException.h"
 
 namespace CLDEParser {
     namespace Parsing {
         namespace Json {
-
-            SPtrJsonValue JsonObject::GetValue(std::string const &id) {
-                auto pair = _map.find(id);
-                return pair != _map.end() ? pair->second : SPtrJsonValue{};
-            }
-
-            void JsonObject::SetValue(std::string const &id, SPtrJsonValue const &value) {
-                _map[id] = value;
-            }
 
             std::string JsonObject::CopyToString() const {
 
@@ -39,6 +31,19 @@ namespace CLDEParser {
                 msg += "}";
 
                 return msg;
+            }
+
+            SPtrJsonValue JsonObject::GetValue(std::string const &id) {
+                auto pair = _map.find(id);
+                return pair != _map.end() ? pair->second : SPtrJsonValue{};
+            }
+
+            void JsonObject::SetValue(std::string const &id, SPtrJsonValue const &value) {
+                _map[id] = value;
+            }
+
+            SPtrJsonValueVector &JsonObject::Container() {
+                throw JsonException((int) JsonException::JsonExceptionCode::InvalidMethodInType, "Object entity does not support this method");
             }
         }
     }

@@ -46,6 +46,8 @@ namespace CLDEParser {
             using SPtrJsonSyntaxNode = std::shared_ptr<JsonSyntaxNode>;
             using SPtrJsonSyntaxNodeVector = std::vector<SPtrJsonSyntaxNode>;
             using SPtrJsonSyntaxNodeIterator = SPtrJsonSyntaxNodeVector::const_iterator;
+
+            SPtrJsonSyntaxNode CreateJsonSyntaxNode(int id, std::string const &value);
         }
     }
 }

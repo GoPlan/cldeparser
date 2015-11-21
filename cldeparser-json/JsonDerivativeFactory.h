@@ -9,7 +9,7 @@
 
 namespace CLDEParser {
     namespace Parsing {
-        struct JsonParserFactory {
+        struct JsonDerivativeFactory {
             static UPtrDerivative CreateJsonDerivativeInstance();
         };
     }

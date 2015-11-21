@@ -27,8 +27,9 @@ namespace CLDEParser {
                 std::string CopyToString() const override;
 
                 // Accessors & Mutators
-                SPtrJsonValue GetValue(std::string const &id);
-                void SetValue(std::string const &id, SPtrJsonValue const &value);
+                virtual SPtrJsonValue GetValue(std::string const &id) override;
+                virtual SPtrJsonValueVector &Container() override;
+                virtual void SetValue(std::string const &id, SPtrJsonValue const &value) override;
 
             protected:
                 SPtrJsonValueMap _map;

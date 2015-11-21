@@ -3,6 +3,7 @@
 //
 
 #include "JsonArray.h"
+#include "JsonException.h"
 
 namespace CLDEParser {
     namespace Parsing {
@@ -28,6 +29,14 @@ namespace CLDEParser {
                 msg += "]";
 
                 return msg;
+            }
+
+            SPtrJsonValue JsonArray::GetValue(std::string const &id)  {
+                throw JsonException((int)JsonException::JsonExceptionCode::InvalidMethodInType, "Array entity does not support this method");
+            }
+
+            void JsonArray::SetValue(std::string const &id, SPtrJsonValue const &value) {
+                throw JsonException((int)JsonException::JsonExceptionCode::InvalidMethodInType, "Array entity does not support this method");
             }
         }
     }

@@ -24,6 +24,10 @@ namespace CLDEParser {
                 msg += ")";
                 return msg;
             }
+
+            SPtrJsonSyntaxNode CreateJsonSyntaxNode(int id, std::string const &value) {
+                return std::unique_ptr<JsonSyntaxNode>(new JsonSyntaxNode(id, value));
+            }
         }
     }
 }

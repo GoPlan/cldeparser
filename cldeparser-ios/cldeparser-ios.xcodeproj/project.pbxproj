@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C814DFAB1C002AF60021BB10 /* JsonDerivativeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C814DFA91C002AF60021BB10 /* JsonDerivativeFactory.cpp */; };
 		C85861DF1BFF05B800961BE2 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C85861851BFF05B700961BE2 /* Derivative.cpp */; };
 		C85861E01BFF05B800961BE2 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C85861871BFF05B700961BE2 /* Exception.cpp */; };
 		C85861E11BFF05B800961BE2 /* ParserException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C858618A1BFF05B700961BE2 /* ParserException.cpp */; };
@@ -64,7 +65,7 @@
 		C858623E1BFF063700961BE2 /* JsonValueFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C858622F1BFF063700961BE2 /* JsonValueFactory.cpp */; };
 		C858623F1BFF063700961BE2 /* JsonValueHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C85862311BFF063700961BE2 /* JsonValueHelper.cpp */; };
 		C85862501BFF06DA00961BE2 /* CLDEiOSParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = C858624F1BFF06DA00961BE2 /* CLDEiOSParser.mm */; };
-		C858625A1BFF090300961BE2 /* CLDEiOSParser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C858624E1BFF06DA00961BE2 /* CLDEiOSParser.h */; };
+		C858625A1BFF090300961BE2 /* CLDEiOSParser.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = C858624E1BFF06DA00961BE2 /* CLDEiOSParser.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,13 +75,15 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				C858625A1BFF090300961BE2 /* CLDEiOSParser.h in CopyFiles */,
+				C858625A1BFF090300961BE2 /* CLDEiOSParser.hpp in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C814DFA91C002AF60021BB10 /* JsonDerivativeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JsonDerivativeFactory.cpp; path = "../cldeparser-json/JsonDerivativeFactory.cpp"; sourceTree = "<group>"; };
+		C814DFAA1C002AF60021BB10 /* JsonDerivativeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonDerivativeFactory.h; path = "../cldeparser-json/JsonDerivativeFactory.h"; sourceTree = "<group>"; };
 		C85861761BFF054100961BE2 /* libcldeparser-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcldeparser-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85861831BFF05B700961BE2 /* CldeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CldeParser.h; path = ../cldeparser/CldeParser.h; sourceTree = "<group>"; };
 		C85861841BFF05B700961BE2 /* Commons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Commons.h; path = ../cldeparser/Commons.h; sourceTree = "<group>"; };
@@ -197,7 +200,7 @@
 		C85862301BFF063700961BE2 /* JsonValueFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonValueFactory.h; path = "../cldeparser-json/JsonValueFactory.h"; sourceTree = "<group>"; };
 		C85862311BFF063700961BE2 /* JsonValueHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JsonValueHelper.cpp; path = "../cldeparser-json/JsonValueHelper.cpp"; sourceTree = "<group>"; };
 		C85862321BFF063700961BE2 /* JsonValueHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonValueHelper.h; path = "../cldeparser-json/JsonValueHelper.h"; sourceTree = "<group>"; };
-		C858624E1BFF06DA00961BE2 /* CLDEiOSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDEiOSParser.h; sourceTree = "<group>"; };
+		C858624E1BFF06DA00961BE2 /* CLDEiOSParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CLDEiOSParser.hpp; sourceTree = "<group>"; };
 		C858624F1BFF06DA00961BE2 /* CLDEiOSParser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CLDEiOSParser.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,7 +236,7 @@
 		C85861781BFF054100961BE2 /* cldeparser-ios */ = {
 			isa = PBXGroup;
 			children = (
-				C858624E1BFF06DA00961BE2 /* CLDEiOSParser.h */,
+				C858624E1BFF06DA00961BE2 /* CLDEiOSParser.hpp */,
 				C858624F1BFF06DA00961BE2 /* CLDEiOSParser.mm */,
 			);
 			path = "cldeparser-ios";
@@ -371,6 +374,8 @@
 		C85862171BFF062300961BE2 /* cldeparser-json */ = {
 			isa = PBXGroup;
 			children = (
+				C814DFA91C002AF60021BB10 /* JsonDerivativeFactory.cpp */,
+				C814DFAA1C002AF60021BB10 /* JsonDerivativeFactory.h */,
 				C85862181BFF063700961BE2 /* Json.h */,
 				C85862191BFF063700961BE2 /* JsonArray.cpp */,
 				C858621A1BFF063700961BE2 /* JsonArray.h */,
@@ -461,6 +466,7 @@
 				C85861FA1BFF05B800961BE2 /* Number.cpp in Sources */,
 				C85861E11BFF05B800961BE2 /* ParserException.cpp in Sources */,
 				C85862041BFF05B800961BE2 /* SyntaxNode.cpp in Sources */,
+				C814DFAB1C002AF60021BB10 /* JsonDerivativeFactory.cpp in Sources */,
 				C85862021BFF05B800961BE2 /* Tab.cpp in Sources */,
 				C85862001BFF05B800961BE2 /* String.cpp in Sources */,
 				C85861EE1BFF05B800961BE2 /* BracketOpen.cpp in Sources */,

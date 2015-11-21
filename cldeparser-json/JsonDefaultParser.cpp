@@ -1,23 +1,19 @@
 //
-//  CLDEiOSParser.mm
-//  cldeparser-ios
-//
-//  Created by Duc-Anh LE on 11/20/15.
-//  Copyright © 2015 Duc-Anh LE. All rights reserved.
+// Created by Duc-Anh LE on 11/21/15.
 //
 
-#import "CLDEiOSParser.hpp"
-#import <cldeparser/CldeParser.h>
-#import <cldeparser-json/Json.h>
+#include "JsonDefaultParser.h"
+#include "JsonDerivativeFactory.h"
+#include "JsonSyntaxModel.h"
 
-using namespace CLDEParser;
+#include <cldeparser/CldeParser.h>
 
-struct Impl {
-    
+struct CLDEParser::Parsing::Json::JsonDefaultParser::JsonParserImpl {
+
     Scanner scanner;
     ParserSingle parser;
-    
-    Impl() : scanner{}, parser{Parsing::JsonParserFactory::CreateJsonDerivativeInstance()} {
+
+    JsonParserImpl() : parser(JsonDerivativeFactory::CreateJsonDerivativeInstance()) {
         scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateSpace());
         scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateTab());
         scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateCarriageReturn());
@@ -36,47 +32,40 @@ struct Impl {
         scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketOpen());
         scanner.Tokenizers().push_back(Scanning::TokenizerFactory::CreateBracketClosing());
     }
-    
-    Parsing::Json::SPtrJsonEntity Parse(std::string const &json) const {
-        
-        // Scanning
-        auto tokens = scanner.Scan(json);
-        auto filteredCodes = Scanning::TokenHelper::DefaultFilterCodes();
-        auto filteredTokens = Scanning::TokenHelper::Filter(filteredCodes, tokens);
-        
-        // Parsing
-        auto sptrSyntaxModel = parser.ParseCast<Parsing::Json::JsonSyntaxModel>(filteredTokens);
-        auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
-        
-        return sptrJsonEntity;
-    }
 };
 
-@implementation CLDEiOSParser
-
-- (instancetype)init {
-    
-    self = [super init];
-    
-    if(self){
-        _ptrImpl = new Impl();
-    }
-    
-    return self;
+CLDEParser::Parsing::Json::JsonDefaultParser::JsonDefaultParser() {
+    _ptrImpl = new JsonDefaultParser::JsonParserImpl();
 }
 
-- (void)printJson:(NSString *)jsonString {
-    try {
-        auto sptrJsonEntity = _ptrImpl->Parse(std::string([jsonString UTF8String]));
-        auto json = sptrJsonEntity->CopyToString();
-        NSLog(@"%s", json.c_str());
-    } catch (std::exception& ex) {
-        NSLog(@"%s", ex.what());
-    }
+CLDEParser::Parsing::Json::JsonDefaultParser::JsonDefaultParser(const CLDEParser::Parsing::Json::JsonDefaultParser &jsonParser) : _ptrImpl{jsonParser._ptrImpl} {
+    //
 }
 
-- (void)dealloc {
+CLDEParser::Parsing::Json::JsonDefaultParser &CLDEParser::Parsing::Json::JsonDefaultParser::operator=(const CLDEParser::Parsing::Json::JsonDefaultParser &jsonParser) {
+
+    if(&jsonParser != this){
+        delete _ptrImpl;
+        _ptrImpl = jsonParser._ptrImpl;
+    }
+
+    return *this;
+}
+
+CLDEParser::Parsing::Json::JsonDefaultParser::~JsonDefaultParser() {
     delete _ptrImpl;
 }
 
-@end
+CLDEParser::Parsing::Json::SPtrJsonEntity CLDEParser::Parsing::Json::JsonDefaultParser::Parse(std::string const &json) const {
+
+    // Scanning
+    auto tokens = _ptrImpl->scanner.Scan(json);
+    auto filteredCodes = Scanning::TokenHelper::DefaultFilterCodes();
+    auto filteredTokens = Scanning::TokenHelper::Filter(filteredCodes, tokens);
+
+    // Parsing
+    auto sptrSyntaxModel = _ptrImpl->parser.ParseCast<Parsing::Json::JsonSyntaxModel>(filteredTokens);
+    auto sptrJsonEntity = sptrSyntaxModel->CreateSPtrJsonEnity();
+
+    return sptrJsonEntity;
+}

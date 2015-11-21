@@ -42,6 +42,8 @@ namespace CLDEParser {
                         return "UknownSyntaxNode";
                     case JsonExceptionCode::InvalidTypeCasting:
                         return "InvalidTypeCasting";
+                    case JsonExceptionCode::InvalidMethodInType:
+                        return "InvalidMethodInType";
                     case JsonExceptionCode::UnSupportedValueType:
                         return "UnSupportedValueType";
                     case JsonExceptionCode::ValueIsNull:
