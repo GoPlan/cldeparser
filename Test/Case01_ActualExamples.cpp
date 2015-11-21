@@ -7,6 +7,7 @@
 #include "JsonTestFixture.h"
 
 #define CUSTOMERMAP_JSON "JsonExamples/CustomerMap.json"
+#define SERVLET_JSON "JsonExamples/Servlet.json"
 
 namespace CLDEParser {
     namespace Test {
@@ -54,6 +55,17 @@ namespace CLDEParser {
             auto verMinor = sptrVersion->GetValue("Minor")->intValue;
             ASSERT_TRUE(verMajor == 1);
             ASSERT_TRUE(verMinor == 0);
+        }
+
+        TEST_F(JsonTestFixture, servlet) {
+
+            std::ifstream file{SERVLET_JSON};
+            ASSERT_TRUE(!file.operator!());
+
+            std::string document((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+            auto sptrJson = parserInstance().Parse(document);
+            ASSERT_TRUE(sptrJson.operator->());
+            ASSERT_TRUE(sptrJson->Type() == CLDEParser::Parsing::Json::JsonEntityType::Object);
         }
     }
 }
