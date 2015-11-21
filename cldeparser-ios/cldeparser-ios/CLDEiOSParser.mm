@@ -48,6 +48,29 @@ struct Impl {
     }
 }
 
+- (NSString *)translateJson:(NSString *)jsonString {
+    
+    NSMutableString * translation = [[NSMutableString alloc] init];
+    
+    try {
+        
+        auto sptrJsonEntity = _ptrImpl->Parse(std::string([jsonString UTF8String]));
+        auto sptrName = sptrJsonEntity->GetValue("name");
+        auto sptrAge = sptrJsonEntity->GetValue("age");
+
+        [translation appendString:[NSString stringWithUTF8String:sptrName->CopyToString().c_str()]];
+        [translation appendString:@" "];
+        [translation appendString:[NSString stringWithUTF8String:sptrAge->CopyToString().c_str()]];
+        
+    } catch (std::exception& ex) {
+
+        [translation appendString:[NSString stringWithUTF8String:ex.what()]];
+        
+    }
+    
+    return translation;
+}
+
 - (void)dealloc {
     delete _ptrImpl;
 }

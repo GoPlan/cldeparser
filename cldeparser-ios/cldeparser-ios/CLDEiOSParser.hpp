@@ -15,5 +15,6 @@ struct Impl;
 }
 
 -(void)printJson:(NSString*)jsonString;
+-(NSString*)translateJson:(NSString*)jsonString;
 
 @end
