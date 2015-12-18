@@ -26,6 +26,7 @@ namespace CLDEParser {
 
         // Locals
         virtual SPtrSyntaxModel Parse(SPtrTokenVector const &sptrTokens) const;
+        virtual void Reset() const;
 
         template<typename T>
         std::shared_ptr<T> ParseCast(SPtrTokenVector const &sptrTokens) const {

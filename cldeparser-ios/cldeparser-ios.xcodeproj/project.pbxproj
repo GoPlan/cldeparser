@@ -10,7 +10,6 @@
 		C814DFAB1C002AF60021BB10 /* JsonDerivativeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C814DFA91C002AF60021BB10 /* JsonDerivativeFactory.cpp */; };
 		C814DFB01C0043890021BB10 /* JsonDefaultParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C814DFAC1C0043890021BB10 /* JsonDefaultParser.cpp */; };
 		C814DFB11C00438A0021BB10 /* JsonEntityFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C814DFAE1C0043890021BB10 /* JsonEntityFactory.cpp */; };
-		C814DFB21C004F510021BB10 /* CLDEiOSParser.hpp in CopyFiles */ = {isa = PBXBuildFile; fileRef = C858624E1BFF06DA00961BE2 /* CLDEiOSParser.hpp */; };
 		C85861DF1BFF05B800961BE2 /* Derivative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C85861851BFF05B700961BE2 /* Derivative.cpp */; };
 		C85861E01BFF05B800961BE2 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C85861871BFF05B700961BE2 /* Exception.cpp */; };
 		C85861E11BFF05B800961BE2 /* ParserException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C858618A1BFF05B700961BE2 /* ParserException.cpp */; };
@@ -75,7 +74,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				C814DFB21C004F510021BB10 /* CLDEiOSParser.hpp in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

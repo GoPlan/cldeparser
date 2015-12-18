@@ -43,6 +43,10 @@ namespace CLDEParser {
 
         return _sptrDerivative->SyntaxModel();
     }
+    
+    void ParserSingle::Reset() const {        
+        _sptrDerivative->Reset();
+    }
 }
 
 

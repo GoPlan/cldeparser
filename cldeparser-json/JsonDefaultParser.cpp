@@ -58,6 +58,8 @@ CLDEParser::Parsing::Json::JsonDefaultParser::~JsonDefaultParser() {
 
 CLDEParser::Parsing::Json::SPtrJsonEntity CLDEParser::Parsing::Json::JsonDefaultParser::Parse(std::string const &json) const {
 
+    _ptrImpl->parser.Reset();
+    
     // Scanning
     auto tokens = _ptrImpl->scanner.Scan(json);
     auto filteredCodes = Scanning::TokenHelper::DefaultFilterCodes();

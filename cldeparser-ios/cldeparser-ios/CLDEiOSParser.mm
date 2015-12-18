@@ -16,6 +16,7 @@ using namespace CLDEParser;
 struct Impl {
     
     Parsing::Json::JsonDefaultParser parser;
+    
     Parsing::Json::SPtrJsonEntity Parse(std::string const &string){
         return parser.Parse(string);
     }

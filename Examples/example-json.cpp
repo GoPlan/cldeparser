@@ -2,6 +2,8 @@
 #include <iostream>
 #include <cldeparser/CldeParser.h>
 #include <cldeparser-json/Json.h>
+#include <cldeparser-json/JsonDerivativeFactory.h>
+#include <cldeparser-json/JsonSyntaxModel.h>
 
 using namespace CLDEParser;
 
