@@ -93,6 +93,6 @@ namespace CLDEParser {
             ++cIter;
         }
 
-        return sptrTokenizer->CreateSPtrToken();
+        return sptrTokenizer ? sptrTokenizer->CreateSPtrToken() : SPtrToken{nullptr};
     }
 }
